@@ -223,7 +223,7 @@ class _AccountSelectedWidgetState extends State<AccountSelectedWidget> {
         itemBuilder: (_, index) {
           if (index == 0) {
             return ItemWidget(
-              color: context.primary,
+              color: context.secondary,
               selected: false,
               title: 'Add New',
               icon: MdiIcons.plus.codePoint,
@@ -232,7 +232,7 @@ class _AccountSelectedWidgetState extends State<AccountSelectedWidget> {
           } else {
             final AccountEntity account = widget.accounts[index - 1];
             return ItemWidget(
-              color: Color(account.color ?? context.primary.value),
+              color: context.secondary,
               selected: account.superId == selectedId,
               title: account.name ?? '',
               icon: account.cardType!.icon.codePoint,
@@ -503,69 +503,66 @@ class _RecurringDatePickerWidgetState extends State<RecurringDatePickerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: ListTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: ListTile(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              leading: Icon(
+                Icons.today_rounded,
+                color: context.secondary,
+              ),
+              title: Text(selectedDateTime.formattedDate),
+              onTap: () async {
+                final DateTime? dateTime = await showDatePicker(
+                  context: context,
+                  initialDate: selectedDateTime,
+                  firstDate: DateTime(1950),
+                  lastDate: DateTime.now(),
+                );
+                if (dateTime != null) {
+                  setState(() {
+                    selectedDateTime = selectedDateTime.copyWith(
+                      day: dateTime.day,
+                      month: dateTime.month,
+                      year: dateTime.year,
+                    );
+                    recurringCubit.selectedDate = selectedDateTime;
+                  });
+                }
+              },
             ),
-            horizontalTitleGap: 0,
-            onTap: () async {
-              final DateTime? dateTime = await showDatePicker(
-                context: context,
-                initialDate: selectedDateTime,
-                firstDate: DateTime(1950),
-                lastDate: DateTime.now(),
-              );
-              if (dateTime != null) {
-                setState(() {
-                  selectedDateTime = selectedDateTime.copyWith(
-                    day: dateTime.day,
-                    month: dateTime.month,
-                    year: dateTime.year,
-                  );
-                  recurringCubit.selectedDate = selectedDateTime;
-                });
-              }
-            },
-            leading: Icon(
-              Icons.today_rounded,
-              color: context.secondary,
-            ),
-            title: Text(selectedDateTime.formattedDate),
           ),
-        ),
-        Expanded(
-          child: ListTile(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+          Expanded(
+            child: ListTile(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              leading: Icon(
+                MdiIcons.clockOutline,
+                color: context.secondary,
+              ),
+              title: Text(selectedDateTime.formattedTime),
+              onTap: () async {
+                final TimeOfDay? timeOfDay = await paisaTimerPicker(context);
+                if (timeOfDay != null) {
+                  setState(() {
+                    selectedDateTime = selectedDateTime.copyWith(
+                      hour: timeOfDay.hour,
+                      minute: timeOfDay.minute,
+                    );
+                    recurringCubit.selectedDate = selectedDateTime;
+                  });
+                }
+              },
             ),
-            horizontalTitleGap: 0,
-            onTap: () async {
-              final TimeOfDay? timeOfDay = await showTimePicker(
-                context: context,
-                initialTime: TimeOfDay.now(),
-                initialEntryMode: TimePickerEntryMode.dialOnly,
-              );
-              if (timeOfDay != null) {
-                setState(() {
-                  selectedDateTime = selectedDateTime.copyWith(
-                    hour: timeOfDay.hour,
-                    minute: timeOfDay.minute,
-                  );
-                  recurringCubit.selectedDate = selectedDateTime;
-                });
-              }
-            },
-            leading: Icon(
-              MdiIcons.clockOutline,
-              color: context.secondary,
-            ),
-            title: Text(selectedDateTime.formattedTime),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

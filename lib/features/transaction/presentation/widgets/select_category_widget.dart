@@ -122,8 +122,8 @@ class SelectedItem extends StatelessWidget {
                         .add(TransactionEvent.changeCategory(category)),
                     icon: category.icon ?? 0,
                     title: category.name ?? '',
-                    titleColor: Color(category.color ?? context.primary.value),
-                    iconColor: Color(category.color ?? context.primary.value),
+                    iconColor: context.primary,
+                    titleColor: context.primary,
                   );
                 }
               },
