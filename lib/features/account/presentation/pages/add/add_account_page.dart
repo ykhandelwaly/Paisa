@@ -319,7 +319,7 @@ class AccountColorPickerWidget extends StatelessWidget {
             color: context.primary,
           ),
           title: Text(context.loc.pickColor),
-          subtitle: Text(context.loc.pickColorDesc),
+          subtitle: Text(context.loc.pickColorAccountDesc),
           trailing: Container(
             margin: const EdgeInsets.only(right: 12),
             width: 28,
