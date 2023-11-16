@@ -16,7 +16,6 @@ class UpdateAccountUseCase implements UseCase<void, UpdateAccountParams> {
     return accountRepository.update(
       bankName: params.bankName,
       holderName: params.holderName,
-      number: params.number,
       cardType: params.cardType,
       amount: params.amount,
       key: params.key,
@@ -34,7 +33,6 @@ class UpdateAccountParams extends Equatable {
     required this.bankName,
     required this.holderName,
     required this.cardType,
-    this.number,
     this.amount,
     this.color,
     this.isAccountExcluded,
@@ -51,14 +49,12 @@ class UpdateAccountParams extends Equatable {
   final bool? isAccountExcluded;
   final bool? isAccountDefault;
   final int key;
-  final String? number;
 
   @override
   List<Object?> get props => [
         key,
         bankName,
         holderName,
-        number,
         cardType,
         amount,
         color,

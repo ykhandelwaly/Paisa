@@ -6,12 +6,12 @@ import 'package:paisa/features/account/domain/entities/account_entity.dart';
 
 extension AccountModelMapping on AccountModel {
   double get initialAmount => amount ?? 0;
+
   AccountEntity toEntity() => AccountEntity(
         amount: amount,
         bankName: bankName,
         cardType: cardType,
         name: name,
-        number: number,
         superId: superId,
         color: color,
         isAccountExcluded: isAccountExcluded,

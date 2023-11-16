@@ -14,7 +14,6 @@ class AccountModel extends HiveObject with _$AccountModel {
     @HiveField(1, defaultValue: false) bool? isAccountExcluded,
     @HiveField(2) CountryModel? currencySymbol,
     @HiveField(3) String? bankName,
-    @HiveField(5) String? number,
     @HiveField(6, defaultValue: CardType.bank) CardType? cardType,
     @HiveField(7) int? superId,
     @HiveField(8, defaultValue: 0) double? amount,

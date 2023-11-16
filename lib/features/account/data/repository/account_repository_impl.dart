@@ -19,7 +19,6 @@ class AccountRepositoryImpl extends AccountRepository {
     required String bankName,
     required String holderName,
     required CardType cardType,
-    String? number,
     double? amount,
     int? color,
     bool? isAccountExcluded,
@@ -29,7 +28,6 @@ class AccountRepositoryImpl extends AccountRepository {
     return dataSource.add(AccountModel(
       name: holderName,
       bankName: bankName,
-      number: number,
       cardType: cardType,
       amount: amount,
       color: color,
@@ -65,7 +63,6 @@ class AccountRepositoryImpl extends AccountRepository {
     required String? bankName,
     required String? holderName,
     required CardType cardType,
-    String? number,
     double? amount,
     int? color,
     bool? isAccountExcluded,
@@ -76,7 +73,6 @@ class AccountRepositoryImpl extends AccountRepository {
       AccountModel(
         name: holderName,
         bankName: bankName,
-        number: number,
         cardType: cardType,
         amount: amount,
         color: color,

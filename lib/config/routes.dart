@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/common_enum.dart';
+import 'package:paisa/features/account/presentation/bloc/accounts_bloc.dart';
 import 'package:paisa/features/account/presentation/pages/account_transactions_page.dart';
 import 'package:paisa/features/account/presentation/pages/add/add_account_page.dart';
+import 'package:paisa/features/category/presentation/bloc/category_bloc.dart';
 import 'package:paisa/features/category/presentation/pages/add/add_category_page.dart';
 import 'package:paisa/features/category/presentation/pages/category_icon_picker_page.dart';
 import 'package:paisa/features/category/presentation/pages/category_list_page.dart';
@@ -19,10 +22,12 @@ import 'package:paisa/features/settings/presentation/pages/app_language_changer_
 import 'package:paisa/features/settings/presentation/pages/export_and_import_page.dart';
 import 'package:paisa/features/settings/presentation/pages/font_picker_page.dart';
 import 'package:paisa/features/settings/presentation/pages/setting_page.dart';
+import 'package:paisa/features/transaction/presentation/bloc/transaction_bloc.dart';
 import 'package:paisa/features/transaction/presentation/pages/transaction_page.dart';
 import 'package:paisa/features/intro/intro_page.dart';
 import 'package:paisa/features/intro/user_onboarding_page.dart';
 import 'package:paisa/features/home/presentation/controller/summary_controller.dart';
+import 'package:paisa/main.dart';
 import 'package:provider/provider.dart';
 
 final Box<dynamic> settings = Hive.box(BoxType.settings.name);
@@ -80,10 +85,13 @@ final GoRouter goRouter = GoRouter(
             final int typeInt = int.tryParse(transactionTypeString ?? '') ?? 0;
             final TransactionType transactionType =
                 TransactionType.values[typeInt];
-            return TransactionPage(
-              accountId: accountId,
-              categoryId: categoryId,
-              transactionType: transactionType,
+            return BlocProvider(
+              create: (context) => getIt.get<TransactionBloc>(),
+              child: TransactionPage(
+                accountId: accountId,
+                categoryId: categoryId,
+                transactionType: transactionType,
+              ),
             );
           },
         ),
@@ -91,8 +99,11 @@ final GoRouter goRouter = GoRouter(
           name: editTransactionsName,
           path: editTransactionsPath,
           builder: (context, state) {
-            return TransactionPage(
-              expenseId: state.pathParameters['eid'],
+            return BlocProvider(
+              create: (context) => getIt.get<TransactionBloc>(),
+              child: TransactionPage(
+                expenseId: state.pathParameters['eid'],
+              ),
             );
           },
         ),
@@ -100,7 +111,10 @@ final GoRouter goRouter = GoRouter(
           name: addCategoryName,
           path: addCategoryPath,
           builder: (BuildContext context, GoRouterState state) {
-            return const AddCategoryPage();
+            return BlocProvider(
+              create: (context) => getIt.get<CategoryBloc>(),
+              child: const AddCategoryPage(),
+            );
           },
           routes: [
             GoRoute(
@@ -116,8 +130,11 @@ final GoRouter goRouter = GoRouter(
           name: editCategoryName,
           path: editCategoryPath,
           builder: (BuildContext context, GoRouterState state) {
-            return AddCategoryPage(
-              categoryId: state.pathParameters['cid'],
+            return BlocProvider(
+              create: (context) => getIt.get<CategoryBloc>(),
+              child: AddCategoryPage(
+                categoryId: state.pathParameters['cid'],
+              ),
             );
           },
         ),
@@ -132,15 +149,21 @@ final GoRouter goRouter = GoRouter(
           name: addAccountName,
           path: addAccountPath,
           builder: (BuildContext context, GoRouterState state) {
-            return const AddAccountPage();
+            return BlocProvider(
+              create: (context) => getIt.get<AccountBloc>(),
+              child: const AddAccountPage(),
+            );
           },
         ),
         GoRoute(
           name: editAccountName,
           path: editAccountPath,
           builder: (BuildContext context, GoRouterState state) {
-            return AddAccountPage(
-              accountId: state.pathParameters['aid'],
+            return BlocProvider(
+              create: (context) => getIt.get<AccountBloc>(),
+              child: AddAccountPage(
+                accountId: state.pathParameters['aid'],
+              ),
             );
           },
         ),
@@ -160,8 +183,9 @@ final GoRouter goRouter = GoRouter(
               path: editAccountWithIdPath,
               builder: (BuildContext context, GoRouterState state) {
                 final String? accountId = state.pathParameters['aid'];
-                return AddAccountPage(
-                  accountId: accountId,
+                return BlocProvider(
+                  create: (context) => getIt.get<AccountBloc>(),
+                  child: AddAccountPage(accountId: accountId),
                 );
               },
             ),
@@ -176,9 +200,12 @@ final GoRouter goRouter = GoRouter(
                     int.tryParse(transactionTypeString ?? '') ?? 0;
                 final TransactionType transactionType =
                     TransactionType.values[typeInt];
-                return TransactionPage(
-                  accountId: accountId,
-                  transactionType: transactionType,
+                return BlocProvider(
+                  create: (context) => getIt.get<TransactionBloc>(),
+                  child: TransactionPage(
+                    accountId: accountId,
+                    transactionType: transactionType,
+                  ),
                 );
               },
             ),

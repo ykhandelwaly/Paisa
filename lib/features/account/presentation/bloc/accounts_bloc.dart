@@ -45,7 +45,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
   final Box<dynamic> settings;
   String? accountHolderName;
   String? accountName;
-  String? accountNumber;
   final AddAccountUseCase addAccountUseCase;
   Country? currencySymbol;
   AccountEntity? currentAccount;
@@ -71,7 +70,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
     if (account != null) {
       accountName = account.bankName;
       accountHolderName = account.name;
-      accountNumber = account.number;
       selectedType = account.cardType ?? CardType.cash;
       initialAmount = account.amount;
       currentAccount = account;
@@ -93,7 +91,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
   ) async {
     final String? bankName = accountName;
     final String? holderName = accountHolderName;
-    final String? number = accountNumber;
     final CardType cardType = selectedType;
     final double? amount = initialAmount;
     final int? color = selectedColor;
@@ -115,7 +112,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
       await addAccountUseCase(AddAccountParams(
         bankName: bankName,
         holderName: holderName,
-        number: number,
         cardType: cardType,
         amount: amount,
         color: color,
@@ -129,7 +125,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
         currentAccount!.superId!,
         bankName: bankName,
         holderName: holderName,
-        number: number ?? '',
         cardType: cardType,
         amount: amount ?? 0,
         color: color,
