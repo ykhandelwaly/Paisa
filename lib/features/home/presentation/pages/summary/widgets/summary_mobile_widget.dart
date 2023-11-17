@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/enum/card_type.dart';
 import 'package:paisa/features/account/domain/entities/account_entity.dart';
+import 'package:paisa/features/account/presentation/widgets/account_summary_widget.dart';
 import 'package:paisa/features/home/presentation/cubit/summary/summary_cubit.dart';
 import 'package:paisa/features/home/presentation/pages/summary/widgets/expense_history_widget.dart';
 import 'package:paisa/features/home/presentation/pages/summary/widgets/expense_total_widget.dart';
@@ -20,50 +21,49 @@ class SummaryMobileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.surface,
-      body: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: 5,
-        padding: const EdgeInsets.only(bottom: 124),
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return const WelcomeNameWidget();
-          } else if (index == 1) {
-            return BlocBuilder<SummaryCubit, SummaryState>(
-              builder: (context, state) {
-                if (state is TransactionsSuccessState) {
-                  return AccountSelector(
-                    accounts: state.accounts,
-                  );
-                } else {
-                  return const SizedBox.shrink();
-                }
-              },
-            );
-          } else if (index == 2) {
-            return ExpenseTotalWidget(expenses: expenses);
-          } else if (index == 3) {
-            return ListTile(
-              contentPadding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 0,
+    return ListView.builder(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: 6,
+      padding: const EdgeInsets.only(bottom: 124),
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return const WelcomeNameWidget();
+        } else if (index == 1) {
+          return BlocBuilder<SummaryCubit, SummaryState>(
+            builder: (context, state) {
+              if (state is TransactionsSuccessState) {
+                return AccountSelector(
+                  accounts: state.accounts,
+                );
+              } else {
+                return const SizedBox.shrink();
+              }
+            },
+          );
+        } else if (index == 2) {
+          return ExpenseTotalWidget(expenses: expenses);
+        } else if (index == 3) {
+          return AccountSummaryWidget(expenses: expenses);
+        } else if (index == 4) {
+          return ListTile(
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 0,
+            ),
+            title: Text(
+              context.loc.transactions,
+              style: context.titleMedium?.copyWith(
+                color: context.onBackground,
+                fontWeight: FontWeight.w600,
               ),
-              title: Text(
-                context.loc.transactions,
-                style: context.titleMedium?.copyWith(
-                  color: context.onBackground,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            );
-          } else if (index == 4) {
-            return ExpenseHistoryWidget(expenses: expenses);
-          }
-          return const SizedBox.shrink();
-        },
-      ),
+            ),
+          );
+        } else if (index == 5) {
+          return ExpenseHistoryWidget(expenses: expenses);
+        }
+        return const SizedBox.shrink();
+      },
     );
   }
 }
@@ -80,7 +80,7 @@ class AccountSelector extends StatefulWidget {
 }
 
 class _AccountSelectorState extends State<AccountSelector> {
-  late AccountEntity entity = widget.accounts.first;
+  late AccountEntity accountEntity = widget.accounts.first;
 
   showAccountPicker(BuildContext context) {
     showDialog(
@@ -106,7 +106,7 @@ class _AccountSelectorState extends State<AccountSelector> {
                   contentPadding: EdgeInsets.zero,
                   horizontalTitleGap: 0,
                   title: Text(
-                    accountEntity.name ?? '',
+                    ' ${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
                     style: context.titleSmall,
                   ),
                 );
@@ -122,45 +122,32 @@ class _AccountSelectorState extends State<AccountSelector> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 12,
-        right: 12,
+        left: 8,
+        right: 8,
         bottom: 6,
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(32),
-        child: ColoredBox(
-          color: context.secondaryContainer,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: InkWell(
-              borderRadius: BorderRadius.circular(32),
-              onTap: () {
-                showAccountPicker(context);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(
-                      entity.cardType == null
-                          ? CardType.bank.icon
-                          : entity.cardType!.icon,
-                      color: context.onSecondaryContainer,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      entity.name ?? '',
-                      style: context.titleSmall,
-                    ),
-                  ),
-                  const Icon(Icons.keyboard_arrow_down)
-                ],
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextButton.icon(
+          onPressed: () {
+            showAccountPicker(context);
+          },
+          icon: Icon(
+            accountEntity.cardType == null
+                ? CardType.bank.icon
+                : accountEntity.cardType!.icon,
+            color: context.onSecondaryContainer,
+          ),
+          label: Row(
+            children: [
+              Text(
+                '${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
+                style: context.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ),
+              const Icon(Icons.keyboard_arrow_down)
+            ],
           ),
         ),
       ),

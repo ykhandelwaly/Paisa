@@ -29,7 +29,7 @@ class HomeTabletWidget extends StatelessWidget {
         BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
             return NavigationRail(
-              groupAlignment: 1,
+              groupAlignment: 0,
               leading: floatingActionButton,
               elevation: 1,
               selectedLabelTextStyle: context.bodyLarge?.copyWith(

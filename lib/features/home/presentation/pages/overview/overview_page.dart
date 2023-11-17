@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/common_enum.dart';
@@ -16,15 +17,13 @@ class OverViewPage extends StatelessWidget {
   const OverViewPage({
     Key? key,
     required this.summaryController,
-    required this.budgetCubit,
   }) : super(key: key);
 
-  final OverviewCubit budgetCubit;
   final SummaryController summaryController;
 
   @override
   Widget build(BuildContext context) {
-    budgetCubit.fetchDefaultCategory();
+    BlocProvider.of<OverviewCubit>(context).fetchDefaultCategory();
     return ValueListenableBuilder<Box<TransactionModel>>(
       valueListenable: getIt.get<Box<TransactionModel>>().listenable(),
       builder: (context, expenseBox, _) {
@@ -46,19 +45,17 @@ class OverViewPage extends StatelessWidget {
                 return ValueListenableBuilder<FilterExpense>(
                   valueListenable: summaryController.filterExpenseNotifier,
                   builder: (context, value, child) {
-                    budgetCubit.fetchBudgetSummary(filterExpenses, value);
+                    BlocProvider.of<OverviewCubit>(context)
+                        .fetchBudgetSummary(filterExpenses, value);
                     return Scaffold(
                       body: ListView(
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),
                         children: [
                           OverviewFilter(
-                            budgetCubit: budgetCubit,
                             summaryController: summaryController,
                           ),
-                          OverviewListView(
-                            budgetCubit: budgetCubit,
-                          ),
+                          const OverviewListView(),
                         ],
                       ),
                     );

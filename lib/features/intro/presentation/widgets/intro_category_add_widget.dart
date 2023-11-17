@@ -71,6 +71,7 @@ class _IntroCategoryAddWidgetState extends State<IntroCategoryAddWidget>
                           onPress: () async {
                             await model.delete();
                             defaultModels.add(model);
+                            setState(() {});
                           },
                         );
                       },
@@ -93,6 +94,7 @@ class _IntroCategoryAddWidgetState extends State<IntroCategoryAddWidget>
                         onPress: () async {
                           await model.delete();
                           defaultModels.add(model);
+                          setState(() {});
                         },
                       );
                     },
