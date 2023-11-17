@@ -14,7 +14,7 @@ class HomeSearchBar extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(34),
-        color: context.surfaceVariant,
+        color: context.surface,
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(34),

@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:paisa/core/common.dart';
 import 'package:provider/provider.dart';
 
 import 'package:paisa/features/account/presentation/pages/accounts_page.dart';
@@ -32,7 +33,6 @@ class ContentWidget extends StatelessWidget {
       2: const DebtsPage(),
       3: OverViewPage(
         summaryController: Provider.of<SummaryController>(context),
-        budgetCubit: BlocProvider.of<OverviewCubit>(context),
       ),
       4: const CategoryListPage(),
       5: BudgetPage(
@@ -45,18 +45,20 @@ class ContentWidget extends StatelessWidget {
       builder: (context, state) {
         if (state is CurrentIndexState) {
           return PageTransitionSwitcher(
+            duration: const Duration(milliseconds: 300),
+            child: pages[state.currentPage],
             transitionBuilder: (
               child,
               primaryAnimation,
               secondaryAnimation,
-            ) =>
-                FadeThroughTransition(
-              animation: primaryAnimation,
-              secondaryAnimation: secondaryAnimation,
-              child: child,
-            ),
-            duration: const Duration(milliseconds: 300),
-            child: pages[state.currentPage],
+            ) {
+              return FadeThroughTransition(
+                fillColor: context.surfaceVariant,
+                animation: primaryAnimation,
+                secondaryAnimation: secondaryAnimation,
+                child: child,
+              );
+            },
           );
         } else {
           return SizedBox.fromSize();

@@ -21,7 +21,9 @@ class SummaryMonthCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PaisaFilledCard(
+    return PaisaCard(
+      elevation: 0,
+      color: context.surface,
       child: Padding(
         padding: const EdgeInsets.all(14.0),
         child: Column(
@@ -45,7 +47,7 @@ class SummaryMonthCardWidget extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: context.labelMedium?.copyWith(
+                          style: context.bodySmall?.copyWith(
                             color: context.onSurfaceVariant.withOpacity(0.75),
                           ),
                         ),
