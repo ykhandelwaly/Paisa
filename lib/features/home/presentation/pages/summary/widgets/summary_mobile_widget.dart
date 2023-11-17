@@ -82,7 +82,7 @@ class AccountSelector extends StatefulWidget {
 }
 
 class _AccountSelectorState extends State<AccountSelector> {
-  late AccountEntity entity = widget.accounts.first;
+  late AccountEntity accountEntity = widget.accounts.first;
 
   showAccountPicker(BuildContext context) {
     showDialog(
@@ -108,7 +108,7 @@ class _AccountSelectorState extends State<AccountSelector> {
                   contentPadding: EdgeInsets.zero,
                   horizontalTitleGap: 0,
                   title: Text(
-                    accountEntity.name ?? '',
+                    ' ${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
                     style: context.titleSmall,
                   ),
                 );
@@ -143,14 +143,14 @@ class _AccountSelectorState extends State<AccountSelector> {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Icon(
-                    entity.cardType == null
+                    accountEntity.cardType == null
                         ? CardType.bank.icon
-                        : entity.cardType!.icon,
+                        : accountEntity.cardType!.icon,
                     color: context.onSecondaryContainer,
                   ),
                 ),
                 Text(
-                  ' ${entity.name ?? ''} - ${entity.bankName ?? ''}',
+                  '${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
                   style: context.titleMedium,
                 ),
                 const Icon(Icons.keyboard_arrow_down)
