@@ -278,7 +278,12 @@ final GoRouter goRouter = GoRouter(
               name: appLanguageName,
               path: appLanguagePath,
               builder: (BuildContext context, GoRouterState state) {
-                return const AppLanguageChangerPage();
+                return AppLanguageChangerPage(
+                  currentLanguage: settings.get(
+                    appLanguageKey,
+                    defaultValue: 'en',
+                  ),
+                );
               },
             ),
             GoRoute(

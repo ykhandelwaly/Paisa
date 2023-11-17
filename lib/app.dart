@@ -62,8 +62,8 @@ class _PaisaAppState extends State<PaisaApp> {
             themeModeKey,
             calendarFormatKey,
             userCountryKey,
-            appLanguageKey,
             appFontChangerKey,
+            appLanguageKey,
           ],
         ),
         builder: (context, value, _) {

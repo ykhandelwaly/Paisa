@@ -20,11 +20,8 @@ class AppLanguageChanger extends StatelessWidget {
         MdiIcons.translate,
         color: context.onSurfaceVariant,
       ),
-      onTap: () async {
-        final code = await context.pushNamed<String?>(appLanguageName);
-        if (code != null && context.mounted) {
-          settings.put(appLanguageKey, code);
-        }
+      onTap: () {
+        context.goNamed(appLanguageName);
       },
       title: Text(context.loc.appLanguage),
       subtitle: Text(Languages.languages
