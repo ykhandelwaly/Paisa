@@ -22,7 +22,7 @@ class TotalBalanceWidget extends StatelessWidget {
         Text(
           title,
           style: context.titleMedium?.copyWith(
-            color: context.onSurface.withOpacity(0.85),
+            color: context.onPrimaryContainer.withOpacity(0.85),
           ),
         ),
         const SizedBox(height: 8),
@@ -32,7 +32,7 @@ class TotalBalanceWidget extends StatelessWidget {
             selectedCountry: context.read<AccountEntity>().country,
           ),
           style: context.headlineMedium?.copyWith(
-            color: context.onSurface,
+            color: context.onPrimaryContainer,
             fontWeight: FontWeight.w700,
           ),
         ),

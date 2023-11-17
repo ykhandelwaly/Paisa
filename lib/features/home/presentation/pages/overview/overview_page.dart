@@ -48,7 +48,6 @@ class OverViewPage extends StatelessWidget {
                     BlocProvider.of<OverviewCubit>(context)
                         .fetchBudgetSummary(filterExpenses, value);
                     return Scaffold(
-                      backgroundColor: context.surfaceVariant,
                       body: ListView(
                         shrinkWrap: true,
                         physics: const BouncingScrollPhysics(),

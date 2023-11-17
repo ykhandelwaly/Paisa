@@ -53,7 +53,6 @@ class ContentWidget extends StatelessWidget {
               secondaryAnimation,
             ) {
               return FadeThroughTransition(
-                fillColor: context.surfaceVariant,
                 animation: primaryAnimation,
                 secondaryAnimation: secondaryAnimation,
                 child: child,

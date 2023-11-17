@@ -21,9 +21,7 @@ class SummaryMonthCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PaisaCard(
-      elevation: 0,
-      color: context.surface,
+    return PaisaFilledCard(
       child: Padding(
         padding: const EdgeInsets.all(14.0),
         child: Column(

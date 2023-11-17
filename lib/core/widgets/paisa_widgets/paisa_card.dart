@@ -82,6 +82,7 @@ class PaisaFilledCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
       clipBehavior: Clip.antiAlias,
+      elevation: 0,
       color: color ?? context.surfaceVariant,
       shadowColor: context.shadow,
       child: child,

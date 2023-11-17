@@ -15,7 +15,6 @@ class RecurringPage extends StatelessWidget {
     return PaisaAnnotatedRegionWidget(
       color: context.background,
       child: Scaffold(
-        backgroundColor: context.surfaceVariant,
         body: ValueListenableBuilder<Box<RecurringModel>>(
           valueListenable: getIt.get<Box<RecurringModel>>().listenable(),
           builder: (_, value, child) {

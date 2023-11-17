@@ -26,111 +26,106 @@ class HomeMobileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final HomeBloc homeBloc = BlocProvider.of<HomeBloc>(context);
     const double toolbarHeight = kToolbarHeight + 16;
-    return PaisaAnnotatedRegionWidget(
-      color: context.surfaceVariant,
-      child: Scaffold(
-        backgroundColor: context.surfaceVariant,
-        key: _scaffoldStateKey,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(toolbarHeight),
-          child: SafeArea(
-            top: true,
-            child: Container(
-              margin: const EdgeInsets.only(top: 8, bottom: 8),
-              padding: const EdgeInsets.symmetric(horizontal: 12.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(32),
-                child: ColoredBox(
-                  color: context.surface,
-                  child: AppBar(
-                    scrolledUnderElevation: 0,
-                    title: Text(
-                      context.loc.search,
-                      style: context.titleLarge,
-                    ),
-                    actions: const [
-                      PaisaUserWidget(),
-                      SizedBox(width: 8),
-                    ],
-                  ),
+    return Scaffold(
+      key: _scaffoldStateKey,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(toolbarHeight),
+        child: SafeArea(
+          top: true,
+          child: Container(
+            margin: const EdgeInsets.only(top: 8, bottom: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(32),
+              clipBehavior: Clip.antiAlias,
+              child: AppBar(
+                backgroundColor: context.primaryContainer,
+                scrolledUnderElevation: 0,
+                title: Text(
+                  context.loc.search,
+                  style: context.titleLarge,
                 ),
+                actions: const [
+                  PaisaUserWidget(),
+                  SizedBox(width: 8),
+                ],
               ),
             ),
           ),
         ),
-        drawer: BlocBuilder<HomeBloc, HomeState>(
-          builder: (context, state) {
-            return NavigationDrawer(
-              selectedIndex: homeBloc.selectedIndex,
-              onDestinationSelected: (index) {
-                _scaffoldStateKey.currentState?.closeDrawer();
-                homeBloc.add(CurrentIndexEvent(index));
-              },
-              children: [
-                const Padding(
-                  padding: EdgeInsets.all(24.0),
-                  child: PaisaIconTitle(),
-                ),
-                const Divider(),
-                ...destinations
-                    .map((e) => NavigationDrawerDestination(
-                          icon: e.icon,
-                          selectedIcon: e.selectedIcon,
-                          label: Text(e.pageType.name(context)),
-                        ))
-                    .toList(),
-                const Divider(),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: ListTile(
-                    onTap: () {
-                      context.pushNamed(settingsName);
-                      Navigator.pop(context);
-                    },
-                    leading: const Icon(Icons.settings),
-                    title: Text(
-                      context.loc.settings,
-                      style: context.bodyLarge,
-                    ),
+      ),
+      drawer: BlocBuilder<HomeBloc, HomeState>(
+        builder: (context, state) {
+          return NavigationDrawer(
+            selectedIndex: homeBloc.selectedIndex,
+            onDestinationSelected: (index) {
+              _scaffoldStateKey.currentState?.closeDrawer();
+              homeBloc.add(CurrentIndexEvent(index));
+            },
+            children: [
+              const Padding(
+                padding: EdgeInsets.all(24.0),
+                child: PaisaIconTitle(),
+              ),
+              const Divider(),
+              ...destinations
+                  .map((e) => NavigationDrawerDestination(
+                        icon: e.icon,
+                        selectedIcon: e.selectedIcon,
+                        label: Text(e.pageType.name(context)),
+                      ))
+                  .toList(),
+              const Divider(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: ListTile(
+                  onTap: () {
+                    context.pushNamed(settingsName);
+                    Navigator.pop(context);
+                  },
+                  leading: const Icon(Icons.settings),
+                  title: Text(
+                    context.loc.settings,
+                    style: context.bodyLarge,
                   ),
                 ),
-              ],
-            );
-          },
-        ),
-        body: const ContentWidget(),
-        floatingActionButton: floatingActionButton,
-        bottomNavigationBar: BlocBuilder<HomeBloc, HomeState>(
-          buildWhen: (previous, current) => current is CurrentIndexState,
-          builder: (context, state) {
-            if (state is CurrentIndexState &&
-                (state.currentPage == 4 ||
-                    state.currentPage == 6 ||
-                    state.currentPage == 5)) {
-              return const SizedBox.shrink();
-            }
-            return Theme(
-              data: Theme.of(context).copyWith(
-                splashFactory: NoSplash.splashFactory,
               ),
-              child: NavigationBar(
-                elevation: 0,
-                backgroundColor: context.surfaceVariant,
-                selectedIndex: homeBloc.selectedIndex,
-                onDestinationSelected: (index) =>
-                    homeBloc.add(CurrentIndexEvent(index)),
-                destinations: destinations
-                    .sublist(0, 4)
-                    .map((e) => NavigationDestination(
-                          icon: e.icon,
-                          selectedIcon: e.selectedIcon,
-                          label: e.pageType.name(context),
-                        ))
-                    .toList(),
-              ),
-            );
-          },
-        ),
+            ],
+          );
+        },
+      ),
+      body: const ContentWidget(),
+      floatingActionButton: floatingActionButton,
+      bottomNavigationBar: BlocBuilder<HomeBloc, HomeState>(
+        buildWhen: (previous, current) => current is CurrentIndexState,
+        builder: (context, state) {
+          if (state is CurrentIndexState &&
+              (state.currentPage == 4 ||
+                  state.currentPage == 6 ||
+                  state.currentPage == 5)) {
+            return const SizedBox.shrink();
+          }
+          return Theme(
+            data: Theme.of(context).copyWith(
+              splashFactory: NoSplash.splashFactory,
+            ),
+            child: NavigationBar(
+              elevation: 1,
+              backgroundColor: context.surface,
+              selectedIndex: homeBloc.selectedIndex,
+              onDestinationSelected: (index) =>
+                  homeBloc.add(CurrentIndexEvent(index)),
+              destinations: destinations
+                  .sublist(0, 4)
+                  .map((e) => NavigationDestination(
+                        icon: e.icon,
+                        selectedIcon: e.selectedIcon,
+                        label: e.pageType.name(context),
+                      ))
+                  .toList(),
+            ),
+          );
+        },
       ),
     );
   }

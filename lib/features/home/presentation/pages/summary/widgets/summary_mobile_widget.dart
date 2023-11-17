@@ -3,9 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/enum/card_type.dart';
-import 'package:paisa/core/widgets/paisa_widget.dart';
 import 'package:paisa/features/account/domain/entities/account_entity.dart';
-import 'package:paisa/features/account/presentation/widgets/account_card.dart';
 import 'package:paisa/features/account/presentation/widgets/account_summary_widget.dart';
 import 'package:paisa/features/home/presentation/cubit/summary/summary_cubit.dart';
 import 'package:paisa/features/home/presentation/pages/summary/widgets/expense_history_widget.dart';
@@ -128,34 +126,28 @@ class _AccountSelectorState extends State<AccountSelector> {
         right: 8,
         bottom: 6,
       ),
-      child: PaisaCard(
-        elevation: 0,
-        color: context.surface,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(32),
-            onTap: () {
-              showAccountPicker(context);
-            },
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Icon(
-                    accountEntity.cardType == null
-                        ? CardType.bank.icon
-                        : accountEntity.cardType!.icon,
-                    color: context.onSecondaryContainer,
-                  ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextButton.icon(
+          onPressed: () {
+            showAccountPicker(context);
+          },
+          icon: Icon(
+            accountEntity.cardType == null
+                ? CardType.bank.icon
+                : accountEntity.cardType!.icon,
+            color: context.onSecondaryContainer,
+          ),
+          label: Row(
+            children: [
+              Text(
+                '${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
+                style: context.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
                 ),
-                Text(
-                  '${accountEntity.name ?? ''} - ${accountEntity.bankName ?? ''}',
-                  style: context.titleMedium,
-                ),
-                const Icon(Icons.keyboard_arrow_down)
-              ],
-            ),
+              ),
+              const Icon(Icons.keyboard_arrow_down)
+            ],
           ),
         ),
       ),

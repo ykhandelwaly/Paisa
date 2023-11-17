@@ -27,7 +27,7 @@ class ExpenseTotalWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8, left: 8, right: 8),
       child: PaisaCard(
         elevation: 0,
-        color: context.surface,
+        color: context.primaryContainer,
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(

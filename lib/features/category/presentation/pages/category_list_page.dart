@@ -19,7 +19,6 @@ class CategoryListPage extends StatelessWidget {
     return PaisaAnnotatedRegionWidget(
       color: context.background,
       child: Scaffold(
-        backgroundColor: context.surfaceVariant,
         body: ValueListenableBuilder<Box<CategoryModel>>(
           valueListenable: getIt.get<Box<CategoryModel>>().listenable(),
           builder: (BuildContext context, value, Widget? child) {

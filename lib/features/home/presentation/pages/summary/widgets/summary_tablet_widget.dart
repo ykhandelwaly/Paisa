@@ -17,7 +17,6 @@ class SummaryTabletWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: context.surfaceVariant,
       body: SafeArea(
         child: Row(
           mainAxisSize: MainAxisSize.min,

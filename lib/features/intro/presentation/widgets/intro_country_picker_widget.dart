@@ -64,7 +64,8 @@ class _IntroCountryPickerWidgetState extends State<IntroCountryPickerWidget> {
                     icon: Icons.language_rounded,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding:
+                        const EdgeInsets.only(left: 16, right: 16, bottom: 8),
                     child: PaisaTextFormField(
                       hintText: context.loc.search,
                       controller: TextEditingController(),

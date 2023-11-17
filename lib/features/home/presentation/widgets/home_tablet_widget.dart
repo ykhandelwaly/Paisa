@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:paisa/core/common.dart';
-import 'package:paisa/core/theme/paisa_theme.dart';
 import 'package:paisa/features/home/presentation/bloc/home/home_bloc.dart';
 import 'package:paisa/features/home/presentation/pages/home/home_page.dart';
 import 'package:paisa/features/home/presentation/widgets/content_widget.dart';
@@ -80,9 +79,7 @@ class HomeTabletWidget extends StatelessWidget {
         ),
         Expanded(
           child: Scaffold(
-            backgroundColor: context.surfaceVariant,
             appBar: AppBar(
-              backgroundColor: context.surfaceVariant,
               leading: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.0),
                 child: PaisaIconTitle(),

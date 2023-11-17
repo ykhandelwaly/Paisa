@@ -23,7 +23,7 @@ class ExpenseTotalForMonthWidget extends StatelessWidget {
         Text(
           context.loc.total,
           style: context.titleMedium?.copyWith(
-            color: context.onSurface.withOpacity(0.85),
+            color: context.onPrimaryContainer.withOpacity(0.85),
           ),
         ),
         const SizedBox(height: 8),
@@ -44,7 +44,7 @@ class ExpenseTotalForMonthWidget extends StatelessWidget {
                         TextSpan(
                           text: context.loc.income,
                           style: context.labelLarge?.copyWith(
-                            color: context.onSurface.withOpacity(0.75),
+                            color: context.onPrimaryContainer.withOpacity(0.75),
                           ),
                         )
                       ],
@@ -56,7 +56,7 @@ class ExpenseTotalForMonthWidget extends StatelessWidget {
                       selectedCountry: context.read<AccountEntity>().country,
                     )}',
                     style: context.titleLarge?.copyWith(
-                      color: context.onSurface,
+                      color: context.onPrimaryContainer,
                     ),
                   ),
                 ],
@@ -76,7 +76,7 @@ class ExpenseTotalForMonthWidget extends StatelessWidget {
                         TextSpan(
                           text: context.loc.expense,
                           style: context.labelLarge?.copyWith(
-                            color: context.onSurface.withOpacity(0.75),
+                            color: context.onPrimaryContainer.withOpacity(0.75),
                           ),
                         )
                       ],
@@ -88,7 +88,7 @@ class ExpenseTotalForMonthWidget extends StatelessWidget {
                       selectedCountry: context.read<AccountEntity>().country,
                     )}',
                     style: context.titleLarge?.copyWith(
-                      color: context.onSurface,
+                      color: context.onPrimaryContainer,
                     ),
                   ),
                 ],
