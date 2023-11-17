@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:paisa/config/routes_name.dart';
 
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/enum/card_type.dart';
@@ -34,8 +35,8 @@ class AccountCardV2 extends StatelessWidget {
       child: PaisaCard(
         color: color,
         child: InkWell(
-          onTap: () => GoRouter.of(context).pushNamed(
-            accountTransactionName,
+          onTap: () => context.pushNamed(
+            RoutesName.accountTransactions.name,
             pathParameters: <String, String>{'aid': account.superId.toString()},
           ),
           child: Column(

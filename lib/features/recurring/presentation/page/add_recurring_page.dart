@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:paisa/config/routes_name.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'package:paisa/core/common.dart';
@@ -157,7 +158,7 @@ class SelectedAccount extends StatelessWidget {
         final accounts = value.values.toEntities();
         if (accounts.isEmpty) {
           return ListTile(
-            onTap: () => context.pushNamed(addAccountPath),
+            onTap: () => context.pushNamed(RoutesName.addAccount.name),
             title: Text(context.loc.addAccountEmptyTitle),
             subtitle: Text(context.loc.addAccountEmptySubTitle),
             trailing: const Icon(Icons.keyboard_arrow_right),
@@ -227,7 +228,7 @@ class _AccountSelectedWidgetState extends State<AccountSelectedWidget> {
               selected: false,
               title: 'Add New',
               icon: MdiIcons.plus.codePoint,
-              onPressed: () => context.pushNamed(addAccountPath),
+              onPressed: () => context.pushNamed(RoutesName.addAccount.name),
             );
           } else {
             final AccountEntity account = widget.accounts[index - 1];
@@ -262,7 +263,7 @@ class SelectCategory extends StatelessWidget {
         final List<CategoryEntity> categories = value.values.toEntities();
         if (categories.isEmpty) {
           return ListTile(
-            onTap: () => context.pushNamed(addCategoryPath),
+            onTap: () => context.pushNamed(RoutesName.addCategory.name),
             title: Text(context.loc.addCategoryEmptyTitle),
             subtitle: Text(context.loc.addCategoryEmptySubTitle),
             trailing: const Icon(Icons.keyboard_arrow_right),
@@ -327,7 +328,8 @@ class _CategorySelectWidgetState extends State<CategorySelectWidget> {
               return Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: FilterChip(
-                  onSelected: (value) => context.pushNamed(addCategoryPath),
+                  onSelected: (value) =>
+                      context.pushNamed(RoutesName.addCategory.name),
                   avatar: Icon(
                     color: context.primary,
                     IconData(

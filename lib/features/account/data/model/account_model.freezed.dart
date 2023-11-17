@@ -52,9 +52,9 @@ mixin _$AccountModel {
   int? get color => throw _privateConstructorUsedError;
   @HiveField(9, defaultValue: 0xFFFFC107)
   set color(int? value) => throw _privateConstructorUsedError;
-  @HiveField(10, defaultValue: false)
+  @HiveField(11, defaultValue: false)
   bool? get isAccountDefault => throw _privateConstructorUsedError;
-  @HiveField(10, defaultValue: false)
+  @HiveField(11, defaultValue: false)
   set isAccountDefault(bool? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -78,7 +78,7 @@ abstract class $AccountModelCopyWith<$Res> {
       @HiveField(7) int? superId,
       @HiveField(8, defaultValue: 0) double? amount,
       @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-      @HiveField(10, defaultValue: false) bool? isAccountDefault});
+      @HiveField(11, defaultValue: false) bool? isAccountDefault});
 
   $CountryModelCopyWith<$Res>? get currencySymbol;
 }
@@ -176,7 +176,7 @@ abstract class _$$_AccountModelCopyWith<$Res>
       @HiveField(7) int? superId,
       @HiveField(8, defaultValue: 0) double? amount,
       @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-      @HiveField(10, defaultValue: false) bool? isAccountDefault});
+      @HiveField(11, defaultValue: false) bool? isAccountDefault});
 
   @override
   $CountryModelCopyWith<$Res>? get currencySymbol;
@@ -257,7 +257,7 @@ class _$_AccountModel extends _AccountModel {
       @HiveField(7) this.superId,
       @HiveField(8, defaultValue: 0) this.amount,
       @HiveField(9, defaultValue: 0xFFFFC107) this.color,
-      @HiveField(10, defaultValue: false) this.isAccountDefault})
+      @HiveField(11, defaultValue: false) this.isAccountDefault})
       : super._();
 
   factory _$_AccountModel.fromJson(Map<String, dynamic> json) =>
@@ -288,7 +288,7 @@ class _$_AccountModel extends _AccountModel {
   @HiveField(9, defaultValue: 0xFFFFC107)
   int? color;
   @override
-  @HiveField(10, defaultValue: false)
+  @HiveField(11, defaultValue: false)
   bool? isAccountDefault;
 
   @override
@@ -320,7 +320,7 @@ abstract class _AccountModel extends AccountModel {
           @HiveField(7) int? superId,
           @HiveField(8, defaultValue: 0) double? amount,
           @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-          @HiveField(10, defaultValue: false) bool? isAccountDefault}) =
+          @HiveField(11, defaultValue: false) bool? isAccountDefault}) =
       _$_AccountModel;
   _AccountModel._() : super._();
 
@@ -368,9 +368,9 @@ abstract class _AccountModel extends AccountModel {
   @HiveField(9, defaultValue: 0xFFFFC107)
   set color(int? value);
   @override
-  @HiveField(10, defaultValue: false)
+  @HiveField(11, defaultValue: false)
   bool? get isAccountDefault;
-  @HiveField(10, defaultValue: false)
+  @HiveField(11, defaultValue: false)
   set isAccountDefault(bool? value);
   @override
   @JsonKey(ignore: true)

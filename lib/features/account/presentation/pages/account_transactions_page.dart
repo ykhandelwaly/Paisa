@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:paisa/config/routes_name.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/widgets/paisa_widget.dart';
 import 'package:paisa/features/account/presentation/bloc/accounts_bloc.dart';
@@ -35,8 +36,8 @@ class AccountTransactionsPage extends StatelessWidget {
             IconButton(
               tooltip: context.loc.edit,
               onPressed: () {
-                GoRouter.of(context).pushNamed(
-                  editAccountWithIdName,
+                context.pushNamed(
+                  RoutesName.editAccount.name,
                   pathParameters: {'aid': accountId},
                 );
               },
@@ -147,7 +148,7 @@ class AccountTransactionsPage extends StatelessWidget {
                 PaisaIconButton(
                   onPressed: () {
                     GoRouter.of(context).pushNamed(
-                      addTransactionsName,
+                      RoutesName.addTransaction.name,
                       queryParameters: {'aid': accountId, 'type': '0'},
                     );
                   },
@@ -160,7 +161,7 @@ class AccountTransactionsPage extends StatelessWidget {
                 PaisaIconButton(
                   onPressed: () {
                     GoRouter.of(context).pushNamed(
-                      addTransactionsName,
+                      RoutesName.addTransaction.name,
                       queryParameters: {'aid': accountId, 'type': '1'},
                     );
                   },

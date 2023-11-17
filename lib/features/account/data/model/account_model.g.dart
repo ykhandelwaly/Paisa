@@ -25,7 +25,7 @@ class AccountModelAdapter extends TypeAdapter<_$_AccountModel> {
       superId: fields[7] as int?,
       amount: fields[8] == null ? 0 : fields[8] as double?,
       color: fields[9] == null ? 4294951175 : fields[9] as int?,
-      isAccountDefault: fields[10] == null ? false : fields[10] as bool?,
+      isAccountDefault: fields[11] == null ? false : fields[11] as bool?,
     );
   }
 
@@ -49,7 +49,7 @@ class AccountModelAdapter extends TypeAdapter<_$_AccountModel> {
       ..write(obj.amount)
       ..writeByte(9)
       ..write(obj.color)
-      ..writeByte(10)
+      ..writeByte(11)
       ..write(obj.isAccountDefault);
   }
 

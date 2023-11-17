@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:paisa/config/routes_name.dart';
 
 import 'package:paisa/core/common.dart';
 import 'package:paisa/features/home/presentation/bloc/home/home_bloc.dart';
@@ -25,7 +26,7 @@ class HomeMobileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeBloc homeBloc = BlocProvider.of<HomeBloc>(context);
-    const double toolbarHeight = kToolbarHeight + 16;
+    const double toolbarHeight = kToolbarHeight + 8;
     return Scaffold(
       key: _scaffoldStateKey,
       appBar: PreferredSize(
@@ -39,11 +40,11 @@ class HomeMobileWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(32),
               clipBehavior: Clip.antiAlias,
               child: AppBar(
-                backgroundColor: context.primaryContainer,
+                backgroundColor: context.secondaryContainer.withOpacity(0.5),
                 scrolledUnderElevation: 0,
                 title: Text(
                   context.loc.search,
-                  style: context.titleLarge,
+                  style: context.titleMedium,
                 ),
                 actions: const [
                   PaisaUserWidget(),
@@ -80,7 +81,7 @@ class HomeMobileWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: ListTile(
                   onTap: () {
-                    context.pushNamed(settingsName);
+                    context.pushNamed(RoutesName.settings.name);
                     Navigator.pop(context);
                   },
                   leading: const Icon(Icons.settings),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:paisa/config/routes_name.dart';
 import 'package:paisa/core/common.dart';
 
 class AppFontChanger extends StatelessWidget {
@@ -13,7 +14,7 @@ class AppFontChanger extends StatelessWidget {
       title: Text(context.loc.fontStyle),
       subtitle: Text(context.loc.fontStyleDescription),
       onTap: () {
-        context.goNamed(fontPickerName);
+        context.goNamed(RoutesName.appFontChanger.name);
       },
     );
   }

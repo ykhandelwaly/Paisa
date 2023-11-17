@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:paisa/config/routes_name.dart';
 
 import 'package:paisa/core/common.dart';
 
@@ -21,7 +22,7 @@ class AppLanguageChanger extends StatelessWidget {
         color: context.onSurfaceVariant,
       ),
       onTap: () {
-        context.goNamed(appLanguageName);
+        context.goNamed(RoutesName.appLanguageChanger.name);
       },
       title: Text(context.loc.appLanguage),
       subtitle: Text(Languages.languages

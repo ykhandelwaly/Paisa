@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:paisa/config/routes_name.dart';
 
 import 'package:paisa/core/common.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
@@ -29,7 +30,7 @@ class CategoryListWidget extends StatelessWidget {
         return ListTile(
           onTap: () {
             context.pushNamed(
-              expensesByCategoryName,
+              RoutesName.expensesByCategory.name,
               pathParameters: {'cid': map.key.superId.toString()},
             );
           },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:paisa/config/routes_name.dart';
 import 'package:paisa/core/common.dart';
 
 import 'package:paisa/core/widgets/paisa_widget.dart';
@@ -22,7 +23,7 @@ class CategoryItemTabletWidget extends StatelessWidget {
       color: context.surface,
       child: InkWell(
         onTap: () => context.pushNamed(
-          editCategoryName,
+          RoutesName.editCategory.name,
           pathParameters: <String, String>{'cid': category.superId.toString()},
         ),
         child: Row(
