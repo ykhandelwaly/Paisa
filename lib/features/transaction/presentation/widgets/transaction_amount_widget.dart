@@ -26,8 +26,7 @@ class TransactionAmountWidget extends StatelessWidget {
         counterText: '',
         onChanged: (value) {
           double? amount = double.tryParse(value);
-          BlocProvider.of<TransactionBloc>(context).transactionAmountString =
-              value;
+          BlocProvider.of<TransactionBloc>(context).transactionAmount = amount;
         },
         validator: (value) {
           if (value!.isNotEmpty) {

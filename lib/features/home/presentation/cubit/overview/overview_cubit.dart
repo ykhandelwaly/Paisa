@@ -29,7 +29,9 @@ class OverviewCubit extends Cubit<BudgetState> {
   Map<String, List<TransactionEntity>> _groupedExpenses = {};
 
   void fetchBudgetSummary(
-      List<TransactionEntity> expenses, FilterExpense filterExpense) {
+    List<TransactionEntity> expenses,
+    FilterExpense filterExpense,
+  ) {
     if (expenses.isEmpty) {
       emit(EmptyFilterListState());
     } else {
@@ -65,6 +67,21 @@ class OverviewCubit extends Cubit<BudgetState> {
     emit(FilteredCategoryListState(
       mapExpenses,
       selectedTimeExpenses.total,
+    ));
+  }
+
+  void emitExpenses(List<TransactionEntity> transactions) {
+    final Map<CategoryEntity, List<TransactionEntity>> categoryGroupedExpenses =
+        groupBy(transactions, (TransactionEntity expense) {
+      return getCategoryUseCase(GetCategoryParams(expense.categoryId)) ??
+          _defaultCategories.first;
+    });
+    final List<MapEntry<CategoryEntity, List<TransactionEntity>>> mapExpenses =
+        categoryGroupedExpenses.entries.toList().sorted(
+            (a, b) => b.value.totalExpense.compareTo(a.value.totalExpense));
+    emit(FilteredCategoryListState(
+      mapExpenses,
+      transactions.total,
     ));
   }
 
@@ -104,6 +121,11 @@ class FilteredCategoryListState extends BudgetState {
 
   final List<MapEntry<CategoryEntity, List<TransactionEntity>>> categoryGrouped;
   final double totalExpense;
+  @override
+  List<Object> get props => [
+        categoryGrouped,
+        totalExpense,
+      ];
 }
 
 class EmptyFilterListState extends BudgetState {}

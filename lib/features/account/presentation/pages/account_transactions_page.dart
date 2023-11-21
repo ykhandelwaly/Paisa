@@ -37,7 +37,7 @@ class AccountTransactionsPage extends StatelessWidget {
               tooltip: context.loc.edit,
               onPressed: () {
                 context.pushNamed(
-                  RoutesName.editAccount.name,
+                  RoutesName.accountTransactionsEditAccount.name,
                   pathParameters: {'aid': accountId},
                 );
               },
@@ -147,9 +147,15 @@ class AccountTransactionsPage extends StatelessWidget {
               children: [
                 PaisaIconButton(
                   onPressed: () {
-                    GoRouter.of(context).pushNamed(
-                      RoutesName.addTransaction.name,
-                      queryParameters: {'aid': accountId, 'type': '0'},
+                    context.pushNamed(
+                      RoutesName.accountAddTransaction.name,
+                      queryParameters: {
+                        'type': '0',
+                        'aid': accountId,
+                      },
+                      pathParameters: {
+                        'aid': accountId,
+                      },
                     );
                   },
                   title: context.loc.income,
@@ -160,9 +166,15 @@ class AccountTransactionsPage extends StatelessWidget {
                 ),
                 PaisaIconButton(
                   onPressed: () {
-                    GoRouter.of(context).pushNamed(
-                      RoutesName.addTransaction.name,
-                      queryParameters: {'aid': accountId, 'type': '1'},
+                    context.pushNamed(
+                      RoutesName.accountAddTransaction.name,
+                      pathParameters: {
+                        'aid': accountId,
+                      },
+                      queryParameters: {
+                        'type': '1',
+                        'aid': accountId,
+                      },
                     );
                   },
                   title: context.loc.expense,

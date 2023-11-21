@@ -166,13 +166,34 @@ final GoRouter goRouter = GoRouter(
             final String accountId = state.pathParameters['aid'] as String;
             return AccountTransactionsPage(
               accountId: accountId,
-              summaryController: Provider.of<SummaryController>(context),
+              summaryController: Provider.of<SummaryController>(
+                context,
+                listen: false,
+              ),
             );
           },
           routes: [
             GoRoute(
-              name: RoutesName.accountTransactionsAddAccount.name,
-              path: RoutesName.accountTransactionsAddAccount.path,
+              name: RoutesName.accountEditTransaction.name,
+              path: RoutesName.accountEditTransaction.path,
+              builder: (BuildContext context, GoRouterState state) {
+                final String? transactionId = state.pathParameters['eid'];
+                final String? accountId = state.pathParameters['aid'];
+                return BlocProvider(
+                  create: (context) => getIt.get<AccountBloc>(),
+                  child: BlocProvider(
+                    create: (context) => getIt.get<TransactionBloc>(),
+                    child: TransactionPage(
+                      expenseId: transactionId,
+                      accountId: accountId,
+                    ),
+                  ),
+                );
+              },
+            ),
+            GoRoute(
+              name: RoutesName.accountTransactionsEditAccount.name,
+              path: RoutesName.accountTransactionsEditAccount.path,
               builder: (BuildContext context, GoRouterState state) {
                 final String? accountId = state.pathParameters['aid'];
                 return BlocProvider(
@@ -182,8 +203,8 @@ final GoRouter goRouter = GoRouter(
               },
             ),
             GoRoute(
-              name: RoutesName.accountTransactionsAddTransactions.name,
-              path: RoutesName.accountTransactionsAddTransactions.path,
+              name: RoutesName.accountAddTransaction.name,
+              path: RoutesName.accountAddTransaction.path,
               builder: (context, state) {
                 final String? transactionTypeString =
                     state.uri.queryParameters['type'];

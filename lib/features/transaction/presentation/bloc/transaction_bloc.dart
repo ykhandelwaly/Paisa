@@ -148,8 +148,7 @@ class TransactionBloc extends Bloc<TransactionEvent, TransactionState> {
 
       emit(const TransactionState.transactionAdded(isAddOrUpdate: true));
     } else {
-      final double? validAmount =
-          evaluateExpression(transactionAmountString ?? '');
+      final double? validAmount = transactionAmount;
       final String? name = expenseName;
       final int? categoryId = selectedCategoryId;
       final int? accountId = selectedAccountId;

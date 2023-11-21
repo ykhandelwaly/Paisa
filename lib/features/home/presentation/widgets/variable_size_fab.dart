@@ -31,44 +31,18 @@ class HomeFloatingActionButtonWidget extends StatelessWidget {
       case 2:
         context.goNamed(RoutesName.addDebtCredit.name);
         break;
-      case 3:
-        _dateRangePicker(context);
-        break;
       case 5:
         break;
     }
-  }
-
-  Future<void> _dateRangePicker(BuildContext context) async {
-    final initialDateRange = DateTimeRange(
-      start: DateTime.now().subtract(const Duration(days: 3)),
-      end: DateTime.now(),
-    );
-    final newDateRange = await showDateRangePicker(
-      context: context,
-      firstDate: DateTime(DateTime.now().year - 5),
-      lastDate: DateTime.now(),
-      initialDateRange: initialDateRange,
-      initialEntryMode: DatePickerEntryMode.calendarOnly,
-      builder: (_, child) {
-        return Theme(
-          data: ThemeData.from(colorScheme: Theme.of(context).colorScheme)
-              .copyWith(
-            appBarTheme: Theme.of(context).appBarTheme,
-          ),
-          child: child!,
-        );
-      },
-    );
-    if (newDateRange == null) return;
-    summaryController.dateTimeRangeNotifier.value = newDateRange;
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        if (state is CurrentIndexState && state.currentPage != 5) {
+        if (state is CurrentIndexState &&
+            state.currentPage != 5 &&
+            state.currentPage != 3) {
           return VariableFABSize(
             onPressed: () => _handleClick(context, state.currentPage),
             icon: state.currentPage != 3 ? Icons.add : Icons.date_range,

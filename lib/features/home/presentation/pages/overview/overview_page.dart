@@ -35,33 +35,21 @@ class OverViewPage extends StatelessWidget {
           );
         }
         return FilterOverviewWidget(
-          expenses: expenseBox.values,
+          transactions: expenseBox.values,
           valueNotifier: summaryController.typeNotifier,
           builder: (expenses) {
-            return FilterDateRangeWidget(
-              dateTimeRangeNotifier: summaryController.dateTimeRangeNotifier,
-              expenses: expenses,
-              builder: (filterExpenses) {
-                return ValueListenableBuilder<FilterExpense>(
-                  valueListenable: summaryController.filterExpenseNotifier,
-                  builder: (context, value, child) {
-                    BlocProvider.of<OverviewCubit>(context)
-                        .fetchBudgetSummary(filterExpenses, value);
-                    return Scaffold(
-                      body: ListView(
-                        shrinkWrap: true,
-                        physics: const BouncingScrollPhysics(),
-                        children: [
-                          OverviewFilter(
-                            summaryController: summaryController,
-                          ),
-                          const OverviewListView(),
-                        ],
-                      ),
-                    );
-                  },
-                );
-              },
+            BlocProvider.of<OverviewCubit>(context).emitExpenses(expenses);
+            return Scaffold(
+              body: ListView(
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                children: [
+                  OverviewFilter(
+                    summaryController: summaryController,
+                  ),
+                  const OverviewListView(),
+                ],
+              ),
             );
           },
         );

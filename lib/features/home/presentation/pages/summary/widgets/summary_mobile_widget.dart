@@ -33,9 +33,7 @@ class SummaryMobileWidget extends StatelessWidget {
           return BlocBuilder<SummaryCubit, SummaryState>(
             builder: (context, state) {
               if (state is TransactionsSuccessState) {
-                return AccountSelector(
-                  accounts: state.accounts,
-                );
+                return AccountSelector(accounts: state.accounts);
               } else {
                 return const SizedBox.shrink();
               }
@@ -80,10 +78,13 @@ class AccountSelector extends StatefulWidget {
 }
 
 class _AccountSelectorState extends State<AccountSelector> {
-  late AccountEntity accountEntity = widget.accounts.first;
+  late AccountEntity accountEntity = widget.accounts.firstWhere(
+    (element) => element.isAccountDefault ?? false,
+    orElse: () => widget.accounts.first,
+  );
 
-  showAccountPicker(BuildContext context) {
-    showDialog(
+  Future<AccountEntity?> showAccountPicker(BuildContext context) {
+    return showDialog<AccountEntity>(
       context: context,
       builder: (_) {
         return AlertDialog(
@@ -101,7 +102,7 @@ class _AccountSelectorState extends State<AccountSelector> {
                     BlocProvider.of<SummaryCubit>(context).fetchAccounts(
                       accountEntity: accountEntity,
                     );
-                    Navigator.pop(context);
+                    Navigator.pop(context, accountEntity);
                   },
                   contentPadding: EdgeInsets.zero,
                   horizontalTitleGap: 0,
@@ -129,8 +130,13 @@ class _AccountSelectorState extends State<AccountSelector> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: TextButton.icon(
-          onPressed: () {
-            showAccountPicker(context);
+          onPressed: () async {
+            final AccountEntity? account = await showAccountPicker(context);
+            if (account != null) {
+              setState(() {
+                accountEntity = account;
+              });
+            }
           },
           icon: Icon(
             accountEntity.cardType == null

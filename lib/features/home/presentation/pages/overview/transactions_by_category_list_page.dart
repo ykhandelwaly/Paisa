@@ -35,18 +35,21 @@ class TransactionByCategoryListPage extends StatelessWidget {
         extendBody: true,
         appBar: context.materialYouAppBar(context.loc.transactionsByCategory),
         bottomNavigationBar: SafeArea(
-          child: PaisaFilledCard(
-            child: ListTile(
-              title: Text(
-                context.loc.total,
-                style: context.titleSmall
-                    ?.copyWith(color: context.onSurfaceVariant),
-              ),
-              subtitle: Text(
-                expenses.total.toFormateCurrency(context),
-                style: context.titleMedium?.copyWith(
-                  color: context.onSurfaceVariant,
-                  fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: PaisaFilledCard(
+              child: ListTile(
+                title: Text(
+                  context.loc.total,
+                  style: context.titleSmall
+                      ?.copyWith(color: context.onSurfaceVariant),
+                ),
+                subtitle: Text(
+                  expenses.total.toFormateCurrency(context),
+                  style: context.titleMedium?.copyWith(
+                    color: context.onSurfaceVariant,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),

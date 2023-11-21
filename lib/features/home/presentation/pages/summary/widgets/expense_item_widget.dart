@@ -37,8 +37,11 @@ class ExpenseItemWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(24),
       onTap: () {
         context.goNamed(
-          RoutesName.editTransaction.name,
-          pathParameters: <String, String>{'eid': expense.superId.toString()},
+          RoutesName.accountEditTransaction.name,
+          pathParameters: <String, String>{
+            'eid': expense.superId.toString(),
+            'aid': account.superId.toString(),
+          },
         );
       },
       child: ListTile(
