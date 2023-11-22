@@ -16,7 +16,6 @@ class OverviewListView extends StatelessWidget {
           current is FilteredCategoryListState ||
           current is EmptyFilterListState,
       builder: (context, state) {
-        print(state);
         if (state is FilteredCategoryListState) {
           if (state.categoryGrouped.isEmpty) {
             return EmptyWidget(

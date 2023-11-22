@@ -484,29 +484,21 @@ class AccountInitialAmountWidget extends StatelessWidget {
   }
 }
 
-class AccountDefaultSwitchWidget extends StatefulWidget {
-  const AccountDefaultSwitchWidget({
-    super.key,
-  });
-
-  @override
-  State<AccountDefaultSwitchWidget> createState() =>
-      _AccountDefaultSwitchWidgetState();
-}
-
-class _AccountDefaultSwitchWidgetState
-    extends State<AccountDefaultSwitchWidget> {
-  late bool isAccountDefault =
-      BlocProvider.of<AccountBloc>(context, listen: false).isAccountDefault;
+class AccountDefaultSwitchWidget extends StatelessWidget {
+  const AccountDefaultSwitchWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AccountBloc, AccountState>(
-      buildWhen: (previous, current) => current is AccountSuccessState,
+      buildWhen: (previous, current) =>
+          current is AccountSuccessState ||
+          current is UpdateAccountExcludeState,
       builder: (context, state) {
+        bool isEnabled = false;
         if (state is AccountSuccessState) {
-          isAccountDefault =
-              isAccountDefault || (state.account.isAccountDefault ?? false);
+          isEnabled = state.account.isAccountDefault ?? false;
+        } else if (state is UpdateAccountExcludeState) {
+          isEnabled = state.isAccountDefault;
         }
         return SwitchListTile(
           shape: RoundedRectangleBorder(
@@ -514,13 +506,14 @@ class _AccountDefaultSwitchWidgetState
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 8),
           title: Text(context.loc.defaultAccount),
-          value: isAccountDefault,
+          value: isEnabled,
           onChanged: (value) {
-            BlocProvider.of<AccountBloc>(context, listen: false)
-                .isAccountDefault = value;
-            setState(() {
-              isAccountDefault = value;
-            });
+            BlocProvider.of<AccountBloc>(context)
+                .add(AccountsEvent.updateDefaultAndExculde(
+              isAccountDefault: value,
+              isAccountExcluded:
+                  BlocProvider.of<AccountBloc>(context).isAccountExcluded,
+            ));
           },
         );
       },
@@ -528,27 +521,38 @@ class _AccountDefaultSwitchWidgetState
   }
 }
 
-class AccountExcludedSwitchWidget extends StatefulWidget {
+class AccountExcludedSwitchWidget extends StatelessWidget {
   const AccountExcludedSwitchWidget({super.key});
 
   @override
-  State<AccountExcludedSwitchWidget> createState() =>
-      _AccountExcludedSwitchWidgetState();
-}
-
-class _AccountExcludedSwitchWidgetState
-    extends State<AccountExcludedSwitchWidget> {
-  @override
   Widget build(BuildContext context) {
-    return SwitchListTile(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-      title: Text(context.loc.excludeAccount),
-      value: BlocProvider.of<AccountBloc>(context).isAccountExcluded,
-      onChanged: (value) {
-        setState(() {
-          BlocProvider.of<AccountBloc>(context).isAccountExcluded = value;
-        });
+    return BlocBuilder<AccountBloc, AccountState>(
+      buildWhen: (previous, current) =>
+          current is AccountSuccessState ||
+          current is UpdateAccountExcludeState,
+      builder: (context, state) {
+        bool isEnabled = false;
+        if (state is AccountSuccessState) {
+          isEnabled = state.account.isAccountExcluded ?? false;
+        } else if (state is UpdateAccountExcludeState) {
+          isEnabled = state.isAccountExcluded;
+        }
+        return SwitchListTile(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+          title: Text(context.loc.excludeAccount),
+          value: isEnabled,
+          onChanged: (value) {
+            BlocProvider.of<AccountBloc>(context)
+                .add(AccountsEvent.updateDefaultAndExculde(
+              isAccountDefault:
+                  BlocProvider.of<AccountBloc>(context).isAccountDefault,
+              isAccountExcluded: value,
+            ));
+          },
+        );
       },
     );
   }
@@ -590,6 +594,9 @@ class _AccountCountrySelectorWidgetState
           symbol = '${country.name} - ${country.code}';
         }
         return ListTile(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
           contentPadding: EdgeInsets.zero,
           onTap: () async {
             final Country? result = await showModalBottomSheet<Country>(

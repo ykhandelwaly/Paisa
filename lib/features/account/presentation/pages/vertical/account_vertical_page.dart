@@ -22,37 +22,21 @@ class AccountMobileVerticalPage extends StatelessWidget {
           valueListenable: getIt.get<Box<TransactionModel>>().listenable(),
           builder: (context, value, child) {
             return ScreenTypeLayout.builder(
-              mobile: (p0) => ListView(
+              mobile: (p0) => ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
-                children: [
-                  ListTile(
-                    title: Text(
-                      context.loc.totalBalance,
-                      style: context.bodyLarge,
-                    ),
-                    subtitle: Text(
-                      value.fullTotal.toFormateCurrency(context),
-                      style: context.headlineSmall,
-                    ),
-                  ),
-                  ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.only(bottom: 124),
-                    itemCount: accounts.length,
-                    itemBuilder: (context, index) {
-                      final List<TransactionEntity> expenses = value
-                          .expensesFromAccountId(accounts[index].superId!)
-                          .map((e) => e.toEntity())
-                          .toList();
-                      return AccountCardV2(
-                        account: accounts[index],
-                        expenses: expenses,
-                      );
-                    },
-                  ),
-                ],
+                padding: const EdgeInsets.only(bottom: 124),
+                itemCount: accounts.length,
+                itemBuilder: (context, index) {
+                  final List<TransactionEntity> expenses = value
+                      .expensesFromAccountId(accounts[index].superId!)
+                      .map((e) => e.toEntity())
+                      .toList();
+                  return AccountCardV2(
+                    account: accounts[index],
+                    expenses: expenses,
+                  );
+                },
               ),
               tablet: (p0) => GridView.builder(
                 padding: const EdgeInsets.only(bottom: 124),

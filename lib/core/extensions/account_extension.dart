@@ -15,6 +15,7 @@ extension AccountModelMapping on AccountModel {
         superId: superId,
         color: color,
         isAccountExcluded: isAccountExcluded,
+        isAccountDefault: isAccountDefault,
         country: currencySymbol?.toEntity(),
       );
 }

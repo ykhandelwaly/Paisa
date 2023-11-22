@@ -225,8 +225,8 @@ final GoRouter goRouter = GoRouter(
           ],
         ),
         GoRoute(
-          name: RoutesName.expensesByCategory.name,
-          path: RoutesName.expensesByCategory.path,
+          name: RoutesName.transactionsByCategory.name,
+          path: RoutesName.transactionsByCategory.path,
           builder: (BuildContext context, GoRouterState state) {
             return TransactionByCategoryListPage(
               categoryId: state.pathParameters['cid'] as String,

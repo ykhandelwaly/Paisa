@@ -30,7 +30,7 @@ class CategoryListWidget extends StatelessWidget {
         return ListTile(
           onTap: () {
             context.pushNamed(
-              RoutesName.expensesByCategory.name,
+              RoutesName.transactionsByCategory.name,
               pathParameters: {'cid': map.key.superId.toString()},
             );
           },

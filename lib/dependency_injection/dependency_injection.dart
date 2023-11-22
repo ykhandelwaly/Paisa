@@ -5,7 +5,7 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:paisa/config/routes.dart';
 import 'package:paisa/config/routes_name.dart';
-import 'package:paisa/di/module/hive_module.dart';
+import 'package:paisa/dependency_injection/module/hive_module.dart';
 import 'package:quick_actions/quick_actions.dart';
 
 import 'dependency_injection.config.dart';

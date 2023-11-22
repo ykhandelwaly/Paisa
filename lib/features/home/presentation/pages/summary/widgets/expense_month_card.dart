@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:paisa/core/theme/custom_color.dart';
-import 'package:paisa/core/widgets/paisa_widget.dart';
 import 'package:paisa/features/account/domain/entities/account_entity.dart';
 import 'package:paisa/features/home/presentation/pages/summary/widgets/expense_list_widget.dart';
 import 'package:paisa/features/transaction/domain/entities/transaction.dart';

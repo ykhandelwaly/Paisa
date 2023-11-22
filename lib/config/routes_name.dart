@@ -14,7 +14,7 @@ enum RoutesName {
   addRecurring,
   addDebtCredit,
   editDebitCredit,
-  expensesByCategory,
+  transactionsByCategory,
   settings,
   exportAndImport,
   appLanguageChanger,
@@ -59,8 +59,8 @@ extension RoutesNameHelper on RoutesName {
         return 'add-debit-credit';
       case RoutesName.editDebitCredit:
         return 'edit-debit-credit';
-      case RoutesName.expensesByCategory:
-        return 'expenses';
+      case RoutesName.transactionsByCategory:
+        return 'transactions';
       case RoutesName.settings:
         return 'settings';
       case RoutesName.exportAndImport:
@@ -114,8 +114,8 @@ extension RoutesNameHelper on RoutesName {
         return 'add-debit-credit';
       case RoutesName.editDebitCredit:
         return 'edit-debit-credit';
-      case RoutesName.expensesByCategory:
-        return 'expenses/:cid';
+      case RoutesName.transactionsByCategory:
+        return 'transactions/:cid';
       case RoutesName.settings:
         return 'settings';
       case RoutesName.exportAndImport:

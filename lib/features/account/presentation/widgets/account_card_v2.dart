@@ -31,10 +31,11 @@ class AccountCardV2 extends StatelessWidget {
     final String totalBalance = (account.initialAmount + expenses.fullTotal)
         .toFormateCurrency(context, selectedCountry: account.country);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.all(8.0),
       child: AspectRatio(
         aspectRatio: 16 / 10,
         child: PaisaCard(
+          elevation: 4,
           color: color,
           child: InkWell(
             onTap: () {

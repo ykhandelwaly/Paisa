@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:injectable/injectable.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/enum/card_type.dart';
@@ -31,7 +30,6 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
     this.deleteExpensesFromAccountIdUseCase,
     this.updateAccountUseCase,
     this.getCountryUseCase,
-    @Named('settings') this.settings,
   ) : super(const AccountsInitial()) {
     on<AccountsEvent>((event, emit) {});
     on<AddOrUpdateAccountEvent>(_addAccount);
@@ -41,8 +39,9 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
     on<AccountColorSelectedEvent>(_updateAccountColor);
     on<FetchAccountAndExpenseFromIdEvent>(_fetchAccountAndExpensesFromId);
     on<FetchCountriesEvent>(_fetchCountries);
+    on<_UpdateDefaultAndExculde>(_updateAccountDefaults);
   }
-  final Box<dynamic> settings;
+
   String? accountHolderName;
   String? accountName;
   final AddAccountUseCase addAccountUseCase;
@@ -55,8 +54,8 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
   final GetCountriesUseCase getCountryUseCase;
   final GetTransactionsByAccountIdUseCase getTransactionsByAccountIdUseCase;
   double? initialAmount;
-  bool isAccountExcluded = false;
   bool isAccountDefault = false;
+  bool isAccountExcluded = false;
   int? selectedColor;
   CardType selectedType = CardType.cash;
   final UpdateAccountUseCase updateAccountUseCase;
@@ -74,11 +73,11 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
       initialAmount = account.amount;
       currentAccount = account;
       selectedColor = account.color ?? Colors.brown.shade100.value;
-      isAccountExcluded = account.isAccountExcluded ?? false;
       currencySymbol = account.country;
-      emit(AccountSuccessState(account));
-      emit(UpdateCardTypeState(selectedType));
-      emit(UpdateAccountExcludeState(isAccountExcluded));
+      isAccountExcluded = account.isAccountExcluded ?? false;
+      isAccountDefault = account.isAccountDefault ?? false;
+      emit(AccountState.accountState(account));
+      //emit(AccountState.updateCardType(selectedType));
     } else {
       emit(const AccountState.errorAccountState(
           AccountErrors.accountNotFound()));
@@ -183,5 +182,17 @@ class AccountBloc extends Bloc<AccountsEvent, AccountState> {
   ) {
     final List<Country> countries = getCountryUseCase(NoParams()).toEntities();
     emit(AccountState.countries(countries));
+  }
+
+  FutureOr<void> _updateAccountDefaults(
+    _UpdateDefaultAndExculde event,
+    Emitter<AccountState> emit,
+  ) {
+    isAccountDefault = event.isAccountDefault;
+    isAccountExcluded = event.isAccountExcluded;
+    emit(AccountState.updateAccountExcluded(
+      isAccountDefault: event.isAccountDefault,
+      isAccountExcluded: event.isAccountExcluded,
+    ));
   }
 }

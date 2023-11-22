@@ -25,7 +25,7 @@ class AccountModelAdapter extends TypeAdapter<_$_AccountModel> {
       superId: fields[7] as int?,
       amount: fields[8] == null ? 0 : fields[8] as double?,
       color: fields[9] == null ? 4294951175 : fields[9] as int?,
-      isAccountDefault: fields[11] == null ? false : fields[11] as bool?,
+      isAccountDefault: fields[4] == null ? false : fields[4] as bool,
     );
   }
 
@@ -49,7 +49,7 @@ class AccountModelAdapter extends TypeAdapter<_$_AccountModel> {
       ..write(obj.amount)
       ..writeByte(9)
       ..write(obj.color)
-      ..writeByte(11)
+      ..writeByte(4)
       ..write(obj.isAccountDefault);
   }
 
@@ -81,7 +81,7 @@ _$_AccountModel _$$_AccountModelFromJson(Map<String, dynamic> json) =>
       superId: json['superId'] as int?,
       amount: (json['amount'] as num?)?.toDouble(),
       color: json['color'] as int?,
-      isAccountDefault: json['isAccountDefault'] as bool?,
+      isAccountDefault: json['isAccountDefault'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_AccountModelToJson(_$_AccountModel instance) =>

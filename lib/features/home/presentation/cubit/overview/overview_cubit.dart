@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:paisa/core/common.dart';
-import 'package:paisa/core/common_enum.dart';
 import 'package:paisa/core/use_case/use_case.dart';
 import 'package:paisa/features/category/domain/entities/category.dart';
 import 'package:paisa/features/category/domain/use_case/category_use_case.dart';
@@ -14,66 +13,22 @@ import 'package:paisa/features/transaction/domain/use_case/transaction_use_case.
 @injectable
 class OverviewCubit extends Cubit<BudgetState> {
   OverviewCubit(
-    this.getExpensesUseCase,
-    this.getCategoryUseCase,
-    this.getCategoriesUseCase,
+    this._getCategoryUseCase,
+    this._getCategoriesUseCase,
+    this._byCategoryIdUseCase,
   ) : super(BudgetInitial());
 
-  final GetDefaultCategoriesUseCase getCategoriesUseCase;
-  final GetCategoryUseCase getCategoryUseCase;
-  final GetTransactionsUseCase getExpensesUseCase;
+  final GetDefaultCategoriesUseCase _getCategoriesUseCase;
+  final GetCategoryUseCase _getCategoryUseCase;
+  final GetTransactionsByCategoryIdUseCase _byCategoryIdUseCase;
   String? selectedTime;
 
-  List<String> _filterTimes = [];
   final List<CategoryEntity> _defaultCategories = [];
-  Map<String, List<TransactionEntity>> _groupedExpenses = {};
-
-  void fetchBudgetSummary(
-    List<TransactionEntity> expenses,
-    FilterExpense filterExpense,
-  ) {
-    if (expenses.isEmpty) {
-      emit(EmptyFilterListState());
-    } else {
-      _groupedExpenses = groupBy(
-          expenses,
-          (TransactionEntity expense) =>
-              expense.time!.formatted(filterExpense));
-      final String time = selectedTime = _groupedExpenses.keys.first;
-      _filterTimes = _groupedExpenses.keys.toList();
-      emit(InitialSelectedState(time, _filterTimes));
-      Future.delayed(Duration.zero)
-          .then((value) => fetchSelectedTimeExpenses(time));
-    }
-  }
-
-  void updateFilterTime(String time) {
-    selectedTime = time;
-    emit(InitialSelectedState(selectedTime!, _filterTimes));
-    fetchSelectedTimeExpenses(time);
-  }
-
-  void fetchSelectedTimeExpenses(String time) {
-    final List<TransactionEntity> selectedTimeExpenses =
-        _groupedExpenses[time] ?? [];
-    final Map<CategoryEntity, List<TransactionEntity>> categoryGroupedExpenses =
-        groupBy(selectedTimeExpenses, (TransactionEntity expense) {
-      return getCategoryUseCase(GetCategoryParams(expense.categoryId)) ??
-          _defaultCategories.first;
-    });
-    final List<MapEntry<CategoryEntity, List<TransactionEntity>>> mapExpenses =
-        categoryGroupedExpenses.entries.toList().sorted(
-            (a, b) => b.value.totalExpense.compareTo(a.value.totalExpense));
-    emit(FilteredCategoryListState(
-      mapExpenses,
-      selectedTimeExpenses.total,
-    ));
-  }
 
   void emitExpenses(List<TransactionEntity> transactions) {
     final Map<CategoryEntity, List<TransactionEntity>> categoryGroupedExpenses =
         groupBy(transactions, (TransactionEntity expense) {
-      return getCategoryUseCase(GetCategoryParams(expense.categoryId)) ??
+      return _getCategoryUseCase(GetCategoryParams(expense.categoryId)) ??
           _defaultCategories.first;
     });
     final List<MapEntry<CategoryEntity, List<TransactionEntity>>> mapExpenses =
@@ -86,14 +41,13 @@ class OverviewCubit extends Cubit<BudgetState> {
   }
 
   void fetchDefaultCategory() {
-    _defaultCategories.addAll(getCategoriesUseCase(NoParams()));
+    _defaultCategories.addAll(_getCategoriesUseCase(NoParams()));
   }
 
-  List<TransactionEntity> expensesForCid(int cid) {
+  List<TransactionEntity> transactionsForCategoryId(int categoryId) {
     final List<TransactionEntity> selectedTimeExpenses =
-        _groupedExpenses[selectedTime] ?? [];
-
-    return selectedTimeExpenses.transactionsForCid(cid);
+        _byCategoryIdUseCase(ParamsGetTransactionsByCategoryId(categoryId));
+    return selectedTimeExpenses;
   }
 }
 
