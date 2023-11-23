@@ -88,6 +88,7 @@ class _PaisaAppState extends State<PaisaApp> {
             fontPreference,
             ThemeData.dark().textTheme,
           );
+
           final TextTheme lightTextTheme = GoogleFonts.getTextTheme(
             fontPreference,
             ThemeData.light().textTheme,
