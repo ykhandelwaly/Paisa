@@ -26,7 +26,7 @@ class Data {
   final List<DebitTransactionsModel> debitTransactions;
 
   factory Data.fromRawJson(String str) => Data.fromJson(json.decode(str));
-    
+
   String toRawJson() => json.encode(toJson());
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(

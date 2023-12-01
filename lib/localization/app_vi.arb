@@ -201,7 +201,7 @@
     "accountStyleDescription": "Chọn kiểu hiển thị tài khoản ưa thích của bạn: dọc hoặc ngang",
     "supportMe": "Hỗ trợ tôi",
     "supportMeDescription": "Nếu bạn nghĩ rằng tôi xứng đáng được thưởng một chút cho công việc khó khăn của mình, bạn có thể mua cho tôi một cốc bia ảo",
-    "lockAppDescription": "Khi được bật, bạn sẽ cần sử dụng dấu vân tay để mở Paisa."
+    "lockAppDescription": "Khi được bật, bạn sẽ cần sử dụng dấu vân tay để mở Paisa.",
     "fontStyle": "Kiểu font chữ",
     "fontStyleDescription": "Thay đổi kiểu font chữ để cá nhân hóa giao diện ứng dụng của bạn. Chọn từ nhiều tùy chọn font chữ khác nhau để phù hợp với sở thích của bạn và nâng cao khả năng đọc.",
     "chooseFont": "Chọn font",
@@ -213,5 +213,5 @@
     "holderNameError": "Đặt tên chủ tài khoản",
     "accountColorError": "Đặt tên màu tài khoản",
     "emptySelectedAccountsInfo": "Chọn tài khoản ở trên để bắt đầu",
-    "emptyrecommendedAccountsInfo": "Không còn tài khoản nào để thêm",
+    "emptyrecommendedAccountsInfo": "Không còn tài khoản nào để thêm"
 }
