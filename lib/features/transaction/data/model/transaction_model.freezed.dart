@@ -137,11 +137,11 @@ class _$TransactionModelCopyWithImpl<$Res, $Val extends TransactionModel>
 }
 
 /// @nodoc
-abstract class _$$_TransactionModelCopyWith<$Res>
+abstract class _$$TransactionModelImplCopyWith<$Res>
     implements $TransactionModelCopyWith<$Res> {
-  factory _$$_TransactionModelCopyWith(
-          _$_TransactionModel value, $Res Function(_$_TransactionModel) then) =
-      __$$_TransactionModelCopyWithImpl<$Res>;
+  factory _$$TransactionModelImplCopyWith(_$TransactionModelImpl value,
+          $Res Function(_$TransactionModelImpl) then) =
+      __$$TransactionModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -157,11 +157,11 @@ abstract class _$$_TransactionModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TransactionModelCopyWithImpl<$Res>
-    extends _$TransactionModelCopyWithImpl<$Res, _$_TransactionModel>
-    implements _$$_TransactionModelCopyWith<$Res> {
-  __$$_TransactionModelCopyWithImpl(
-      _$_TransactionModel _value, $Res Function(_$_TransactionModel) _then)
+class __$$TransactionModelImplCopyWithImpl<$Res>
+    extends _$TransactionModelCopyWithImpl<$Res, _$TransactionModelImpl>
+    implements _$$TransactionModelImplCopyWith<$Res> {
+  __$$TransactionModelImplCopyWithImpl(_$TransactionModelImpl _value,
+      $Res Function(_$TransactionModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -176,7 +176,7 @@ class __$$_TransactionModelCopyWithImpl<$Res>
     Object? time = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$_TransactionModel(
+    return _then(_$TransactionModelImpl(
       accountId: freezed == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -216,8 +216,8 @@ class __$$_TransactionModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 0, adapterName: 'TransactionModelAdapter')
-class _$_TransactionModel extends _TransactionModel {
-  _$_TransactionModel(
+class _$TransactionModelImpl extends _TransactionModel {
+  _$TransactionModelImpl(
       {@HiveField(5) this.accountId,
       @HiveField(6) this.categoryId,
       @HiveField(1) this.currency,
@@ -229,8 +229,8 @@ class _$_TransactionModel extends _TransactionModel {
       this.type = TransactionType.expense})
       : super._();
 
-  factory _$_TransactionModel.fromJson(Map<String, dynamic> json) =>
-      _$$_TransactionModelFromJson(json);
+  factory _$TransactionModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TransactionModelImplFromJson(json);
 
   @override
   @HiveField(5)
@@ -266,12 +266,13 @@ class _$_TransactionModel extends _TransactionModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TransactionModelCopyWith<_$_TransactionModel> get copyWith =>
-      __$$_TransactionModelCopyWithImpl<_$_TransactionModel>(this, _$identity);
+  _$$TransactionModelImplCopyWith<_$TransactionModelImpl> get copyWith =>
+      __$$TransactionModelImplCopyWithImpl<_$TransactionModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TransactionModelToJson(
+    return _$$TransactionModelImplToJson(
       this,
     );
   }
@@ -287,11 +288,11 @@ abstract class _TransactionModel extends TransactionModel {
       @HiveField(7) int? superId,
       @HiveField(3) DateTime? time,
       @HiveField(4, defaultValue: TransactionType.expense)
-      TransactionType? type}) = _$_TransactionModel;
+      TransactionType? type}) = _$TransactionModelImpl;
   _TransactionModel._() : super._();
 
   factory _TransactionModel.fromJson(Map<String, dynamic> json) =
-      _$_TransactionModel.fromJson;
+      _$TransactionModelImpl.fromJson;
 
   @override
   @HiveField(5)
@@ -335,6 +336,6 @@ abstract class _TransactionModel extends TransactionModel {
   set type(TransactionType? value);
   @override
   @JsonKey(ignore: true)
-  _$$_TransactionModelCopyWith<_$_TransactionModel> get copyWith =>
+  _$$TransactionModelImplCopyWith<_$TransactionModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

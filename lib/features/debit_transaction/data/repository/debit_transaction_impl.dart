@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/features/debit/data/data_sources/transaction_data_manager.dart';
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
-import 'package:paisa/features/debit/domain/entities/debit_transaction_entity.dart';
-import 'package:paisa/features/debit/domain/repository/debit_transaction_repository.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/domain/entity/debit_transaction_entity.dart';
+import 'package:paisa/features/debit_transaction/domain/repository/debit_transaction_repository.dart';
 
 @Singleton(as: DebitTransactionRepository)
 class DebitTransactionRepositoryImpl extends DebitTransactionRepository {

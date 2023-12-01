@@ -119,20 +119,22 @@ class _$AccountsEventCopyWithImpl<$Res, $Val extends AccountsEvent>
 }
 
 /// @nodoc
-abstract class _$$AddOrUpdateAccountEventCopyWith<$Res> {
-  factory _$$AddOrUpdateAccountEventCopyWith(_$AddOrUpdateAccountEvent value,
-          $Res Function(_$AddOrUpdateAccountEvent) then) =
-      __$$AddOrUpdateAccountEventCopyWithImpl<$Res>;
+abstract class _$$AddOrUpdateAccountEventImplCopyWith<$Res> {
+  factory _$$AddOrUpdateAccountEventImplCopyWith(
+          _$AddOrUpdateAccountEventImpl value,
+          $Res Function(_$AddOrUpdateAccountEventImpl) then) =
+      __$$AddOrUpdateAccountEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool addOrUpdate});
 }
 
 /// @nodoc
-class __$$AddOrUpdateAccountEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$AddOrUpdateAccountEvent>
-    implements _$$AddOrUpdateAccountEventCopyWith<$Res> {
-  __$$AddOrUpdateAccountEventCopyWithImpl(_$AddOrUpdateAccountEvent _value,
-      $Res Function(_$AddOrUpdateAccountEvent) _then)
+class __$$AddOrUpdateAccountEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$AddOrUpdateAccountEventImpl>
+    implements _$$AddOrUpdateAccountEventImplCopyWith<$Res> {
+  __$$AddOrUpdateAccountEventImplCopyWithImpl(
+      _$AddOrUpdateAccountEventImpl _value,
+      $Res Function(_$AddOrUpdateAccountEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -140,7 +142,7 @@ class __$$AddOrUpdateAccountEventCopyWithImpl<$Res>
   $Res call({
     Object? addOrUpdate = null,
   }) {
-    return _then(_$AddOrUpdateAccountEvent(
+    return _then(_$AddOrUpdateAccountEventImpl(
       null == addOrUpdate
           ? _value.addOrUpdate
           : addOrUpdate // ignore: cast_nullable_to_non_nullable
@@ -151,8 +153,8 @@ class __$$AddOrUpdateAccountEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AddOrUpdateAccountEvent implements AddOrUpdateAccountEvent {
-  const _$AddOrUpdateAccountEvent(this.addOrUpdate);
+class _$AddOrUpdateAccountEventImpl implements AddOrUpdateAccountEvent {
+  const _$AddOrUpdateAccountEventImpl(this.addOrUpdate);
 
   @override
   final bool addOrUpdate;
@@ -166,7 +168,7 @@ class _$AddOrUpdateAccountEvent implements AddOrUpdateAccountEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AddOrUpdateAccountEvent &&
+            other is _$AddOrUpdateAccountEventImpl &&
             (identical(other.addOrUpdate, addOrUpdate) ||
                 other.addOrUpdate == addOrUpdate));
   }
@@ -177,9 +179,9 @@ class _$AddOrUpdateAccountEvent implements AddOrUpdateAccountEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AddOrUpdateAccountEventCopyWith<_$AddOrUpdateAccountEvent> get copyWith =>
-      __$$AddOrUpdateAccountEventCopyWithImpl<_$AddOrUpdateAccountEvent>(
-          this, _$identity);
+  _$$AddOrUpdateAccountEventImplCopyWith<_$AddOrUpdateAccountEventImpl>
+      get copyWith => __$$AddOrUpdateAccountEventImplCopyWithImpl<
+          _$AddOrUpdateAccountEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -290,29 +292,31 @@ class _$AddOrUpdateAccountEvent implements AddOrUpdateAccountEvent {
 
 abstract class AddOrUpdateAccountEvent implements AccountsEvent {
   const factory AddOrUpdateAccountEvent(final bool addOrUpdate) =
-      _$AddOrUpdateAccountEvent;
+      _$AddOrUpdateAccountEventImpl;
 
   bool get addOrUpdate;
   @JsonKey(ignore: true)
-  _$$AddOrUpdateAccountEventCopyWith<_$AddOrUpdateAccountEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AddOrUpdateAccountEventImplCopyWith<_$AddOrUpdateAccountEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UpdateDefaultAndExculdeCopyWith<$Res> {
-  factory _$$_UpdateDefaultAndExculdeCopyWith(_$_UpdateDefaultAndExculde value,
-          $Res Function(_$_UpdateDefaultAndExculde) then) =
-      __$$_UpdateDefaultAndExculdeCopyWithImpl<$Res>;
+abstract class _$$UpdateDefaultAndExculdeImplCopyWith<$Res> {
+  factory _$$UpdateDefaultAndExculdeImplCopyWith(
+          _$UpdateDefaultAndExculdeImpl value,
+          $Res Function(_$UpdateDefaultAndExculdeImpl) then) =
+      __$$UpdateDefaultAndExculdeImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isAccountExcluded, bool isAccountDefault});
 }
 
 /// @nodoc
-class __$$_UpdateDefaultAndExculdeCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$_UpdateDefaultAndExculde>
-    implements _$$_UpdateDefaultAndExculdeCopyWith<$Res> {
-  __$$_UpdateDefaultAndExculdeCopyWithImpl(_$_UpdateDefaultAndExculde _value,
-      $Res Function(_$_UpdateDefaultAndExculde) _then)
+class __$$UpdateDefaultAndExculdeImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$UpdateDefaultAndExculdeImpl>
+    implements _$$UpdateDefaultAndExculdeImplCopyWith<$Res> {
+  __$$UpdateDefaultAndExculdeImplCopyWithImpl(
+      _$UpdateDefaultAndExculdeImpl _value,
+      $Res Function(_$UpdateDefaultAndExculdeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -321,7 +325,7 @@ class __$$_UpdateDefaultAndExculdeCopyWithImpl<$Res>
     Object? isAccountExcluded = null,
     Object? isAccountDefault = null,
   }) {
-    return _then(_$_UpdateDefaultAndExculde(
+    return _then(_$UpdateDefaultAndExculdeImpl(
       isAccountExcluded: null == isAccountExcluded
           ? _value.isAccountExcluded
           : isAccountExcluded // ignore: cast_nullable_to_non_nullable
@@ -336,8 +340,8 @@ class __$$_UpdateDefaultAndExculdeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateDefaultAndExculde implements _UpdateDefaultAndExculde {
-  const _$_UpdateDefaultAndExculde(
+class _$UpdateDefaultAndExculdeImpl implements _UpdateDefaultAndExculde {
+  const _$UpdateDefaultAndExculdeImpl(
       {this.isAccountExcluded = false, this.isAccountDefault = false});
 
   @override
@@ -356,7 +360,7 @@ class _$_UpdateDefaultAndExculde implements _UpdateDefaultAndExculde {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateDefaultAndExculde &&
+            other is _$UpdateDefaultAndExculdeImpl &&
             (identical(other.isAccountExcluded, isAccountExcluded) ||
                 other.isAccountExcluded == isAccountExcluded) &&
             (identical(other.isAccountDefault, isAccountDefault) ||
@@ -370,10 +374,9 @@ class _$_UpdateDefaultAndExculde implements _UpdateDefaultAndExculde {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateDefaultAndExculdeCopyWith<_$_UpdateDefaultAndExculde>
-      get copyWith =>
-          __$$_UpdateDefaultAndExculdeCopyWithImpl<_$_UpdateDefaultAndExculde>(
-              this, _$identity);
+  _$$UpdateDefaultAndExculdeImplCopyWith<_$UpdateDefaultAndExculdeImpl>
+      get copyWith => __$$UpdateDefaultAndExculdeImplCopyWithImpl<
+          _$UpdateDefaultAndExculdeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -485,30 +488,30 @@ class _$_UpdateDefaultAndExculde implements _UpdateDefaultAndExculde {
 abstract class _UpdateDefaultAndExculde implements AccountsEvent {
   const factory _UpdateDefaultAndExculde(
       {final bool isAccountExcluded,
-      final bool isAccountDefault}) = _$_UpdateDefaultAndExculde;
+      final bool isAccountDefault}) = _$UpdateDefaultAndExculdeImpl;
 
   bool get isAccountExcluded;
   bool get isAccountDefault;
   @JsonKey(ignore: true)
-  _$$_UpdateDefaultAndExculdeCopyWith<_$_UpdateDefaultAndExculde>
+  _$$UpdateDefaultAndExculdeImplCopyWith<_$UpdateDefaultAndExculdeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DeleteAccountEventCopyWith<$Res> {
-  factory _$$DeleteAccountEventCopyWith(_$DeleteAccountEvent value,
-          $Res Function(_$DeleteAccountEvent) then) =
-      __$$DeleteAccountEventCopyWithImpl<$Res>;
+abstract class _$$DeleteAccountEventImplCopyWith<$Res> {
+  factory _$$DeleteAccountEventImplCopyWith(_$DeleteAccountEventImpl value,
+          $Res Function(_$DeleteAccountEventImpl) then) =
+      __$$DeleteAccountEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int accountId});
 }
 
 /// @nodoc
-class __$$DeleteAccountEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$DeleteAccountEvent>
-    implements _$$DeleteAccountEventCopyWith<$Res> {
-  __$$DeleteAccountEventCopyWithImpl(
-      _$DeleteAccountEvent _value, $Res Function(_$DeleteAccountEvent) _then)
+class __$$DeleteAccountEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$DeleteAccountEventImpl>
+    implements _$$DeleteAccountEventImplCopyWith<$Res> {
+  __$$DeleteAccountEventImplCopyWithImpl(_$DeleteAccountEventImpl _value,
+      $Res Function(_$DeleteAccountEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -516,7 +519,7 @@ class __$$DeleteAccountEventCopyWithImpl<$Res>
   $Res call({
     Object? accountId = null,
   }) {
-    return _then(_$DeleteAccountEvent(
+    return _then(_$DeleteAccountEventImpl(
       null == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -527,8 +530,8 @@ class __$$DeleteAccountEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteAccountEvent implements DeleteAccountEvent {
-  const _$DeleteAccountEvent(this.accountId);
+class _$DeleteAccountEventImpl implements DeleteAccountEvent {
+  const _$DeleteAccountEventImpl(this.accountId);
 
   @override
   final int accountId;
@@ -542,7 +545,7 @@ class _$DeleteAccountEvent implements DeleteAccountEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteAccountEvent &&
+            other is _$DeleteAccountEventImpl &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId));
   }
@@ -553,8 +556,8 @@ class _$DeleteAccountEvent implements DeleteAccountEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteAccountEventCopyWith<_$DeleteAccountEvent> get copyWith =>
-      __$$DeleteAccountEventCopyWithImpl<_$DeleteAccountEvent>(
+  _$$DeleteAccountEventImplCopyWith<_$DeleteAccountEventImpl> get copyWith =>
+      __$$DeleteAccountEventImplCopyWithImpl<_$DeleteAccountEventImpl>(
           this, _$identity);
 
   @override
@@ -665,32 +668,33 @@ class _$DeleteAccountEvent implements DeleteAccountEvent {
 }
 
 abstract class DeleteAccountEvent implements AccountsEvent {
-  const factory DeleteAccountEvent(final int accountId) = _$DeleteAccountEvent;
+  const factory DeleteAccountEvent(final int accountId) =
+      _$DeleteAccountEventImpl;
 
   int get accountId;
   @JsonKey(ignore: true)
-  _$$DeleteAccountEventCopyWith<_$DeleteAccountEvent> get copyWith =>
+  _$$DeleteAccountEventImplCopyWith<_$DeleteAccountEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchAccountAndExpenseFromIdEventCopyWith<$Res> {
-  factory _$$FetchAccountAndExpenseFromIdEventCopyWith(
-          _$FetchAccountAndExpenseFromIdEvent value,
-          $Res Function(_$FetchAccountAndExpenseFromIdEvent) then) =
-      __$$FetchAccountAndExpenseFromIdEventCopyWithImpl<$Res>;
+abstract class _$$FetchAccountAndExpenseFromIdEventImplCopyWith<$Res> {
+  factory _$$FetchAccountAndExpenseFromIdEventImplCopyWith(
+          _$FetchAccountAndExpenseFromIdEventImpl value,
+          $Res Function(_$FetchAccountAndExpenseFromIdEventImpl) then) =
+      __$$FetchAccountAndExpenseFromIdEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int accountId});
 }
 
 /// @nodoc
-class __$$FetchAccountAndExpenseFromIdEventCopyWithImpl<$Res>
+class __$$FetchAccountAndExpenseFromIdEventImplCopyWithImpl<$Res>
     extends _$AccountsEventCopyWithImpl<$Res,
-        _$FetchAccountAndExpenseFromIdEvent>
-    implements _$$FetchAccountAndExpenseFromIdEventCopyWith<$Res> {
-  __$$FetchAccountAndExpenseFromIdEventCopyWithImpl(
-      _$FetchAccountAndExpenseFromIdEvent _value,
-      $Res Function(_$FetchAccountAndExpenseFromIdEvent) _then)
+        _$FetchAccountAndExpenseFromIdEventImpl>
+    implements _$$FetchAccountAndExpenseFromIdEventImplCopyWith<$Res> {
+  __$$FetchAccountAndExpenseFromIdEventImplCopyWithImpl(
+      _$FetchAccountAndExpenseFromIdEventImpl _value,
+      $Res Function(_$FetchAccountAndExpenseFromIdEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -698,7 +702,7 @@ class __$$FetchAccountAndExpenseFromIdEventCopyWithImpl<$Res>
   $Res call({
     Object? accountId = null,
   }) {
-    return _then(_$FetchAccountAndExpenseFromIdEvent(
+    return _then(_$FetchAccountAndExpenseFromIdEventImpl(
       null == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -709,9 +713,9 @@ class __$$FetchAccountAndExpenseFromIdEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAccountAndExpenseFromIdEvent
+class _$FetchAccountAndExpenseFromIdEventImpl
     implements FetchAccountAndExpenseFromIdEvent {
-  const _$FetchAccountAndExpenseFromIdEvent(this.accountId);
+  const _$FetchAccountAndExpenseFromIdEventImpl(this.accountId);
 
   @override
   final int accountId;
@@ -725,7 +729,7 @@ class _$FetchAccountAndExpenseFromIdEvent
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAccountAndExpenseFromIdEvent &&
+            other is _$FetchAccountAndExpenseFromIdEventImpl &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId));
   }
@@ -736,10 +740,10 @@ class _$FetchAccountAndExpenseFromIdEvent
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAccountAndExpenseFromIdEventCopyWith<
-          _$FetchAccountAndExpenseFromIdEvent>
-      get copyWith => __$$FetchAccountAndExpenseFromIdEventCopyWithImpl<
-          _$FetchAccountAndExpenseFromIdEvent>(this, _$identity);
+  _$$FetchAccountAndExpenseFromIdEventImplCopyWith<
+          _$FetchAccountAndExpenseFromIdEventImpl>
+      get copyWith => __$$FetchAccountAndExpenseFromIdEventImplCopyWithImpl<
+          _$FetchAccountAndExpenseFromIdEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -850,30 +854,32 @@ class _$FetchAccountAndExpenseFromIdEvent
 
 abstract class FetchAccountAndExpenseFromIdEvent implements AccountsEvent {
   const factory FetchAccountAndExpenseFromIdEvent(final int accountId) =
-      _$FetchAccountAndExpenseFromIdEvent;
+      _$FetchAccountAndExpenseFromIdEventImpl;
 
   int get accountId;
   @JsonKey(ignore: true)
-  _$$FetchAccountAndExpenseFromIdEventCopyWith<
-          _$FetchAccountAndExpenseFromIdEvent>
+  _$$FetchAccountAndExpenseFromIdEventImplCopyWith<
+          _$FetchAccountAndExpenseFromIdEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchAccountFromIdEventCopyWith<$Res> {
-  factory _$$FetchAccountFromIdEventCopyWith(_$FetchAccountFromIdEvent value,
-          $Res Function(_$FetchAccountFromIdEvent) then) =
-      __$$FetchAccountFromIdEventCopyWithImpl<$Res>;
+abstract class _$$FetchAccountFromIdEventImplCopyWith<$Res> {
+  factory _$$FetchAccountFromIdEventImplCopyWith(
+          _$FetchAccountFromIdEventImpl value,
+          $Res Function(_$FetchAccountFromIdEventImpl) then) =
+      __$$FetchAccountFromIdEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int accountId});
 }
 
 /// @nodoc
-class __$$FetchAccountFromIdEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$FetchAccountFromIdEvent>
-    implements _$$FetchAccountFromIdEventCopyWith<$Res> {
-  __$$FetchAccountFromIdEventCopyWithImpl(_$FetchAccountFromIdEvent _value,
-      $Res Function(_$FetchAccountFromIdEvent) _then)
+class __$$FetchAccountFromIdEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$FetchAccountFromIdEventImpl>
+    implements _$$FetchAccountFromIdEventImplCopyWith<$Res> {
+  __$$FetchAccountFromIdEventImplCopyWithImpl(
+      _$FetchAccountFromIdEventImpl _value,
+      $Res Function(_$FetchAccountFromIdEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -881,7 +887,7 @@ class __$$FetchAccountFromIdEventCopyWithImpl<$Res>
   $Res call({
     Object? accountId = null,
   }) {
-    return _then(_$FetchAccountFromIdEvent(
+    return _then(_$FetchAccountFromIdEventImpl(
       null == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -892,8 +898,8 @@ class __$$FetchAccountFromIdEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FetchAccountFromIdEvent implements FetchAccountFromIdEvent {
-  const _$FetchAccountFromIdEvent(this.accountId);
+class _$FetchAccountFromIdEventImpl implements FetchAccountFromIdEvent {
+  const _$FetchAccountFromIdEventImpl(this.accountId);
 
   @override
   final int accountId;
@@ -907,7 +913,7 @@ class _$FetchAccountFromIdEvent implements FetchAccountFromIdEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAccountFromIdEvent &&
+            other is _$FetchAccountFromIdEventImpl &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId));
   }
@@ -918,9 +924,9 @@ class _$FetchAccountFromIdEvent implements FetchAccountFromIdEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FetchAccountFromIdEventCopyWith<_$FetchAccountFromIdEvent> get copyWith =>
-      __$$FetchAccountFromIdEventCopyWithImpl<_$FetchAccountFromIdEvent>(
-          this, _$identity);
+  _$$FetchAccountFromIdEventImplCopyWith<_$FetchAccountFromIdEventImpl>
+      get copyWith => __$$FetchAccountFromIdEventImplCopyWithImpl<
+          _$FetchAccountFromIdEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1031,30 +1037,31 @@ class _$FetchAccountFromIdEvent implements FetchAccountFromIdEvent {
 
 abstract class FetchAccountFromIdEvent implements AccountsEvent {
   const factory FetchAccountFromIdEvent(final int accountId) =
-      _$FetchAccountFromIdEvent;
+      _$FetchAccountFromIdEventImpl;
 
   int get accountId;
   @JsonKey(ignore: true)
-  _$$FetchAccountFromIdEventCopyWith<_$FetchAccountFromIdEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FetchAccountFromIdEventImplCopyWith<_$FetchAccountFromIdEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountColorSelectedEventCopyWith<$Res> {
-  factory _$$AccountColorSelectedEventCopyWith(
-          _$AccountColorSelectedEvent value,
-          $Res Function(_$AccountColorSelectedEvent) then) =
-      __$$AccountColorSelectedEventCopyWithImpl<$Res>;
+abstract class _$$AccountColorSelectedEventImplCopyWith<$Res> {
+  factory _$$AccountColorSelectedEventImplCopyWith(
+          _$AccountColorSelectedEventImpl value,
+          $Res Function(_$AccountColorSelectedEventImpl) then) =
+      __$$AccountColorSelectedEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int color});
 }
 
 /// @nodoc
-class __$$AccountColorSelectedEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$AccountColorSelectedEvent>
-    implements _$$AccountColorSelectedEventCopyWith<$Res> {
-  __$$AccountColorSelectedEventCopyWithImpl(_$AccountColorSelectedEvent _value,
-      $Res Function(_$AccountColorSelectedEvent) _then)
+class __$$AccountColorSelectedEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$AccountColorSelectedEventImpl>
+    implements _$$AccountColorSelectedEventImplCopyWith<$Res> {
+  __$$AccountColorSelectedEventImplCopyWithImpl(
+      _$AccountColorSelectedEventImpl _value,
+      $Res Function(_$AccountColorSelectedEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1062,7 +1069,7 @@ class __$$AccountColorSelectedEventCopyWithImpl<$Res>
   $Res call({
     Object? color = null,
   }) {
-    return _then(_$AccountColorSelectedEvent(
+    return _then(_$AccountColorSelectedEventImpl(
       null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -1073,8 +1080,8 @@ class __$$AccountColorSelectedEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountColorSelectedEvent implements AccountColorSelectedEvent {
-  const _$AccountColorSelectedEvent(this.color);
+class _$AccountColorSelectedEventImpl implements AccountColorSelectedEvent {
+  const _$AccountColorSelectedEventImpl(this.color);
 
   @override
   final int color;
@@ -1088,7 +1095,7 @@ class _$AccountColorSelectedEvent implements AccountColorSelectedEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountColorSelectedEvent &&
+            other is _$AccountColorSelectedEventImpl &&
             (identical(other.color, color) || other.color == color));
   }
 
@@ -1098,9 +1105,9 @@ class _$AccountColorSelectedEvent implements AccountColorSelectedEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountColorSelectedEventCopyWith<_$AccountColorSelectedEvent>
-      get copyWith => __$$AccountColorSelectedEventCopyWithImpl<
-          _$AccountColorSelectedEvent>(this, _$identity);
+  _$$AccountColorSelectedEventImplCopyWith<_$AccountColorSelectedEventImpl>
+      get copyWith => __$$AccountColorSelectedEventImplCopyWithImpl<
+          _$AccountColorSelectedEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1211,29 +1218,29 @@ class _$AccountColorSelectedEvent implements AccountColorSelectedEvent {
 
 abstract class AccountColorSelectedEvent implements AccountsEvent {
   const factory AccountColorSelectedEvent(final int color) =
-      _$AccountColorSelectedEvent;
+      _$AccountColorSelectedEventImpl;
 
   int get color;
   @JsonKey(ignore: true)
-  _$$AccountColorSelectedEventCopyWith<_$AccountColorSelectedEvent>
+  _$$AccountColorSelectedEventImplCopyWith<_$AccountColorSelectedEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateCardTypeEventCopyWith<$Res> {
-  factory _$$UpdateCardTypeEventCopyWith(_$UpdateCardTypeEvent value,
-          $Res Function(_$UpdateCardTypeEvent) then) =
-      __$$UpdateCardTypeEventCopyWithImpl<$Res>;
+abstract class _$$UpdateCardTypeEventImplCopyWith<$Res> {
+  factory _$$UpdateCardTypeEventImplCopyWith(_$UpdateCardTypeEventImpl value,
+          $Res Function(_$UpdateCardTypeEventImpl) then) =
+      __$$UpdateCardTypeEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CardType cardType});
 }
 
 /// @nodoc
-class __$$UpdateCardTypeEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$UpdateCardTypeEvent>
-    implements _$$UpdateCardTypeEventCopyWith<$Res> {
-  __$$UpdateCardTypeEventCopyWithImpl(
-      _$UpdateCardTypeEvent _value, $Res Function(_$UpdateCardTypeEvent) _then)
+class __$$UpdateCardTypeEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$UpdateCardTypeEventImpl>
+    implements _$$UpdateCardTypeEventImplCopyWith<$Res> {
+  __$$UpdateCardTypeEventImplCopyWithImpl(_$UpdateCardTypeEventImpl _value,
+      $Res Function(_$UpdateCardTypeEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1241,7 +1248,7 @@ class __$$UpdateCardTypeEventCopyWithImpl<$Res>
   $Res call({
     Object? cardType = null,
   }) {
-    return _then(_$UpdateCardTypeEvent(
+    return _then(_$UpdateCardTypeEventImpl(
       null == cardType
           ? _value.cardType
           : cardType // ignore: cast_nullable_to_non_nullable
@@ -1252,8 +1259,8 @@ class __$$UpdateCardTypeEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCardTypeEvent implements UpdateCardTypeEvent {
-  const _$UpdateCardTypeEvent(this.cardType);
+class _$UpdateCardTypeEventImpl implements UpdateCardTypeEvent {
+  const _$UpdateCardTypeEventImpl(this.cardType);
 
   @override
   final CardType cardType;
@@ -1267,7 +1274,7 @@ class _$UpdateCardTypeEvent implements UpdateCardTypeEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateCardTypeEvent &&
+            other is _$UpdateCardTypeEventImpl &&
             (identical(other.cardType, cardType) ||
                 other.cardType == cardType));
   }
@@ -1278,8 +1285,8 @@ class _$UpdateCardTypeEvent implements UpdateCardTypeEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateCardTypeEventCopyWith<_$UpdateCardTypeEvent> get copyWith =>
-      __$$UpdateCardTypeEventCopyWithImpl<_$UpdateCardTypeEvent>(
+  _$$UpdateCardTypeEventImplCopyWith<_$UpdateCardTypeEventImpl> get copyWith =>
+      __$$UpdateCardTypeEventImplCopyWithImpl<_$UpdateCardTypeEventImpl>(
           this, _$identity);
 
   @override
@@ -1391,34 +1398,34 @@ class _$UpdateCardTypeEvent implements UpdateCardTypeEvent {
 
 abstract class UpdateCardTypeEvent implements AccountsEvent {
   const factory UpdateCardTypeEvent(final CardType cardType) =
-      _$UpdateCardTypeEvent;
+      _$UpdateCardTypeEventImpl;
 
   CardType get cardType;
   @JsonKey(ignore: true)
-  _$$UpdateCardTypeEventCopyWith<_$UpdateCardTypeEvent> get copyWith =>
+  _$$UpdateCardTypeEventImplCopyWith<_$UpdateCardTypeEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FetchCountriesEventCopyWith<$Res> {
-  factory _$$FetchCountriesEventCopyWith(_$FetchCountriesEvent value,
-          $Res Function(_$FetchCountriesEvent) then) =
-      __$$FetchCountriesEventCopyWithImpl<$Res>;
+abstract class _$$FetchCountriesEventImplCopyWith<$Res> {
+  factory _$$FetchCountriesEventImplCopyWith(_$FetchCountriesEventImpl value,
+          $Res Function(_$FetchCountriesEventImpl) then) =
+      __$$FetchCountriesEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchCountriesEventCopyWithImpl<$Res>
-    extends _$AccountsEventCopyWithImpl<$Res, _$FetchCountriesEvent>
-    implements _$$FetchCountriesEventCopyWith<$Res> {
-  __$$FetchCountriesEventCopyWithImpl(
-      _$FetchCountriesEvent _value, $Res Function(_$FetchCountriesEvent) _then)
+class __$$FetchCountriesEventImplCopyWithImpl<$Res>
+    extends _$AccountsEventCopyWithImpl<$Res, _$FetchCountriesEventImpl>
+    implements _$$FetchCountriesEventImplCopyWith<$Res> {
+  __$$FetchCountriesEventImplCopyWithImpl(_$FetchCountriesEventImpl _value,
+      $Res Function(_$FetchCountriesEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FetchCountriesEvent implements FetchCountriesEvent {
-  const _$FetchCountriesEvent();
+class _$FetchCountriesEventImpl implements FetchCountriesEvent {
+  const _$FetchCountriesEventImpl();
 
   @override
   String toString() {
@@ -1428,7 +1435,8 @@ class _$FetchCountriesEvent implements FetchCountriesEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchCountriesEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$FetchCountriesEventImpl);
   }
 
   @override
@@ -1542,7 +1550,7 @@ class _$FetchCountriesEvent implements FetchCountriesEvent {
 }
 
 abstract class FetchCountriesEvent implements AccountsEvent {
-  const factory FetchCountriesEvent() = _$FetchCountriesEvent;
+  const factory FetchCountriesEvent() = _$FetchCountriesEventImpl;
 }
 
 /// @nodoc
@@ -1669,20 +1677,22 @@ class _$AccountStateCopyWithImpl<$Res, $Val extends AccountState>
 }
 
 /// @nodoc
-abstract class _$$AccountAndExpensesStateCopyWith<$Res> {
-  factory _$$AccountAndExpensesStateCopyWith(_$AccountAndExpensesState value,
-          $Res Function(_$AccountAndExpensesState) then) =
-      __$$AccountAndExpensesStateCopyWithImpl<$Res>;
+abstract class _$$AccountAndExpensesStateImplCopyWith<$Res> {
+  factory _$$AccountAndExpensesStateImplCopyWith(
+          _$AccountAndExpensesStateImpl value,
+          $Res Function(_$AccountAndExpensesStateImpl) then) =
+      __$$AccountAndExpensesStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AccountEntity account, List<TransactionEntity> expenses});
 }
 
 /// @nodoc
-class __$$AccountAndExpensesStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountAndExpensesState>
-    implements _$$AccountAndExpensesStateCopyWith<$Res> {
-  __$$AccountAndExpensesStateCopyWithImpl(_$AccountAndExpensesState _value,
-      $Res Function(_$AccountAndExpensesState) _then)
+class __$$AccountAndExpensesStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountAndExpensesStateImpl>
+    implements _$$AccountAndExpensesStateImplCopyWith<$Res> {
+  __$$AccountAndExpensesStateImplCopyWithImpl(
+      _$AccountAndExpensesStateImpl _value,
+      $Res Function(_$AccountAndExpensesStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1691,7 +1701,7 @@ class __$$AccountAndExpensesStateCopyWithImpl<$Res>
     Object? account = null,
     Object? expenses = null,
   }) {
-    return _then(_$AccountAndExpensesState(
+    return _then(_$AccountAndExpensesStateImpl(
       null == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
@@ -1706,8 +1716,8 @@ class __$$AccountAndExpensesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountAndExpensesState implements AccountAndExpensesState {
-  const _$AccountAndExpensesState(
+class _$AccountAndExpensesStateImpl implements AccountAndExpensesState {
+  const _$AccountAndExpensesStateImpl(
       this.account, final List<TransactionEntity> expenses)
       : _expenses = expenses;
 
@@ -1730,7 +1740,7 @@ class _$AccountAndExpensesState implements AccountAndExpensesState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountAndExpensesState &&
+            other is _$AccountAndExpensesStateImpl &&
             (identical(other.account, account) || other.account == account) &&
             const DeepCollectionEquality().equals(other._expenses, _expenses));
   }
@@ -1742,9 +1752,9 @@ class _$AccountAndExpensesState implements AccountAndExpensesState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountAndExpensesStateCopyWith<_$AccountAndExpensesState> get copyWith =>
-      __$$AccountAndExpensesStateCopyWithImpl<_$AccountAndExpensesState>(
-          this, _$identity);
+  _$$AccountAndExpensesStateImplCopyWith<_$AccountAndExpensesStateImpl>
+      get copyWith => __$$AccountAndExpensesStateImplCopyWithImpl<
+          _$AccountAndExpensesStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1875,30 +1885,30 @@ class _$AccountAndExpensesState implements AccountAndExpensesState {
 abstract class AccountAndExpensesState implements AccountState {
   const factory AccountAndExpensesState(
           final AccountEntity account, final List<TransactionEntity> expenses) =
-      _$AccountAndExpensesState;
+      _$AccountAndExpensesStateImpl;
 
   AccountEntity get account;
   List<TransactionEntity> get expenses;
   @JsonKey(ignore: true)
-  _$$AccountAndExpensesStateCopyWith<_$AccountAndExpensesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AccountAndExpensesStateImplCopyWith<_$AccountAndExpensesStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountSuccessStateCopyWith<$Res> {
-  factory _$$AccountSuccessStateCopyWith(_$AccountSuccessState value,
-          $Res Function(_$AccountSuccessState) then) =
-      __$$AccountSuccessStateCopyWithImpl<$Res>;
+abstract class _$$AccountSuccessStateImplCopyWith<$Res> {
+  factory _$$AccountSuccessStateImplCopyWith(_$AccountSuccessStateImpl value,
+          $Res Function(_$AccountSuccessStateImpl) then) =
+      __$$AccountSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AccountEntity account});
 }
 
 /// @nodoc
-class __$$AccountSuccessStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountSuccessState>
-    implements _$$AccountSuccessStateCopyWith<$Res> {
-  __$$AccountSuccessStateCopyWithImpl(
-      _$AccountSuccessState _value, $Res Function(_$AccountSuccessState) _then)
+class __$$AccountSuccessStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountSuccessStateImpl>
+    implements _$$AccountSuccessStateImplCopyWith<$Res> {
+  __$$AccountSuccessStateImplCopyWithImpl(_$AccountSuccessStateImpl _value,
+      $Res Function(_$AccountSuccessStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1906,7 +1916,7 @@ class __$$AccountSuccessStateCopyWithImpl<$Res>
   $Res call({
     Object? account = null,
   }) {
-    return _then(_$AccountSuccessState(
+    return _then(_$AccountSuccessStateImpl(
       null == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
@@ -1917,8 +1927,8 @@ class __$$AccountSuccessStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountSuccessState implements AccountSuccessState {
-  const _$AccountSuccessState(this.account);
+class _$AccountSuccessStateImpl implements AccountSuccessState {
+  const _$AccountSuccessStateImpl(this.account);
 
   @override
   final AccountEntity account;
@@ -1932,7 +1942,7 @@ class _$AccountSuccessState implements AccountSuccessState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountSuccessState &&
+            other is _$AccountSuccessStateImpl &&
             (identical(other.account, account) || other.account == account));
   }
 
@@ -1942,8 +1952,8 @@ class _$AccountSuccessState implements AccountSuccessState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountSuccessStateCopyWith<_$AccountSuccessState> get copyWith =>
-      __$$AccountSuccessStateCopyWithImpl<_$AccountSuccessState>(
+  _$$AccountSuccessStateImplCopyWith<_$AccountSuccessStateImpl> get copyWith =>
+      __$$AccountSuccessStateImplCopyWithImpl<_$AccountSuccessStateImpl>(
           this, _$identity);
 
   @override
@@ -2074,29 +2084,29 @@ class _$AccountSuccessState implements AccountSuccessState {
 
 abstract class AccountSuccessState implements AccountState {
   const factory AccountSuccessState(final AccountEntity account) =
-      _$AccountSuccessState;
+      _$AccountSuccessStateImpl;
 
   AccountEntity get account;
   @JsonKey(ignore: true)
-  _$$AccountSuccessStateCopyWith<_$AccountSuccessState> get copyWith =>
+  _$$AccountSuccessStateImplCopyWith<_$AccountSuccessStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountListStateCopyWith<$Res> {
-  factory _$$AccountListStateCopyWith(
-          _$AccountListState value, $Res Function(_$AccountListState) then) =
-      __$$AccountListStateCopyWithImpl<$Res>;
+abstract class _$$AccountListStateImplCopyWith<$Res> {
+  factory _$$AccountListStateImplCopyWith(_$AccountListStateImpl value,
+          $Res Function(_$AccountListStateImpl) then) =
+      __$$AccountListStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<AccountEntity> account});
 }
 
 /// @nodoc
-class __$$AccountListStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountListState>
-    implements _$$AccountListStateCopyWith<$Res> {
-  __$$AccountListStateCopyWithImpl(
-      _$AccountListState _value, $Res Function(_$AccountListState) _then)
+class __$$AccountListStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountListStateImpl>
+    implements _$$AccountListStateImplCopyWith<$Res> {
+  __$$AccountListStateImplCopyWithImpl(_$AccountListStateImpl _value,
+      $Res Function(_$AccountListStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2104,7 +2114,7 @@ class __$$AccountListStateCopyWithImpl<$Res>
   $Res call({
     Object? account = null,
   }) {
-    return _then(_$AccountListState(
+    return _then(_$AccountListStateImpl(
       null == account
           ? _value._account
           : account // ignore: cast_nullable_to_non_nullable
@@ -2115,8 +2125,8 @@ class __$$AccountListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountListState implements AccountListState {
-  const _$AccountListState(final List<AccountEntity> account)
+class _$AccountListStateImpl implements AccountListState {
+  const _$AccountListStateImpl(final List<AccountEntity> account)
       : _account = account;
 
   final List<AccountEntity> _account;
@@ -2136,7 +2146,7 @@ class _$AccountListState implements AccountListState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountListState &&
+            other is _$AccountListStateImpl &&
             const DeepCollectionEquality().equals(other._account, _account));
   }
 
@@ -2147,8 +2157,9 @@ class _$AccountListState implements AccountListState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountListStateCopyWith<_$AccountListState> get copyWith =>
-      __$$AccountListStateCopyWithImpl<_$AccountListState>(this, _$identity);
+  _$$AccountListStateImplCopyWith<_$AccountListStateImpl> get copyWith =>
+      __$$AccountListStateImplCopyWithImpl<_$AccountListStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2278,29 +2289,29 @@ class _$AccountListState implements AccountListState {
 
 abstract class AccountListState implements AccountState {
   const factory AccountListState(final List<AccountEntity> account) =
-      _$AccountListState;
+      _$AccountListStateImpl;
 
   List<AccountEntity> get account;
   @JsonKey(ignore: true)
-  _$$AccountListStateCopyWith<_$AccountListState> get copyWith =>
+  _$$AccountListStateImplCopyWith<_$AccountListStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountAddedStateCopyWith<$Res> {
-  factory _$$AccountAddedStateCopyWith(
-          _$AccountAddedState value, $Res Function(_$AccountAddedState) then) =
-      __$$AccountAddedStateCopyWithImpl<$Res>;
+abstract class _$$AccountAddedStateImplCopyWith<$Res> {
+  factory _$$AccountAddedStateImplCopyWith(_$AccountAddedStateImpl value,
+          $Res Function(_$AccountAddedStateImpl) then) =
+      __$$AccountAddedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isAddOrUpdate});
 }
 
 /// @nodoc
-class __$$AccountAddedStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountAddedState>
-    implements _$$AccountAddedStateCopyWith<$Res> {
-  __$$AccountAddedStateCopyWithImpl(
-      _$AccountAddedState _value, $Res Function(_$AccountAddedState) _then)
+class __$$AccountAddedStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountAddedStateImpl>
+    implements _$$AccountAddedStateImplCopyWith<$Res> {
+  __$$AccountAddedStateImplCopyWithImpl(_$AccountAddedStateImpl _value,
+      $Res Function(_$AccountAddedStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2308,7 +2319,7 @@ class __$$AccountAddedStateCopyWithImpl<$Res>
   $Res call({
     Object? isAddOrUpdate = null,
   }) {
-    return _then(_$AccountAddedState(
+    return _then(_$AccountAddedStateImpl(
       null == isAddOrUpdate
           ? _value.isAddOrUpdate
           : isAddOrUpdate // ignore: cast_nullable_to_non_nullable
@@ -2319,8 +2330,8 @@ class __$$AccountAddedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountAddedState implements AccountAddedState {
-  const _$AccountAddedState(this.isAddOrUpdate);
+class _$AccountAddedStateImpl implements AccountAddedState {
+  const _$AccountAddedStateImpl(this.isAddOrUpdate);
 
   @override
   final bool isAddOrUpdate;
@@ -2334,7 +2345,7 @@ class _$AccountAddedState implements AccountAddedState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountAddedState &&
+            other is _$AccountAddedStateImpl &&
             (identical(other.isAddOrUpdate, isAddOrUpdate) ||
                 other.isAddOrUpdate == isAddOrUpdate));
   }
@@ -2345,8 +2356,9 @@ class _$AccountAddedState implements AccountAddedState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountAddedStateCopyWith<_$AccountAddedState> get copyWith =>
-      __$$AccountAddedStateCopyWithImpl<_$AccountAddedState>(this, _$identity);
+  _$$AccountAddedStateImplCopyWith<_$AccountAddedStateImpl> get copyWith =>
+      __$$AccountAddedStateImplCopyWithImpl<_$AccountAddedStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2476,30 +2488,31 @@ class _$AccountAddedState implements AccountAddedState {
 
 abstract class AccountAddedState implements AccountState {
   const factory AccountAddedState(final bool isAddOrUpdate) =
-      _$AccountAddedState;
+      _$AccountAddedStateImpl;
 
   bool get isAddOrUpdate;
   @JsonKey(ignore: true)
-  _$$AccountAddedStateCopyWith<_$AccountAddedState> get copyWith =>
+  _$$AccountAddedStateImplCopyWith<_$AccountAddedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountColorSelectedStateCopyWith<$Res> {
-  factory _$$AccountColorSelectedStateCopyWith(
-          _$AccountColorSelectedState value,
-          $Res Function(_$AccountColorSelectedState) then) =
-      __$$AccountColorSelectedStateCopyWithImpl<$Res>;
+abstract class _$$AccountColorSelectedStateImplCopyWith<$Res> {
+  factory _$$AccountColorSelectedStateImplCopyWith(
+          _$AccountColorSelectedStateImpl value,
+          $Res Function(_$AccountColorSelectedStateImpl) then) =
+      __$$AccountColorSelectedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int color});
 }
 
 /// @nodoc
-class __$$AccountColorSelectedStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountColorSelectedState>
-    implements _$$AccountColorSelectedStateCopyWith<$Res> {
-  __$$AccountColorSelectedStateCopyWithImpl(_$AccountColorSelectedState _value,
-      $Res Function(_$AccountColorSelectedState) _then)
+class __$$AccountColorSelectedStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountColorSelectedStateImpl>
+    implements _$$AccountColorSelectedStateImplCopyWith<$Res> {
+  __$$AccountColorSelectedStateImplCopyWithImpl(
+      _$AccountColorSelectedStateImpl _value,
+      $Res Function(_$AccountColorSelectedStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2507,7 +2520,7 @@ class __$$AccountColorSelectedStateCopyWithImpl<$Res>
   $Res call({
     Object? color = null,
   }) {
-    return _then(_$AccountColorSelectedState(
+    return _then(_$AccountColorSelectedStateImpl(
       null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -2518,8 +2531,8 @@ class __$$AccountColorSelectedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountColorSelectedState implements AccountColorSelectedState {
-  const _$AccountColorSelectedState(this.color);
+class _$AccountColorSelectedStateImpl implements AccountColorSelectedState {
+  const _$AccountColorSelectedStateImpl(this.color);
 
   @override
   final int color;
@@ -2533,7 +2546,7 @@ class _$AccountColorSelectedState implements AccountColorSelectedState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountColorSelectedState &&
+            other is _$AccountColorSelectedStateImpl &&
             (identical(other.color, color) || other.color == color));
   }
 
@@ -2543,9 +2556,9 @@ class _$AccountColorSelectedState implements AccountColorSelectedState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountColorSelectedStateCopyWith<_$AccountColorSelectedState>
-      get copyWith => __$$AccountColorSelectedStateCopyWithImpl<
-          _$AccountColorSelectedState>(this, _$identity);
+  _$$AccountColorSelectedStateImplCopyWith<_$AccountColorSelectedStateImpl>
+      get copyWith => __$$AccountColorSelectedStateImplCopyWithImpl<
+          _$AccountColorSelectedStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2675,29 +2688,29 @@ class _$AccountColorSelectedState implements AccountColorSelectedState {
 
 abstract class AccountColorSelectedState implements AccountState {
   const factory AccountColorSelectedState(final int color) =
-      _$AccountColorSelectedState;
+      _$AccountColorSelectedStateImpl;
 
   int get color;
   @JsonKey(ignore: true)
-  _$$AccountColorSelectedStateCopyWith<_$AccountColorSelectedState>
+  _$$AccountColorSelectedStateImplCopyWith<_$AccountColorSelectedStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CountriesStateCopyWith<$Res> {
-  factory _$$CountriesStateCopyWith(
-          _$CountriesState value, $Res Function(_$CountriesState) then) =
-      __$$CountriesStateCopyWithImpl<$Res>;
+abstract class _$$CountriesStateImplCopyWith<$Res> {
+  factory _$$CountriesStateImplCopyWith(_$CountriesStateImpl value,
+          $Res Function(_$CountriesStateImpl) then) =
+      __$$CountriesStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Country> countries});
 }
 
 /// @nodoc
-class __$$CountriesStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$CountriesState>
-    implements _$$CountriesStateCopyWith<$Res> {
-  __$$CountriesStateCopyWithImpl(
-      _$CountriesState _value, $Res Function(_$CountriesState) _then)
+class __$$CountriesStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$CountriesStateImpl>
+    implements _$$CountriesStateImplCopyWith<$Res> {
+  __$$CountriesStateImplCopyWithImpl(
+      _$CountriesStateImpl _value, $Res Function(_$CountriesStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2705,7 +2718,7 @@ class __$$CountriesStateCopyWithImpl<$Res>
   $Res call({
     Object? countries = null,
   }) {
-    return _then(_$CountriesState(
+    return _then(_$CountriesStateImpl(
       null == countries
           ? _value._countries
           : countries // ignore: cast_nullable_to_non_nullable
@@ -2716,8 +2729,8 @@ class __$$CountriesStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CountriesState implements CountriesState {
-  const _$CountriesState(final List<Country> countries)
+class _$CountriesStateImpl implements CountriesState {
+  const _$CountriesStateImpl(final List<Country> countries)
       : _countries = countries;
 
   final List<Country> _countries;
@@ -2737,7 +2750,7 @@ class _$CountriesState implements CountriesState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CountriesState &&
+            other is _$CountriesStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._countries, _countries));
   }
@@ -2749,8 +2762,9 @@ class _$CountriesState implements CountriesState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CountriesStateCopyWith<_$CountriesState> get copyWith =>
-      __$$CountriesStateCopyWithImpl<_$CountriesState>(this, _$identity);
+  _$$CountriesStateImplCopyWith<_$CountriesStateImpl> get copyWith =>
+      __$$CountriesStateImplCopyWithImpl<_$CountriesStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2880,34 +2894,34 @@ class _$CountriesState implements CountriesState {
 
 abstract class CountriesState implements AccountState {
   const factory CountriesState(final List<Country> countries) =
-      _$CountriesState;
+      _$CountriesStateImpl;
 
   List<Country> get countries;
   @JsonKey(ignore: true)
-  _$$CountriesStateCopyWith<_$CountriesState> get copyWith =>
+  _$$CountriesStateImplCopyWith<_$CountriesStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountDeletedStateCopyWith<$Res> {
-  factory _$$AccountDeletedStateCopyWith(_$AccountDeletedState value,
-          $Res Function(_$AccountDeletedState) then) =
-      __$$AccountDeletedStateCopyWithImpl<$Res>;
+abstract class _$$AccountDeletedStateImplCopyWith<$Res> {
+  factory _$$AccountDeletedStateImplCopyWith(_$AccountDeletedStateImpl value,
+          $Res Function(_$AccountDeletedStateImpl) then) =
+      __$$AccountDeletedStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AccountDeletedStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountDeletedState>
-    implements _$$AccountDeletedStateCopyWith<$Res> {
-  __$$AccountDeletedStateCopyWithImpl(
-      _$AccountDeletedState _value, $Res Function(_$AccountDeletedState) _then)
+class __$$AccountDeletedStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountDeletedStateImpl>
+    implements _$$AccountDeletedStateImplCopyWith<$Res> {
+  __$$AccountDeletedStateImplCopyWithImpl(_$AccountDeletedStateImpl _value,
+      $Res Function(_$AccountDeletedStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AccountDeletedState implements AccountDeletedState {
-  const _$AccountDeletedState();
+class _$AccountDeletedStateImpl implements AccountDeletedState {
+  const _$AccountDeletedStateImpl();
 
   @override
   String toString() {
@@ -2917,7 +2931,8 @@ class _$AccountDeletedState implements AccountDeletedState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AccountDeletedState);
+        (other.runtimeType == runtimeType &&
+            other is _$AccountDeletedStateImpl);
   }
 
   @override
@@ -3050,14 +3065,14 @@ class _$AccountDeletedState implements AccountDeletedState {
 }
 
 abstract class AccountDeletedState implements AccountState {
-  const factory AccountDeletedState() = _$AccountDeletedState;
+  const factory AccountDeletedState() = _$AccountDeletedStateImpl;
 }
 
 /// @nodoc
-abstract class _$$AccountErrorStateCopyWith<$Res> {
-  factory _$$AccountErrorStateCopyWith(
-          _$AccountErrorState value, $Res Function(_$AccountErrorState) then) =
-      __$$AccountErrorStateCopyWithImpl<$Res>;
+abstract class _$$AccountErrorStateImplCopyWith<$Res> {
+  factory _$$AccountErrorStateImplCopyWith(_$AccountErrorStateImpl value,
+          $Res Function(_$AccountErrorStateImpl) then) =
+      __$$AccountErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AccountErrors accountErrors});
 
@@ -3065,11 +3080,11 @@ abstract class _$$AccountErrorStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AccountErrorStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountErrorState>
-    implements _$$AccountErrorStateCopyWith<$Res> {
-  __$$AccountErrorStateCopyWithImpl(
-      _$AccountErrorState _value, $Res Function(_$AccountErrorState) _then)
+class __$$AccountErrorStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountErrorStateImpl>
+    implements _$$AccountErrorStateImplCopyWith<$Res> {
+  __$$AccountErrorStateImplCopyWithImpl(_$AccountErrorStateImpl _value,
+      $Res Function(_$AccountErrorStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3077,7 +3092,7 @@ class __$$AccountErrorStateCopyWithImpl<$Res>
   $Res call({
     Object? accountErrors = null,
   }) {
-    return _then(_$AccountErrorState(
+    return _then(_$AccountErrorStateImpl(
       null == accountErrors
           ? _value.accountErrors
           : accountErrors // ignore: cast_nullable_to_non_nullable
@@ -3096,8 +3111,8 @@ class __$$AccountErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AccountErrorState implements AccountErrorState {
-  const _$AccountErrorState(this.accountErrors);
+class _$AccountErrorStateImpl implements AccountErrorState {
+  const _$AccountErrorStateImpl(this.accountErrors);
 
   @override
   final AccountErrors accountErrors;
@@ -3111,7 +3126,7 @@ class _$AccountErrorState implements AccountErrorState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AccountErrorState &&
+            other is _$AccountErrorStateImpl &&
             (identical(other.accountErrors, accountErrors) ||
                 other.accountErrors == accountErrors));
   }
@@ -3122,8 +3137,9 @@ class _$AccountErrorState implements AccountErrorState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccountErrorStateCopyWith<_$AccountErrorState> get copyWith =>
-      __$$AccountErrorStateCopyWithImpl<_$AccountErrorState>(this, _$identity);
+  _$$AccountErrorStateImplCopyWith<_$AccountErrorStateImpl> get copyWith =>
+      __$$AccountErrorStateImplCopyWithImpl<_$AccountErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3253,34 +3269,34 @@ class _$AccountErrorState implements AccountErrorState {
 
 abstract class AccountErrorState implements AccountState {
   const factory AccountErrorState(final AccountErrors accountErrors) =
-      _$AccountErrorState;
+      _$AccountErrorStateImpl;
 
   AccountErrors get accountErrors;
   @JsonKey(ignore: true)
-  _$$AccountErrorStateCopyWith<_$AccountErrorState> get copyWith =>
+  _$$AccountErrorStateImplCopyWith<_$AccountErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AccountsInitialCopyWith<$Res> {
-  factory _$$AccountsInitialCopyWith(
-          _$AccountsInitial value, $Res Function(_$AccountsInitial) then) =
-      __$$AccountsInitialCopyWithImpl<$Res>;
+abstract class _$$AccountsInitialImplCopyWith<$Res> {
+  factory _$$AccountsInitialImplCopyWith(_$AccountsInitialImpl value,
+          $Res Function(_$AccountsInitialImpl) then) =
+      __$$AccountsInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AccountsInitialCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$AccountsInitial>
-    implements _$$AccountsInitialCopyWith<$Res> {
-  __$$AccountsInitialCopyWithImpl(
-      _$AccountsInitial _value, $Res Function(_$AccountsInitial) _then)
+class __$$AccountsInitialImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$AccountsInitialImpl>
+    implements _$$AccountsInitialImplCopyWith<$Res> {
+  __$$AccountsInitialImplCopyWithImpl(
+      _$AccountsInitialImpl _value, $Res Function(_$AccountsInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AccountsInitial implements AccountsInitial {
-  const _$AccountsInitial();
+class _$AccountsInitialImpl implements AccountsInitial {
+  const _$AccountsInitialImpl();
 
   @override
   String toString() {
@@ -3290,7 +3306,7 @@ class _$AccountsInitial implements AccountsInitial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AccountsInitial);
+        (other.runtimeType == runtimeType && other is _$AccountsInitialImpl);
   }
 
   @override
@@ -3423,25 +3439,26 @@ class _$AccountsInitial implements AccountsInitial {
 }
 
 abstract class AccountsInitial implements AccountState {
-  const factory AccountsInitial() = _$AccountsInitial;
+  const factory AccountsInitial() = _$AccountsInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$UpdateAccountExcludeStateCopyWith<$Res> {
-  factory _$$UpdateAccountExcludeStateCopyWith(
-          _$UpdateAccountExcludeState value,
-          $Res Function(_$UpdateAccountExcludeState) then) =
-      __$$UpdateAccountExcludeStateCopyWithImpl<$Res>;
+abstract class _$$UpdateAccountExcludeStateImplCopyWith<$Res> {
+  factory _$$UpdateAccountExcludeStateImplCopyWith(
+          _$UpdateAccountExcludeStateImpl value,
+          $Res Function(_$UpdateAccountExcludeStateImpl) then) =
+      __$$UpdateAccountExcludeStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isAccountExcluded, bool isAccountDefault});
 }
 
 /// @nodoc
-class __$$UpdateAccountExcludeStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$UpdateAccountExcludeState>
-    implements _$$UpdateAccountExcludeStateCopyWith<$Res> {
-  __$$UpdateAccountExcludeStateCopyWithImpl(_$UpdateAccountExcludeState _value,
-      $Res Function(_$UpdateAccountExcludeState) _then)
+class __$$UpdateAccountExcludeStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$UpdateAccountExcludeStateImpl>
+    implements _$$UpdateAccountExcludeStateImplCopyWith<$Res> {
+  __$$UpdateAccountExcludeStateImplCopyWithImpl(
+      _$UpdateAccountExcludeStateImpl _value,
+      $Res Function(_$UpdateAccountExcludeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3450,7 +3467,7 @@ class __$$UpdateAccountExcludeStateCopyWithImpl<$Res>
     Object? isAccountExcluded = null,
     Object? isAccountDefault = null,
   }) {
-    return _then(_$UpdateAccountExcludeState(
+    return _then(_$UpdateAccountExcludeStateImpl(
       isAccountExcluded: null == isAccountExcluded
           ? _value.isAccountExcluded
           : isAccountExcluded // ignore: cast_nullable_to_non_nullable
@@ -3465,8 +3482,8 @@ class __$$UpdateAccountExcludeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateAccountExcludeState implements UpdateAccountExcludeState {
-  const _$UpdateAccountExcludeState(
+class _$UpdateAccountExcludeStateImpl implements UpdateAccountExcludeState {
+  const _$UpdateAccountExcludeStateImpl(
       {this.isAccountExcluded = false, this.isAccountDefault = false});
 
   @override
@@ -3485,7 +3502,7 @@ class _$UpdateAccountExcludeState implements UpdateAccountExcludeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateAccountExcludeState &&
+            other is _$UpdateAccountExcludeStateImpl &&
             (identical(other.isAccountExcluded, isAccountExcluded) ||
                 other.isAccountExcluded == isAccountExcluded) &&
             (identical(other.isAccountDefault, isAccountDefault) ||
@@ -3499,9 +3516,9 @@ class _$UpdateAccountExcludeState implements UpdateAccountExcludeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateAccountExcludeStateCopyWith<_$UpdateAccountExcludeState>
-      get copyWith => __$$UpdateAccountExcludeStateCopyWithImpl<
-          _$UpdateAccountExcludeState>(this, _$identity);
+  _$$UpdateAccountExcludeStateImplCopyWith<_$UpdateAccountExcludeStateImpl>
+      get copyWith => __$$UpdateAccountExcludeStateImplCopyWithImpl<
+          _$UpdateAccountExcludeStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3632,30 +3649,30 @@ class _$UpdateAccountExcludeState implements UpdateAccountExcludeState {
 abstract class UpdateAccountExcludeState implements AccountState {
   const factory UpdateAccountExcludeState(
       {final bool isAccountExcluded,
-      final bool isAccountDefault}) = _$UpdateAccountExcludeState;
+      final bool isAccountDefault}) = _$UpdateAccountExcludeStateImpl;
 
   bool get isAccountExcluded;
   bool get isAccountDefault;
   @JsonKey(ignore: true)
-  _$$UpdateAccountExcludeStateCopyWith<_$UpdateAccountExcludeState>
+  _$$UpdateAccountExcludeStateImplCopyWith<_$UpdateAccountExcludeStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UpdateCardTypeStateCopyWith<$Res> {
-  factory _$$UpdateCardTypeStateCopyWith(_$UpdateCardTypeState value,
-          $Res Function(_$UpdateCardTypeState) then) =
-      __$$UpdateCardTypeStateCopyWithImpl<$Res>;
+abstract class _$$UpdateCardTypeStateImplCopyWith<$Res> {
+  factory _$$UpdateCardTypeStateImplCopyWith(_$UpdateCardTypeStateImpl value,
+          $Res Function(_$UpdateCardTypeStateImpl) then) =
+      __$$UpdateCardTypeStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CardType cardType});
 }
 
 /// @nodoc
-class __$$UpdateCardTypeStateCopyWithImpl<$Res>
-    extends _$AccountStateCopyWithImpl<$Res, _$UpdateCardTypeState>
-    implements _$$UpdateCardTypeStateCopyWith<$Res> {
-  __$$UpdateCardTypeStateCopyWithImpl(
-      _$UpdateCardTypeState _value, $Res Function(_$UpdateCardTypeState) _then)
+class __$$UpdateCardTypeStateImplCopyWithImpl<$Res>
+    extends _$AccountStateCopyWithImpl<$Res, _$UpdateCardTypeStateImpl>
+    implements _$$UpdateCardTypeStateImplCopyWith<$Res> {
+  __$$UpdateCardTypeStateImplCopyWithImpl(_$UpdateCardTypeStateImpl _value,
+      $Res Function(_$UpdateCardTypeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -3663,7 +3680,7 @@ class __$$UpdateCardTypeStateCopyWithImpl<$Res>
   $Res call({
     Object? cardType = null,
   }) {
-    return _then(_$UpdateCardTypeState(
+    return _then(_$UpdateCardTypeStateImpl(
       null == cardType
           ? _value.cardType
           : cardType // ignore: cast_nullable_to_non_nullable
@@ -3674,8 +3691,8 @@ class __$$UpdateCardTypeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCardTypeState implements UpdateCardTypeState {
-  const _$UpdateCardTypeState(this.cardType);
+class _$UpdateCardTypeStateImpl implements UpdateCardTypeState {
+  const _$UpdateCardTypeStateImpl(this.cardType);
 
   @override
   final CardType cardType;
@@ -3689,7 +3706,7 @@ class _$UpdateCardTypeState implements UpdateCardTypeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateCardTypeState &&
+            other is _$UpdateCardTypeStateImpl &&
             (identical(other.cardType, cardType) ||
                 other.cardType == cardType));
   }
@@ -3700,8 +3717,8 @@ class _$UpdateCardTypeState implements UpdateCardTypeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateCardTypeStateCopyWith<_$UpdateCardTypeState> get copyWith =>
-      __$$UpdateCardTypeStateCopyWithImpl<_$UpdateCardTypeState>(
+  _$$UpdateCardTypeStateImplCopyWith<_$UpdateCardTypeStateImpl> get copyWith =>
+      __$$UpdateCardTypeStateImplCopyWithImpl<_$UpdateCardTypeStateImpl>(
           this, _$identity);
 
   @override
@@ -3832,10 +3849,10 @@ class _$UpdateCardTypeState implements UpdateCardTypeState {
 
 abstract class UpdateCardTypeState implements AccountState {
   const factory UpdateCardTypeState(final CardType cardType) =
-      _$UpdateCardTypeState;
+      _$UpdateCardTypeStateImpl;
 
   CardType get cardType;
   @JsonKey(ignore: true)
-  _$$UpdateCardTypeStateCopyWith<_$UpdateCardTypeState> get copyWith =>
+  _$$UpdateCardTypeStateImplCopyWith<_$UpdateCardTypeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

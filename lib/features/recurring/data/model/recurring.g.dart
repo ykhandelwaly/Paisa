@@ -6,17 +6,17 @@ part of 'recurring.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class RecurringModelAdapter extends TypeAdapter<_$_RecurringModel> {
+class RecurringModelAdapter extends TypeAdapter<_$RecurringModelImpl> {
   @override
   final int typeId = 5;
 
   @override
-  _$_RecurringModel read(BinaryReader reader) {
+  _$RecurringModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_RecurringModel(
+    return _$RecurringModelImpl(
       name: fields[0] as String,
       amount: fields[1] as double,
       recurringType:
@@ -32,7 +32,7 @@ class RecurringModelAdapter extends TypeAdapter<_$_RecurringModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_RecurringModel obj) {
+  void write(BinaryWriter writer, _$RecurringModelImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)

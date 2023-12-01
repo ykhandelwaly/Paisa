@@ -81,25 +81,25 @@ class _$SummaryStateCopyWithImpl<$Res, $Val extends SummaryState>
 }
 
 /// @nodoc
-abstract class _$$_SummaryInitialCopyWith<$Res> {
-  factory _$$_SummaryInitialCopyWith(
-          _$_SummaryInitial value, $Res Function(_$_SummaryInitial) then) =
-      __$$_SummaryInitialCopyWithImpl<$Res>;
+abstract class _$$SummaryInitialImplCopyWith<$Res> {
+  factory _$$SummaryInitialImplCopyWith(_$SummaryInitialImpl value,
+          $Res Function(_$SummaryInitialImpl) then) =
+      __$$SummaryInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SummaryInitialCopyWithImpl<$Res>
-    extends _$SummaryStateCopyWithImpl<$Res, _$_SummaryInitial>
-    implements _$$_SummaryInitialCopyWith<$Res> {
-  __$$_SummaryInitialCopyWithImpl(
-      _$_SummaryInitial _value, $Res Function(_$_SummaryInitial) _then)
+class __$$SummaryInitialImplCopyWithImpl<$Res>
+    extends _$SummaryStateCopyWithImpl<$Res, _$SummaryInitialImpl>
+    implements _$$SummaryInitialImplCopyWith<$Res> {
+  __$$SummaryInitialImplCopyWithImpl(
+      _$SummaryInitialImpl _value, $Res Function(_$SummaryInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SummaryInitial implements _SummaryInitial {
-  const _$_SummaryInitial();
+class _$SummaryInitialImpl implements _SummaryInitial {
+  const _$SummaryInitialImpl();
 
   @override
   String toString() {
@@ -109,7 +109,7 @@ class _$_SummaryInitial implements _SummaryInitial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SummaryInitial);
+        (other.runtimeType == runtimeType && other is _$SummaryInitialImpl);
   }
 
   @override
@@ -185,14 +185,15 @@ class _$_SummaryInitial implements _SummaryInitial {
 }
 
 abstract class _SummaryInitial implements SummaryState {
-  const factory _SummaryInitial() = _$_SummaryInitial;
+  const factory _SummaryInitial() = _$SummaryInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$TransactionsSuccessStateCopyWith<$Res> {
-  factory _$$TransactionsSuccessStateCopyWith(_$TransactionsSuccessState value,
-          $Res Function(_$TransactionsSuccessState) then) =
-      __$$TransactionsSuccessStateCopyWithImpl<$Res>;
+abstract class _$$TransactionsSuccessStateImplCopyWith<$Res> {
+  factory _$$TransactionsSuccessStateImplCopyWith(
+          _$TransactionsSuccessStateImpl value,
+          $Res Function(_$TransactionsSuccessStateImpl) then) =
+      __$$TransactionsSuccessStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {AccountEntity accountEntity,
@@ -201,11 +202,12 @@ abstract class _$$TransactionsSuccessStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TransactionsSuccessStateCopyWithImpl<$Res>
-    extends _$SummaryStateCopyWithImpl<$Res, _$TransactionsSuccessState>
-    implements _$$TransactionsSuccessStateCopyWith<$Res> {
-  __$$TransactionsSuccessStateCopyWithImpl(_$TransactionsSuccessState _value,
-      $Res Function(_$TransactionsSuccessState) _then)
+class __$$TransactionsSuccessStateImplCopyWithImpl<$Res>
+    extends _$SummaryStateCopyWithImpl<$Res, _$TransactionsSuccessStateImpl>
+    implements _$$TransactionsSuccessStateImplCopyWith<$Res> {
+  __$$TransactionsSuccessStateImplCopyWithImpl(
+      _$TransactionsSuccessStateImpl _value,
+      $Res Function(_$TransactionsSuccessStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -215,7 +217,7 @@ class __$$TransactionsSuccessStateCopyWithImpl<$Res>
     Object? transactions = null,
     Object? accounts = null,
   }) {
-    return _then(_$TransactionsSuccessState(
+    return _then(_$TransactionsSuccessStateImpl(
       accountEntity: null == accountEntity
           ? _value.accountEntity
           : accountEntity // ignore: cast_nullable_to_non_nullable
@@ -234,8 +236,8 @@ class __$$TransactionsSuccessStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionsSuccessState implements TransactionsSuccessState {
-  const _$TransactionsSuccessState(
+class _$TransactionsSuccessStateImpl implements TransactionsSuccessState {
+  const _$TransactionsSuccessStateImpl(
       {required this.accountEntity,
       required final List<TransactionEntity> transactions,
       required final List<AccountEntity> accounts})
@@ -269,7 +271,7 @@ class _$TransactionsSuccessState implements TransactionsSuccessState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TransactionsSuccessState &&
+            other is _$TransactionsSuccessStateImpl &&
             (identical(other.accountEntity, accountEntity) ||
                 other.accountEntity == accountEntity) &&
             const DeepCollectionEquality()
@@ -287,10 +289,9 @@ class _$TransactionsSuccessState implements TransactionsSuccessState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionsSuccessStateCopyWith<_$TransactionsSuccessState>
-      get copyWith =>
-          __$$TransactionsSuccessStateCopyWithImpl<_$TransactionsSuccessState>(
-              this, _$identity);
+  _$$TransactionsSuccessStateImplCopyWith<_$TransactionsSuccessStateImpl>
+      get copyWith => __$$TransactionsSuccessStateImplCopyWithImpl<
+          _$TransactionsSuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -366,12 +367,12 @@ abstract class TransactionsSuccessState implements SummaryState {
           {required final AccountEntity accountEntity,
           required final List<TransactionEntity> transactions,
           required final List<AccountEntity> accounts}) =
-      _$TransactionsSuccessState;
+      _$TransactionsSuccessStateImpl;
 
   AccountEntity get accountEntity;
   List<TransactionEntity> get transactions;
   List<AccountEntity> get accounts;
   @JsonKey(ignore: true)
-  _$$TransactionsSuccessStateCopyWith<_$TransactionsSuccessState>
+  _$$TransactionsSuccessStateImplCopyWith<_$TransactionsSuccessStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -24,10 +24,6 @@ mixin _$AccountModel {
   String? get name => throw _privateConstructorUsedError;
   @HiveField(0)
   set name(String? value) => throw _privateConstructorUsedError;
-  @HiveField(1, defaultValue: false)
-  bool? get isAccountExcluded => throw _privateConstructorUsedError;
-  @HiveField(1, defaultValue: false)
-  set isAccountExcluded(bool? value) => throw _privateConstructorUsedError;
   @HiveField(2)
   CountryModel? get currencySymbol => throw _privateConstructorUsedError;
   @HiveField(2)
@@ -56,6 +52,10 @@ mixin _$AccountModel {
   bool get isAccountDefault => throw _privateConstructorUsedError;
   @HiveField(4, defaultValue: false)
   set isAccountDefault(bool value) => throw _privateConstructorUsedError;
+  @HiveField(21, defaultValue: false)
+  bool? get isAccountExcluded => throw _privateConstructorUsedError;
+  @HiveField(21, defaultValue: false)
+  set isAccountExcluded(bool? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -71,14 +71,14 @@ abstract class $AccountModelCopyWith<$Res> {
   @useResult
   $Res call(
       {@HiveField(0) String? name,
-      @HiveField(1, defaultValue: false) bool? isAccountExcluded,
       @HiveField(2) CountryModel? currencySymbol,
       @HiveField(3) String? bankName,
       @HiveField(6, defaultValue: CardType.bank) CardType? cardType,
       @HiveField(7) int? superId,
       @HiveField(8, defaultValue: 0) double? amount,
       @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-      @HiveField(4, defaultValue: false) bool isAccountDefault});
+      @HiveField(4, defaultValue: false) bool isAccountDefault,
+      @HiveField(21, defaultValue: false) bool? isAccountExcluded});
 
   $CountryModelCopyWith<$Res>? get currencySymbol;
 }
@@ -97,7 +97,6 @@ class _$AccountModelCopyWithImpl<$Res, $Val extends AccountModel>
   @override
   $Res call({
     Object? name = freezed,
-    Object? isAccountExcluded = freezed,
     Object? currencySymbol = freezed,
     Object? bankName = freezed,
     Object? cardType = freezed,
@@ -105,16 +104,13 @@ class _$AccountModelCopyWithImpl<$Res, $Val extends AccountModel>
     Object? amount = freezed,
     Object? color = freezed,
     Object? isAccountDefault = null,
+    Object? isAccountExcluded = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      isAccountExcluded: freezed == isAccountExcluded
-          ? _value.isAccountExcluded
-          : isAccountExcluded // ignore: cast_nullable_to_non_nullable
-              as bool?,
       currencySymbol: freezed == currencySymbol
           ? _value.currencySymbol
           : currencySymbol // ignore: cast_nullable_to_non_nullable
@@ -143,6 +139,10 @@ class _$AccountModelCopyWithImpl<$Res, $Val extends AccountModel>
           ? _value.isAccountDefault
           : isAccountDefault // ignore: cast_nullable_to_non_nullable
               as bool,
+      isAccountExcluded: freezed == isAccountExcluded
+          ? _value.isAccountExcluded
+          : isAccountExcluded // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -160,41 +160,40 @@ class _$AccountModelCopyWithImpl<$Res, $Val extends AccountModel>
 }
 
 /// @nodoc
-abstract class _$$_AccountModelCopyWith<$Res>
+abstract class _$$AccountModelImplCopyWith<$Res>
     implements $AccountModelCopyWith<$Res> {
-  factory _$$_AccountModelCopyWith(
-          _$_AccountModel value, $Res Function(_$_AccountModel) then) =
-      __$$_AccountModelCopyWithImpl<$Res>;
+  factory _$$AccountModelImplCopyWith(
+          _$AccountModelImpl value, $Res Function(_$AccountModelImpl) then) =
+      __$$AccountModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {@HiveField(0) String? name,
-      @HiveField(1, defaultValue: false) bool? isAccountExcluded,
       @HiveField(2) CountryModel? currencySymbol,
       @HiveField(3) String? bankName,
       @HiveField(6, defaultValue: CardType.bank) CardType? cardType,
       @HiveField(7) int? superId,
       @HiveField(8, defaultValue: 0) double? amount,
       @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-      @HiveField(4, defaultValue: false) bool isAccountDefault});
+      @HiveField(4, defaultValue: false) bool isAccountDefault,
+      @HiveField(21, defaultValue: false) bool? isAccountExcluded});
 
   @override
   $CountryModelCopyWith<$Res>? get currencySymbol;
 }
 
 /// @nodoc
-class __$$_AccountModelCopyWithImpl<$Res>
-    extends _$AccountModelCopyWithImpl<$Res, _$_AccountModel>
-    implements _$$_AccountModelCopyWith<$Res> {
-  __$$_AccountModelCopyWithImpl(
-      _$_AccountModel _value, $Res Function(_$_AccountModel) _then)
+class __$$AccountModelImplCopyWithImpl<$Res>
+    extends _$AccountModelCopyWithImpl<$Res, _$AccountModelImpl>
+    implements _$$AccountModelImplCopyWith<$Res> {
+  __$$AccountModelImplCopyWithImpl(
+      _$AccountModelImpl _value, $Res Function(_$AccountModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? name = freezed,
-    Object? isAccountExcluded = freezed,
     Object? currencySymbol = freezed,
     Object? bankName = freezed,
     Object? cardType = freezed,
@@ -202,16 +201,13 @@ class __$$_AccountModelCopyWithImpl<$Res>
     Object? amount = freezed,
     Object? color = freezed,
     Object? isAccountDefault = null,
+    Object? isAccountExcluded = freezed,
   }) {
-    return _then(_$_AccountModel(
+    return _then(_$AccountModelImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      isAccountExcluded: freezed == isAccountExcluded
-          ? _value.isAccountExcluded
-          : isAccountExcluded // ignore: cast_nullable_to_non_nullable
-              as bool?,
       currencySymbol: freezed == currencySymbol
           ? _value.currencySymbol
           : currencySymbol // ignore: cast_nullable_to_non_nullable
@@ -240,6 +236,10 @@ class __$$_AccountModelCopyWithImpl<$Res>
           ? _value.isAccountDefault
           : isAccountDefault // ignore: cast_nullable_to_non_nullable
               as bool,
+      isAccountExcluded: freezed == isAccountExcluded
+          ? _value.isAccountExcluded
+          : isAccountExcluded // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -247,28 +247,25 @@ class __$$_AccountModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 2, adapterName: 'AccountModelAdapter')
-class _$_AccountModel extends _AccountModel {
-  _$_AccountModel(
+class _$AccountModelImpl extends _AccountModel {
+  _$AccountModelImpl(
       {@HiveField(0) this.name,
-      @HiveField(1, defaultValue: false) this.isAccountExcluded,
       @HiveField(2) this.currencySymbol,
       @HiveField(3) this.bankName,
       @HiveField(6, defaultValue: CardType.bank) this.cardType,
       @HiveField(7) this.superId,
       @HiveField(8, defaultValue: 0) this.amount,
       @HiveField(9, defaultValue: 0xFFFFC107) this.color,
-      @HiveField(4, defaultValue: false) this.isAccountDefault = false})
+      @HiveField(4, defaultValue: false) this.isAccountDefault = false,
+      @HiveField(21, defaultValue: false) this.isAccountExcluded})
       : super._();
 
-  factory _$_AccountModel.fromJson(Map<String, dynamic> json) =>
-      _$$_AccountModelFromJson(json);
+  factory _$AccountModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccountModelImplFromJson(json);
 
   @override
   @HiveField(0)
   String? name;
-  @override
-  @HiveField(1, defaultValue: false)
-  bool? isAccountExcluded;
   @override
   @HiveField(2)
   CountryModel? currencySymbol;
@@ -291,21 +288,24 @@ class _$_AccountModel extends _AccountModel {
   @JsonKey()
   @HiveField(4, defaultValue: false)
   bool isAccountDefault;
+  @override
+  @HiveField(21, defaultValue: false)
+  bool? isAccountExcluded;
 
   @override
   String toString() {
-    return 'AccountModel(name: $name, isAccountExcluded: $isAccountExcluded, currencySymbol: $currencySymbol, bankName: $bankName, cardType: $cardType, superId: $superId, amount: $amount, color: $color, isAccountDefault: $isAccountDefault)';
+    return 'AccountModel(name: $name, currencySymbol: $currencySymbol, bankName: $bankName, cardType: $cardType, superId: $superId, amount: $amount, color: $color, isAccountDefault: $isAccountDefault, isAccountExcluded: $isAccountExcluded)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AccountModelCopyWith<_$_AccountModel> get copyWith =>
-      __$$_AccountModelCopyWithImpl<_$_AccountModel>(this, _$identity);
+  _$$AccountModelImplCopyWith<_$AccountModelImpl> get copyWith =>
+      __$$AccountModelImplCopyWithImpl<_$AccountModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccountModelToJson(
+    return _$$AccountModelImplToJson(
       this,
     );
   }
@@ -314,30 +314,25 @@ class _$_AccountModel extends _AccountModel {
 abstract class _AccountModel extends AccountModel {
   factory _AccountModel(
           {@HiveField(0) String? name,
-          @HiveField(1, defaultValue: false) bool? isAccountExcluded,
           @HiveField(2) CountryModel? currencySymbol,
           @HiveField(3) String? bankName,
           @HiveField(6, defaultValue: CardType.bank) CardType? cardType,
           @HiveField(7) int? superId,
           @HiveField(8, defaultValue: 0) double? amount,
           @HiveField(9, defaultValue: 0xFFFFC107) int? color,
-          @HiveField(4, defaultValue: false) bool isAccountDefault}) =
-      _$_AccountModel;
+          @HiveField(4, defaultValue: false) bool isAccountDefault,
+          @HiveField(21, defaultValue: false) bool? isAccountExcluded}) =
+      _$AccountModelImpl;
   _AccountModel._() : super._();
 
   factory _AccountModel.fromJson(Map<String, dynamic> json) =
-      _$_AccountModel.fromJson;
+      _$AccountModelImpl.fromJson;
 
   @override
   @HiveField(0)
   String? get name;
   @HiveField(0)
   set name(String? value);
-  @override
-  @HiveField(1, defaultValue: false)
-  bool? get isAccountExcluded;
-  @HiveField(1, defaultValue: false)
-  set isAccountExcluded(bool? value);
   @override
   @HiveField(2)
   CountryModel? get currencySymbol;
@@ -374,7 +369,12 @@ abstract class _AccountModel extends AccountModel {
   @HiveField(4, defaultValue: false)
   set isAccountDefault(bool value);
   @override
+  @HiveField(21, defaultValue: false)
+  bool? get isAccountExcluded;
+  @HiveField(21, defaultValue: false)
+  set isAccountExcluded(bool? value);
+  @override
   @JsonKey(ignore: true)
-  _$$_AccountModelCopyWith<_$_AccountModel> get copyWith =>
+  _$$AccountModelImplCopyWith<_$AccountModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

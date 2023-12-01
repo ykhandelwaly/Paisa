@@ -6,7 +6,8 @@ part of 'country.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Country _$$_CountryFromJson(Map<String, dynamic> json) => _$_Country(
+_$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
+    _$CountryImpl(
       code: json['code'] as String,
       decimalDigits: json['decimalDigits'] as int?,
       decimalSeparator: json['decimalSeparator'] as String,
@@ -20,7 +21,7 @@ _$_Country _$$_CountryFromJson(Map<String, dynamic> json) => _$_Country(
       thousandsSeparator: json['thousandsSeparator'] as String,
     );
 
-Map<String, dynamic> _$$_CountryToJson(_$_Country instance) =>
+Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'decimalDigits': instance.decimalDigits,

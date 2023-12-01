@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
-import 'package:paisa/features/debit/domain/entities/debit_transaction_entity.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/domain/entity/debit_transaction_entity.dart';
 
 extension MappingOnTransactionsBox on Box<DebitTransactionsModel> {
   List<DebitTransactionEntity> getTransactionsFromId(int parentId) {

@@ -131,10 +131,10 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
 }
 
 /// @nodoc
-abstract class _$$_CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
-  factory _$$_CountryCopyWith(
-          _$_Country value, $Res Function(_$_Country) then) =
-      __$$_CountryCopyWithImpl<$Res>;
+abstract class _$$CountryImplCopyWith<$Res> implements $CountryCopyWith<$Res> {
+  factory _$$CountryImplCopyWith(
+          _$CountryImpl value, $Res Function(_$CountryImpl) then) =
+      __$$CountryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -152,10 +152,11 @@ abstract class _$$_CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_CountryCopyWithImpl<$Res>
-    extends _$CountryCopyWithImpl<$Res, _$_Country>
-    implements _$$_CountryCopyWith<$Res> {
-  __$$_CountryCopyWithImpl(_$_Country _value, $Res Function(_$_Country) _then)
+class __$$CountryImplCopyWithImpl<$Res>
+    extends _$CountryCopyWithImpl<$Res, _$CountryImpl>
+    implements _$$CountryImplCopyWith<$Res> {
+  __$$CountryImplCopyWithImpl(
+      _$CountryImpl _value, $Res Function(_$CountryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -173,7 +174,7 @@ class __$$_CountryCopyWithImpl<$Res>
     Object? symbolOnLeft = null,
     Object? thousandsSeparator = null,
   }) {
-    return _then(_$_Country(
+    return _then(_$CountryImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -224,8 +225,8 @@ class __$$_CountryCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Country implements _Country {
-  _$_Country(
+class _$CountryImpl implements _Country {
+  _$CountryImpl(
       {required this.code,
       required this.decimalDigits,
       required this.decimalSeparator,
@@ -238,8 +239,8 @@ class _$_Country implements _Country {
       required this.symbolOnLeft,
       required this.thousandsSeparator});
 
-  factory _$_Country.fromJson(Map<String, dynamic> json) =>
-      _$$_CountryFromJson(json);
+  factory _$CountryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountryImplFromJson(json);
 
   @override
   final String code;
@@ -273,7 +274,7 @@ class _$_Country implements _Country {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Country &&
+            other is _$CountryImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.decimalDigits, decimalDigits) ||
                 other.decimalDigits == decimalDigits) &&
@@ -314,12 +315,12 @@ class _$_Country implements _Country {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CountryCopyWith<_$_Country> get copyWith =>
-      __$$_CountryCopyWithImpl<_$_Country>(this, _$identity);
+  _$$CountryImplCopyWith<_$CountryImpl> get copyWith =>
+      __$$CountryImplCopyWithImpl<_$CountryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CountryToJson(
+    return _$$CountryImplToJson(
       this,
     );
   }
@@ -337,9 +338,9 @@ abstract class _Country implements Country {
       required final bool spaceBetweenAmountAndSymbol,
       required final String symbol,
       required final bool symbolOnLeft,
-      required final String thousandsSeparator}) = _$_Country;
+      required final String thousandsSeparator}) = _$CountryImpl;
 
-  factory _Country.fromJson(Map<String, dynamic> json) = _$_Country.fromJson;
+  factory _Country.fromJson(Map<String, dynamic> json) = _$CountryImpl.fromJson;
 
   @override
   String get code;
@@ -365,6 +366,6 @@ abstract class _Country implements Country {
   String get thousandsSeparator;
   @override
   @JsonKey(ignore: true)
-  _$$_CountryCopyWith<_$_Country> get copyWith =>
+  _$$CountryImplCopyWith<_$CountryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

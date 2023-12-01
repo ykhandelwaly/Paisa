@@ -134,11 +134,11 @@ class _$RecurringModelCopyWithImpl<$Res, $Val extends RecurringModel>
 }
 
 /// @nodoc
-abstract class _$$_RecurringModelCopyWith<$Res>
+abstract class _$$RecurringModelImplCopyWith<$Res>
     implements $RecurringModelCopyWith<$Res> {
-  factory _$$_RecurringModelCopyWith(
-          _$_RecurringModel value, $Res Function(_$_RecurringModel) then) =
-      __$$_RecurringModelCopyWithImpl<$Res>;
+  factory _$$RecurringModelImplCopyWith(_$RecurringModelImpl value,
+          $Res Function(_$RecurringModelImpl) then) =
+      __$$RecurringModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -155,11 +155,11 @@ abstract class _$$_RecurringModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RecurringModelCopyWithImpl<$Res>
-    extends _$RecurringModelCopyWithImpl<$Res, _$_RecurringModel>
-    implements _$$_RecurringModelCopyWith<$Res> {
-  __$$_RecurringModelCopyWithImpl(
-      _$_RecurringModel _value, $Res Function(_$_RecurringModel) _then)
+class __$$RecurringModelImplCopyWithImpl<$Res>
+    extends _$RecurringModelCopyWithImpl<$Res, _$RecurringModelImpl>
+    implements _$$RecurringModelImplCopyWith<$Res> {
+  __$$RecurringModelImplCopyWithImpl(
+      _$RecurringModelImpl _value, $Res Function(_$RecurringModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -174,7 +174,7 @@ class __$$_RecurringModelCopyWithImpl<$Res>
     Object? categoryId = null,
     Object? transactionType = null,
   }) {
-    return _then(_$_RecurringModel(
+    return _then(_$RecurringModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -214,8 +214,8 @@ class __$$_RecurringModelCopyWithImpl<$Res>
 /// @nodoc
 
 @HiveType(typeId: 5, adapterName: 'RecurringModelAdapter')
-class _$_RecurringModel extends _RecurringModel {
-  _$_RecurringModel(
+class _$RecurringModelImpl extends _RecurringModel {
+  _$RecurringModelImpl(
       {@HiveField(0) required this.name,
       @HiveField(1) required this.amount,
       @HiveField(2, defaultValue: RecurringType.daily)
@@ -261,8 +261,9 @@ class _$_RecurringModel extends _RecurringModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RecurringModelCopyWith<_$_RecurringModel> get copyWith =>
-      __$$_RecurringModelCopyWithImpl<_$_RecurringModel>(this, _$identity);
+  _$$RecurringModelImplCopyWith<_$RecurringModelImpl> get copyWith =>
+      __$$RecurringModelImplCopyWithImpl<_$RecurringModelImpl>(
+          this, _$identity);
 }
 
 abstract class _RecurringModel extends RecurringModel {
@@ -276,7 +277,7 @@ abstract class _RecurringModel extends RecurringModel {
       @HiveField(5) required int accountId,
       @HiveField(6) required int categoryId,
       @HiveField(7, defaultValue: TransactionType.expense)
-      required TransactionType transactionType}) = _$_RecurringModel;
+      required TransactionType transactionType}) = _$RecurringModelImpl;
   _RecurringModel._() : super._();
 
   @override
@@ -321,6 +322,6 @@ abstract class _RecurringModel extends RecurringModel {
   set transactionType(TransactionType value);
   @override
   @JsonKey(ignore: true)
-  _$$_RecurringModelCopyWith<_$_RecurringModel> get copyWith =>
+  _$$RecurringModelImplCopyWith<_$RecurringModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

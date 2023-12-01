@@ -87,25 +87,25 @@ class _$AccountErrorsCopyWithImpl<$Res, $Val extends AccountErrors>
 }
 
 /// @nodoc
-abstract class _$$_AccountNotFoundCopyWith<$Res> {
-  factory _$$_AccountNotFoundCopyWith(
-          _$_AccountNotFound value, $Res Function(_$_AccountNotFound) then) =
-      __$$_AccountNotFoundCopyWithImpl<$Res>;
+abstract class _$$AccountNotFoundImplCopyWith<$Res> {
+  factory _$$AccountNotFoundImplCopyWith(_$AccountNotFoundImpl value,
+          $Res Function(_$AccountNotFoundImpl) then) =
+      __$$AccountNotFoundImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AccountNotFoundCopyWithImpl<$Res>
-    extends _$AccountErrorsCopyWithImpl<$Res, _$_AccountNotFound>
-    implements _$$_AccountNotFoundCopyWith<$Res> {
-  __$$_AccountNotFoundCopyWithImpl(
-      _$_AccountNotFound _value, $Res Function(_$_AccountNotFound) _then)
+class __$$AccountNotFoundImplCopyWithImpl<$Res>
+    extends _$AccountErrorsCopyWithImpl<$Res, _$AccountNotFoundImpl>
+    implements _$$AccountNotFoundImplCopyWith<$Res> {
+  __$$AccountNotFoundImplCopyWithImpl(
+      _$AccountNotFoundImpl _value, $Res Function(_$AccountNotFoundImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AccountNotFound implements _AccountNotFound {
-  const _$_AccountNotFound();
+class _$AccountNotFoundImpl implements _AccountNotFound {
+  const _$AccountNotFoundImpl();
 
   @override
   String toString() {
@@ -115,7 +115,7 @@ class _$_AccountNotFound implements _AccountNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AccountNotFound);
+        (other.runtimeType == runtimeType && other is _$AccountNotFoundImpl);
   }
 
   @override
@@ -197,29 +197,29 @@ class _$_AccountNotFound implements _AccountNotFound {
 }
 
 abstract class _AccountNotFound implements AccountErrors {
-  const factory _AccountNotFound() = _$_AccountNotFound;
+  const factory _AccountNotFound() = _$AccountNotFoundImpl;
 }
 
 /// @nodoc
-abstract class _$$_BankNameErrorCopyWith<$Res> {
-  factory _$$_BankNameErrorCopyWith(
-          _$_BankNameError value, $Res Function(_$_BankNameError) then) =
-      __$$_BankNameErrorCopyWithImpl<$Res>;
+abstract class _$$BankNameErrorImplCopyWith<$Res> {
+  factory _$$BankNameErrorImplCopyWith(
+          _$BankNameErrorImpl value, $Res Function(_$BankNameErrorImpl) then) =
+      __$$BankNameErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_BankNameErrorCopyWithImpl<$Res>
-    extends _$AccountErrorsCopyWithImpl<$Res, _$_BankNameError>
-    implements _$$_BankNameErrorCopyWith<$Res> {
-  __$$_BankNameErrorCopyWithImpl(
-      _$_BankNameError _value, $Res Function(_$_BankNameError) _then)
+class __$$BankNameErrorImplCopyWithImpl<$Res>
+    extends _$AccountErrorsCopyWithImpl<$Res, _$BankNameErrorImpl>
+    implements _$$BankNameErrorImplCopyWith<$Res> {
+  __$$BankNameErrorImplCopyWithImpl(
+      _$BankNameErrorImpl _value, $Res Function(_$BankNameErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_BankNameError implements _BankNameError {
-  const _$_BankNameError();
+class _$BankNameErrorImpl implements _BankNameError {
+  const _$BankNameErrorImpl();
 
   @override
   String toString() {
@@ -229,7 +229,7 @@ class _$_BankNameError implements _BankNameError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_BankNameError);
+        (other.runtimeType == runtimeType && other is _$BankNameErrorImpl);
   }
 
   @override
@@ -311,29 +311,29 @@ class _$_BankNameError implements _BankNameError {
 }
 
 abstract class _BankNameError implements AccountErrors {
-  const factory _BankNameError() = _$_BankNameError;
+  const factory _BankNameError() = _$BankNameErrorImpl;
 }
 
 /// @nodoc
-abstract class _$$_HolderNameErrorCopyWith<$Res> {
-  factory _$$_HolderNameErrorCopyWith(
-          _$_HolderNameError value, $Res Function(_$_HolderNameError) then) =
-      __$$_HolderNameErrorCopyWithImpl<$Res>;
+abstract class _$$HolderNameErrorImplCopyWith<$Res> {
+  factory _$$HolderNameErrorImplCopyWith(_$HolderNameErrorImpl value,
+          $Res Function(_$HolderNameErrorImpl) then) =
+      __$$HolderNameErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_HolderNameErrorCopyWithImpl<$Res>
-    extends _$AccountErrorsCopyWithImpl<$Res, _$_HolderNameError>
-    implements _$$_HolderNameErrorCopyWith<$Res> {
-  __$$_HolderNameErrorCopyWithImpl(
-      _$_HolderNameError _value, $Res Function(_$_HolderNameError) _then)
+class __$$HolderNameErrorImplCopyWithImpl<$Res>
+    extends _$AccountErrorsCopyWithImpl<$Res, _$HolderNameErrorImpl>
+    implements _$$HolderNameErrorImplCopyWith<$Res> {
+  __$$HolderNameErrorImplCopyWithImpl(
+      _$HolderNameErrorImpl _value, $Res Function(_$HolderNameErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_HolderNameError implements _HolderNameError {
-  const _$_HolderNameError();
+class _$HolderNameErrorImpl implements _HolderNameError {
+  const _$HolderNameErrorImpl();
 
   @override
   String toString() {
@@ -343,7 +343,7 @@ class _$_HolderNameError implements _HolderNameError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_HolderNameError);
+        (other.runtimeType == runtimeType && other is _$HolderNameErrorImpl);
   }
 
   @override
@@ -425,29 +425,29 @@ class _$_HolderNameError implements _HolderNameError {
 }
 
 abstract class _HolderNameError implements AccountErrors {
-  const factory _HolderNameError() = _$_HolderNameError;
+  const factory _HolderNameError() = _$HolderNameErrorImpl;
 }
 
 /// @nodoc
-abstract class _$$_ColorErrorCopyWith<$Res> {
-  factory _$$_ColorErrorCopyWith(
-          _$_ColorError value, $Res Function(_$_ColorError) then) =
-      __$$_ColorErrorCopyWithImpl<$Res>;
+abstract class _$$ColorErrorImplCopyWith<$Res> {
+  factory _$$ColorErrorImplCopyWith(
+          _$ColorErrorImpl value, $Res Function(_$ColorErrorImpl) then) =
+      __$$ColorErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ColorErrorCopyWithImpl<$Res>
-    extends _$AccountErrorsCopyWithImpl<$Res, _$_ColorError>
-    implements _$$_ColorErrorCopyWith<$Res> {
-  __$$_ColorErrorCopyWithImpl(
-      _$_ColorError _value, $Res Function(_$_ColorError) _then)
+class __$$ColorErrorImplCopyWithImpl<$Res>
+    extends _$AccountErrorsCopyWithImpl<$Res, _$ColorErrorImpl>
+    implements _$$ColorErrorImplCopyWith<$Res> {
+  __$$ColorErrorImplCopyWithImpl(
+      _$ColorErrorImpl _value, $Res Function(_$ColorErrorImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ColorError implements _ColorError {
-  const _$_ColorError();
+class _$ColorErrorImpl implements _ColorError {
+  const _$ColorErrorImpl();
 
   @override
   String toString() {
@@ -457,7 +457,7 @@ class _$_ColorError implements _ColorError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ColorError);
+        (other.runtimeType == runtimeType && other is _$ColorErrorImpl);
   }
 
   @override
@@ -539,5 +539,5 @@ class _$_ColorError implements _ColorError {
 }
 
 abstract class _ColorError implements AccountErrors {
-  const factory _ColorError() = _$_ColorError;
+  const factory _ColorError() = _$ColorErrorImpl;
 }

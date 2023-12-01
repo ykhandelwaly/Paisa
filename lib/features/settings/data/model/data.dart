@@ -7,7 +7,7 @@ import 'dart:convert';
 import 'package:paisa/features/account/data/model/account_model.dart';
 import 'package:paisa/features/category/data/model/category_model.dart';
 import 'package:paisa/features/debit/data/models/debit_model.dart';
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
 import 'package:paisa/features/transaction/data/model/transaction_model.dart';
 
 class Data {

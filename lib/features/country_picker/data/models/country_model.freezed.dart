@@ -156,11 +156,11 @@ class _$CountryModelCopyWithImpl<$Res, $Val extends CountryModel>
 }
 
 /// @nodoc
-abstract class _$$_CountryModelCopyWith<$Res>
+abstract class _$$CountryModelImplCopyWith<$Res>
     implements $CountryModelCopyWith<$Res> {
-  factory _$$_CountryModelCopyWith(
-          _$_CountryModel value, $Res Function(_$_CountryModel) then) =
-      __$$_CountryModelCopyWithImpl<$Res>;
+  factory _$$CountryModelImplCopyWith(
+          _$CountryModelImpl value, $Res Function(_$CountryModelImpl) then) =
+      __$$CountryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -183,11 +183,11 @@ abstract class _$$_CountryModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CountryModelCopyWithImpl<$Res>
-    extends _$CountryModelCopyWithImpl<$Res, _$_CountryModel>
-    implements _$$_CountryModelCopyWith<$Res> {
-  __$$_CountryModelCopyWithImpl(
-      _$_CountryModel _value, $Res Function(_$_CountryModel) _then)
+class __$$CountryModelImplCopyWithImpl<$Res>
+    extends _$CountryModelCopyWithImpl<$Res, _$CountryModelImpl>
+    implements _$$CountryModelImplCopyWith<$Res> {
+  __$$CountryModelImplCopyWithImpl(
+      _$CountryModelImpl _value, $Res Function(_$CountryModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -205,7 +205,7 @@ class __$$_CountryModelCopyWithImpl<$Res>
     Object? symbolOnLeft = null,
     Object? thousandsSeparator = null,
   }) {
-    return _then(_$_CountryModel(
+    return _then(_$CountryModelImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -256,9 +256,9 @@ class __$$_CountryModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@HiveType(typeId: 7)
-class _$_CountryModel extends _CountryModel {
-  _$_CountryModel(
+@HiveType(typeId: 7, adapterName: 'CountryModelAdapter')
+class _$CountryModelImpl extends _CountryModel {
+  _$CountryModelImpl(
       {@HiveField(0) required this.code,
       @HiveField(1)
       @JsonKey(name: 'decimal_digits')
@@ -283,8 +283,8 @@ class _$_CountryModel extends _CountryModel {
       required this.thousandsSeparator})
       : super._();
 
-  factory _$_CountryModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CountryModelFromJson(json);
+  factory _$CountryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountryModelImplFromJson(json);
 
   @override
   @HiveField(0)
@@ -336,7 +336,7 @@ class _$_CountryModel extends _CountryModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CountryModel &&
+            other is _$CountryModelImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.decimalDigits, decimalDigits) ||
                 other.decimalDigits == decimalDigits) &&
@@ -377,12 +377,12 @@ class _$_CountryModel extends _CountryModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CountryModelCopyWith<_$_CountryModel> get copyWith =>
-      __$$_CountryModelCopyWithImpl<_$_CountryModel>(this, _$identity);
+  _$$CountryModelImplCopyWith<_$CountryModelImpl> get copyWith =>
+      __$$CountryModelImplCopyWithImpl<_$CountryModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CountryModelToJson(
+    return _$$CountryModelImplToJson(
       this,
     );
   }
@@ -413,11 +413,11 @@ abstract class _CountryModel extends CountryModel {
       required final bool symbolOnLeft,
       @HiveField(11)
       @JsonKey(name: 'thousands_separator')
-      required final String thousandsSeparator}) = _$_CountryModel;
+      required final String thousandsSeparator}) = _$CountryModelImpl;
   _CountryModel._() : super._();
 
   factory _CountryModel.fromJson(Map<String, dynamic> json) =
-      _$_CountryModel.fromJson;
+      _$CountryModelImpl.fromJson;
 
   @override
   @HiveField(0)
@@ -461,6 +461,6 @@ abstract class _CountryModel extends CountryModel {
   String get thousandsSeparator;
   @override
   @JsonKey(ignore: true)
-  _$$_CountryModelCopyWith<_$_CountryModel> get copyWith =>
+  _$$CountryModelImplCopyWith<_$CountryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

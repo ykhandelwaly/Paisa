@@ -6,17 +6,17 @@ part of 'country_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class CountryModelAdapter extends TypeAdapter<_$_CountryModel> {
+class CountryModelAdapter extends TypeAdapter<_$CountryModelImpl> {
   @override
   final int typeId = 7;
 
   @override
-  _$_CountryModel read(BinaryReader reader) {
+  _$CountryModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_CountryModel(
+    return _$CountryModelImpl(
       code: fields[0] as String,
       decimalDigits: fields[1] as int?,
       decimalSeparator: fields[2] as String,
@@ -32,7 +32,7 @@ class CountryModelAdapter extends TypeAdapter<_$_CountryModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_CountryModel obj) {
+  void write(BinaryWriter writer, _$CountryModelImpl obj) {
     writer
       ..writeByte(11)
       ..writeByte(0)
@@ -74,8 +74,8 @@ class CountryModelAdapter extends TypeAdapter<_$_CountryModel> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CountryModel _$$_CountryModelFromJson(Map<String, dynamic> json) =>
-    _$_CountryModel(
+_$CountryModelImpl _$$CountryModelImplFromJson(Map<String, dynamic> json) =>
+    _$CountryModelImpl(
       code: json['code'] as String,
       decimalDigits: json['decimal_digits'] as int?,
       decimalSeparator: json['decimal_separator'] as String,
@@ -90,7 +90,7 @@ _$_CountryModel _$$_CountryModelFromJson(Map<String, dynamic> json) =>
       thousandsSeparator: json['thousands_separator'] as String,
     );
 
-Map<String, dynamic> _$$_CountryModelToJson(_$_CountryModel instance) =>
+Map<String, dynamic> _$$CountryModelImplToJson(_$CountryModelImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'decimal_digits': instance.decimalDigits,

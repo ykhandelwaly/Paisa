@@ -1,7 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:injectable/injectable.dart';
 import 'package:paisa/features/debit/data/data_sources/transaction_data_manager.dart';
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
 
 @Singleton(as: TransactionDataManager)
 class LocalTransactionDataManagerImpl implements TransactionDataManager {

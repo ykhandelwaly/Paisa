@@ -6,17 +6,17 @@ part of 'debit_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class DebitModelAdapter extends TypeAdapter<_$_DebitModel> {
+class DebitModelAdapter extends TypeAdapter<_$DebitModelImpl> {
   @override
   final int typeId = 4;
 
   @override
-  _$_DebitModel read(BinaryReader reader) {
+  _$DebitModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_DebitModel(
+    return _$DebitModelImpl(
       description: fields[1] as String?,
       amount: fields[2] as double?,
       dateTime: fields[3] as DateTime?,
@@ -28,7 +28,7 @@ class DebitModelAdapter extends TypeAdapter<_$_DebitModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_DebitModel obj) {
+  void write(BinaryWriter writer, _$DebitModelImpl obj) {
     writer
       ..writeByte(7)
       ..writeByte(1)
@@ -62,8 +62,8 @@ class DebitModelAdapter extends TypeAdapter<_$_DebitModel> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DebitModel _$$_DebitModelFromJson(Map<String, dynamic> json) =>
-    _$_DebitModel(
+_$DebitModelImpl _$$DebitModelImplFromJson(Map<String, dynamic> json) =>
+    _$DebitModelImpl(
       description: json['description'] as String?,
       amount: (json['amount'] as num?)?.toDouble(),
       dateTime: json['dateTime'] == null
@@ -77,7 +77,7 @@ _$_DebitModel _$$_DebitModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$$_DebitModelToJson(_$_DebitModel instance) =>
+Map<String, dynamic> _$$DebitModelImplToJson(_$DebitModelImpl instance) =>
     <String, dynamic>{
       'description': instance.description,
       'amount': instance.amount,

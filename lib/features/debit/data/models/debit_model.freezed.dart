@@ -126,11 +126,11 @@ class _$DebitModelCopyWithImpl<$Res, $Val extends DebitModel>
 }
 
 /// @nodoc
-abstract class _$$_DebitModelCopyWith<$Res>
+abstract class _$$DebitModelImplCopyWith<$Res>
     implements $DebitModelCopyWith<$Res> {
-  factory _$$_DebitModelCopyWith(
-          _$_DebitModel value, $Res Function(_$_DebitModel) then) =
-      __$$_DebitModelCopyWithImpl<$Res>;
+  factory _$$DebitModelImplCopyWith(
+          _$DebitModelImpl value, $Res Function(_$DebitModelImpl) then) =
+      __$$DebitModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -144,11 +144,11 @@ abstract class _$$_DebitModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DebitModelCopyWithImpl<$Res>
-    extends _$DebitModelCopyWithImpl<$Res, _$_DebitModel>
-    implements _$$_DebitModelCopyWith<$Res> {
-  __$$_DebitModelCopyWithImpl(
-      _$_DebitModel _value, $Res Function(_$_DebitModel) _then)
+class __$$DebitModelImplCopyWithImpl<$Res>
+    extends _$DebitModelCopyWithImpl<$Res, _$DebitModelImpl>
+    implements _$$DebitModelImplCopyWith<$Res> {
+  __$$DebitModelImplCopyWithImpl(
+      _$DebitModelImpl _value, $Res Function(_$DebitModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -162,7 +162,7 @@ class __$$_DebitModelCopyWithImpl<$Res>
     Object? superId = freezed,
     Object? name = freezed,
   }) {
-    return _then(_$_DebitModel(
+    return _then(_$DebitModelImpl(
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -198,8 +198,8 @@ class __$$_DebitModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @HiveType(typeId: 4, adapterName: 'DebitModelAdapter')
-class _$_DebitModel extends _DebitModel {
-  _$_DebitModel(
+class _$DebitModelImpl extends _DebitModel {
+  _$DebitModelImpl(
       {@HiveField(1) this.description,
       @HiveField(2) this.amount,
       @HiveField(3) this.dateTime,
@@ -209,8 +209,8 @@ class _$_DebitModel extends _DebitModel {
       @HiveField(7, defaultValue: '') this.name})
       : super._();
 
-  factory _$_DebitModel.fromJson(Map<String, dynamic> json) =>
-      _$$_DebitModelFromJson(json);
+  factory _$DebitModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DebitModelImplFromJson(json);
 
   @override
   @HiveField(1)
@@ -242,12 +242,12 @@ class _$_DebitModel extends _DebitModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DebitModelCopyWith<_$_DebitModel> get copyWith =>
-      __$$_DebitModelCopyWithImpl<_$_DebitModel>(this, _$identity);
+  _$$DebitModelImplCopyWith<_$DebitModelImpl> get copyWith =>
+      __$$DebitModelImplCopyWithImpl<_$DebitModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DebitModelToJson(
+    return _$$DebitModelImplToJson(
       this,
     );
   }
@@ -261,11 +261,11 @@ abstract class _DebitModel extends DebitModel {
       @HiveField(4) DateTime? expiryDateTime,
       @HiveField(5, defaultValue: DebitType.debit) DebitType? debtType,
       @HiveField(6, defaultValue: 0) int? superId,
-      @HiveField(7, defaultValue: '') String? name}) = _$_DebitModel;
+      @HiveField(7, defaultValue: '') String? name}) = _$DebitModelImpl;
   _DebitModel._() : super._();
 
   factory _DebitModel.fromJson(Map<String, dynamic> json) =
-      _$_DebitModel.fromJson;
+      _$DebitModelImpl.fromJson;
 
   @override
   @HiveField(1)
@@ -304,6 +304,6 @@ abstract class _DebitModel extends DebitModel {
   set name(String? value);
   @override
   @JsonKey(ignore: true)
-  _$$_DebitModelCopyWith<_$_DebitModel> get copyWith =>
+  _$$DebitModelImplCopyWith<_$DebitModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

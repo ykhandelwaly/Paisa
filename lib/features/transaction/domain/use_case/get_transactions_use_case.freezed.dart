@@ -58,23 +58,25 @@ class _$ParamsDefaultAccountIdCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ParamsDefaultAccountIdCopyWith<$Res>
+abstract class _$$ParamsDefaultAccountIdImplCopyWith<$Res>
     implements $ParamsDefaultAccountIdCopyWith<$Res> {
-  factory _$$_ParamsDefaultAccountIdCopyWith(_$_ParamsDefaultAccountId value,
-          $Res Function(_$_ParamsDefaultAccountId) then) =
-      __$$_ParamsDefaultAccountIdCopyWithImpl<$Res>;
+  factory _$$ParamsDefaultAccountIdImplCopyWith(
+          _$ParamsDefaultAccountIdImpl value,
+          $Res Function(_$ParamsDefaultAccountIdImpl) then) =
+      __$$ParamsDefaultAccountIdImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? accountId});
 }
 
 /// @nodoc
-class __$$_ParamsDefaultAccountIdCopyWithImpl<$Res>
+class __$$ParamsDefaultAccountIdImplCopyWithImpl<$Res>
     extends _$ParamsDefaultAccountIdCopyWithImpl<$Res,
-        _$_ParamsDefaultAccountId>
-    implements _$$_ParamsDefaultAccountIdCopyWith<$Res> {
-  __$$_ParamsDefaultAccountIdCopyWithImpl(_$_ParamsDefaultAccountId _value,
-      $Res Function(_$_ParamsDefaultAccountId) _then)
+        _$ParamsDefaultAccountIdImpl>
+    implements _$$ParamsDefaultAccountIdImplCopyWith<$Res> {
+  __$$ParamsDefaultAccountIdImplCopyWithImpl(
+      _$ParamsDefaultAccountIdImpl _value,
+      $Res Function(_$ParamsDefaultAccountIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -82,7 +84,7 @@ class __$$_ParamsDefaultAccountIdCopyWithImpl<$Res>
   $Res call({
     Object? accountId = freezed,
   }) {
-    return _then(_$_ParamsDefaultAccountId(
+    return _then(_$ParamsDefaultAccountIdImpl(
       freezed == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -93,8 +95,8 @@ class __$$_ParamsDefaultAccountIdCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ParamsDefaultAccountId implements _ParamsDefaultAccountId {
-  const _$_ParamsDefaultAccountId(this.accountId);
+class _$ParamsDefaultAccountIdImpl implements _ParamsDefaultAccountId {
+  const _$ParamsDefaultAccountIdImpl(this.accountId);
 
   @override
   final int? accountId;
@@ -108,7 +110,7 @@ class _$_ParamsDefaultAccountId implements _ParamsDefaultAccountId {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ParamsDefaultAccountId &&
+            other is _$ParamsDefaultAccountIdImpl &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId));
   }
@@ -119,19 +121,19 @@ class _$_ParamsDefaultAccountId implements _ParamsDefaultAccountId {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ParamsDefaultAccountIdCopyWith<_$_ParamsDefaultAccountId> get copyWith =>
-      __$$_ParamsDefaultAccountIdCopyWithImpl<_$_ParamsDefaultAccountId>(
-          this, _$identity);
+  _$$ParamsDefaultAccountIdImplCopyWith<_$ParamsDefaultAccountIdImpl>
+      get copyWith => __$$ParamsDefaultAccountIdImplCopyWithImpl<
+          _$ParamsDefaultAccountIdImpl>(this, _$identity);
 }
 
 abstract class _ParamsDefaultAccountId implements ParamsDefaultAccountId {
   const factory _ParamsDefaultAccountId(final int? accountId) =
-      _$_ParamsDefaultAccountId;
+      _$ParamsDefaultAccountIdImpl;
 
   @override
   int? get accountId;
   @override
   @JsonKey(ignore: true)
-  _$$_ParamsDefaultAccountIdCopyWith<_$_ParamsDefaultAccountId> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ParamsDefaultAccountIdImplCopyWith<_$ParamsDefaultAccountIdImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

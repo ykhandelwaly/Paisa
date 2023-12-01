@@ -1,4 +1,4 @@
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
 
 abstract class TransactionDataManager {
   Future<void> addTransaction(DebitTransactionsModel transactionsModel);

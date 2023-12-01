@@ -128,11 +128,11 @@ class _$UpdateAccountParamsCopyWithImpl<$Res, $Val extends UpdateAccountParams>
 }
 
 /// @nodoc
-abstract class _$$_UpdateAccountParamsCopyWith<$Res>
+abstract class _$$UpdateAccountParamsImplCopyWith<$Res>
     implements $UpdateAccountParamsCopyWith<$Res> {
-  factory _$$_UpdateAccountParamsCopyWith(_$_UpdateAccountParams value,
-          $Res Function(_$_UpdateAccountParams) then) =
-      __$$_UpdateAccountParamsCopyWithImpl<$Res>;
+  factory _$$UpdateAccountParamsImplCopyWith(_$UpdateAccountParamsImpl value,
+          $Res Function(_$UpdateAccountParamsImpl) then) =
+      __$$UpdateAccountParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -151,11 +151,11 @@ abstract class _$$_UpdateAccountParamsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UpdateAccountParamsCopyWithImpl<$Res>
-    extends _$UpdateAccountParamsCopyWithImpl<$Res, _$_UpdateAccountParams>
-    implements _$$_UpdateAccountParamsCopyWith<$Res> {
-  __$$_UpdateAccountParamsCopyWithImpl(_$_UpdateAccountParams _value,
-      $Res Function(_$_UpdateAccountParams) _then)
+class __$$UpdateAccountParamsImplCopyWithImpl<$Res>
+    extends _$UpdateAccountParamsCopyWithImpl<$Res, _$UpdateAccountParamsImpl>
+    implements _$$UpdateAccountParamsImplCopyWith<$Res> {
+  __$$UpdateAccountParamsImplCopyWithImpl(_$UpdateAccountParamsImpl _value,
+      $Res Function(_$UpdateAccountParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -171,7 +171,7 @@ class __$$_UpdateAccountParamsCopyWithImpl<$Res>
     Object? isAccountExcluded = freezed,
     Object? isAccountDefault = freezed,
   }) {
-    return _then(_$_UpdateAccountParams(
+    return _then(_$UpdateAccountParamsImpl(
       null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
@@ -214,8 +214,8 @@ class __$$_UpdateAccountParamsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateAccountParams implements _UpdateAccountParams {
-  const _$_UpdateAccountParams(this.key,
+class _$UpdateAccountParamsImpl implements _UpdateAccountParams {
+  const _$UpdateAccountParamsImpl(this.key,
       {required this.bankName,
       required this.cardType,
       required this.holderName,
@@ -253,7 +253,7 @@ class _$_UpdateAccountParams implements _UpdateAccountParams {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateAccountParams &&
+            other is _$UpdateAccountParamsImpl &&
             (identical(other.key, key) || other.key == key) &&
             (identical(other.bankName, bankName) ||
                 other.bankName == bankName) &&
@@ -287,8 +287,8 @@ class _$_UpdateAccountParams implements _UpdateAccountParams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateAccountParamsCopyWith<_$_UpdateAccountParams> get copyWith =>
-      __$$_UpdateAccountParamsCopyWithImpl<_$_UpdateAccountParams>(
+  _$$UpdateAccountParamsImplCopyWith<_$UpdateAccountParamsImpl> get copyWith =>
+      __$$UpdateAccountParamsImplCopyWithImpl<_$UpdateAccountParamsImpl>(
           this, _$identity);
 }
 
@@ -301,7 +301,7 @@ abstract class _UpdateAccountParams implements UpdateAccountParams {
       final int? color,
       final Country? currencySymbol,
       final bool? isAccountExcluded,
-      final bool? isAccountDefault}) = _$_UpdateAccountParams;
+      final bool? isAccountDefault}) = _$UpdateAccountParamsImpl;
 
   @override
   int get key;
@@ -323,6 +323,6 @@ abstract class _UpdateAccountParams implements UpdateAccountParams {
   bool? get isAccountDefault;
   @override
   @JsonKey(ignore: true)
-  _$$_UpdateAccountParamsCopyWith<_$_UpdateAccountParams> get copyWith =>
+  _$$UpdateAccountParamsImplCopyWith<_$UpdateAccountParamsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

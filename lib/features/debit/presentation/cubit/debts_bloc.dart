@@ -8,7 +8,8 @@ import 'package:paisa/core/enum/debt_type.dart';
 import 'package:paisa/features/debit/data/models/debit_model.dart';
 import 'package:paisa/features/debit/domain/entities/debit_entity.dart';
 import 'package:paisa/features/debit/domain/use_case/debit_use_case.dart';
-import 'package:paisa/features/debit/domain/use_case/delete_debit_transactions_by_debit_id_use_case.dart';
+
+import '../../../debit_transaction/domain/use_case/debit_transaction_use_case.dart';
 
 part 'debts_event.dart';
 part 'debts_state.dart';

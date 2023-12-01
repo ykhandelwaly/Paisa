@@ -6,17 +6,17 @@ part of 'transaction_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class TransactionModelAdapter extends TypeAdapter<_$_TransactionModel> {
+class TransactionModelAdapter extends TypeAdapter<_$TransactionModelImpl> {
   @override
   final int typeId = 0;
 
   @override
-  _$_TransactionModel read(BinaryReader reader) {
+  _$TransactionModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_TransactionModel(
+    return _$TransactionModelImpl(
       accountId: fields[5] as int?,
       categoryId: fields[6] as int?,
       currency: fields[1] as double?,
@@ -31,7 +31,7 @@ class TransactionModelAdapter extends TypeAdapter<_$_TransactionModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_TransactionModel obj) {
+  void write(BinaryWriter writer, _$TransactionModelImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(5)
@@ -67,8 +67,9 @@ class TransactionModelAdapter extends TypeAdapter<_$_TransactionModel> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TransactionModel _$$_TransactionModelFromJson(Map<String, dynamic> json) =>
-    _$_TransactionModel(
+_$TransactionModelImpl _$$TransactionModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TransactionModelImpl(
       accountId: json['accountId'] as int?,
       categoryId: json['categoryId'] as int?,
       currency: (json['currency'] as num?)?.toDouble(),
@@ -81,7 +82,8 @@ _$_TransactionModel _$$_TransactionModelFromJson(Map<String, dynamic> json) =>
           TransactionType.expense,
     );
 
-Map<String, dynamic> _$$_TransactionModelToJson(_$_TransactionModel instance) =>
+Map<String, dynamic> _$$TransactionModelImplToJson(
+        _$TransactionModelImpl instance) =>
     <String, dynamic>{
       'accountId': instance.accountId,
       'categoryId': instance.categoryId,

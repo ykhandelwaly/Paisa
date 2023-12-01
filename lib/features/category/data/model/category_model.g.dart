@@ -6,17 +6,17 @@ part of 'category_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class CategoryModelAdapter extends TypeAdapter<_$_CategoryModel> {
+class CategoryModelAdapter extends TypeAdapter<_$CategoryModelImpl> {
   @override
   final int typeId = 1;
 
   @override
-  _$_CategoryModel read(BinaryReader reader) {
+  _$CategoryModelImpl read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return _$_CategoryModel(
+    return _$CategoryModelImpl(
       name: fields[0] as String?,
       description: fields[1] as String?,
       icon: fields[2] as int?,
@@ -29,7 +29,7 @@ class CategoryModelAdapter extends TypeAdapter<_$_CategoryModel> {
   }
 
   @override
-  void write(BinaryWriter writer, _$_CategoryModel obj) {
+  void write(BinaryWriter writer, _$CategoryModelImpl obj) {
     writer
       ..writeByte(8)
       ..writeByte(0)
@@ -65,8 +65,8 @@ class CategoryModelAdapter extends TypeAdapter<_$_CategoryModel> {
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CategoryModel _$$_CategoryModelFromJson(Map<String, dynamic> json) =>
-    _$_CategoryModel(
+_$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
+    _$CategoryModelImpl(
       name: json['name'] as String?,
       description: json['description'] as String?,
       icon: json['icon'] as int?,
@@ -77,7 +77,7 @@ _$_CategoryModel _$$_CategoryModelFromJson(Map<String, dynamic> json) =>
       color: json['color'] as int?,
     );
 
-Map<String, dynamic> _$$_CategoryModelToJson(_$_CategoryModel instance) =>
+Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,

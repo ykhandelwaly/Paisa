@@ -10,7 +10,7 @@ import 'package:paisa/features/category/data/data_sources/local/category_data_so
 import 'package:paisa/features/debit/data/data_sources/debit_data_manager.dart';
 import 'package:paisa/features/debit/data/data_sources/transaction_data_manager.dart';
 import 'package:paisa/features/debit/data/models/debit_model.dart';
-import 'package:paisa/features/debit/data/models/debit_transactions_model.dart';
+import 'package:paisa/features/debit_transaction/data/model/debit_transactions_model.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'package:paisa/config/routes.dart';

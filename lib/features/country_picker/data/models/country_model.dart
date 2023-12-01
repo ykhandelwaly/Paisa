@@ -7,7 +7,7 @@ part 'country_model.g.dart';
 
 @freezed
 class CountryModel extends HiveObject with _$CountryModel {
-  @HiveType(typeId: 7)
+  @HiveType(typeId: 7, adapterName: 'CountryModelAdapter')
   factory CountryModel({
     @HiveField(0) required String code,
     @HiveField(1) @JsonKey(name: 'decimal_digits') required int? decimalDigits,
