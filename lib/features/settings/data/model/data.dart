@@ -26,15 +26,15 @@ class Data {
   final List<DebitTransactionsModel> debitTransactions;
 
   factory Data.fromRawJson(String str) => Data.fromJson(json.decode(str));
-
+    
   String toRawJson() => json.encode(toJson());
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
         debitTransactions: List<DebitTransactionsModel>.from(
-            json["transactions"]
+            (json["transactions"] ?? [])
                 .map((x) => DebitTransactionsModel.fromJson(x))),
         debits: List<DebitModel>.from(
-            json["debits"].map((x) => DebitModel.fromJson(x))),
+            (json["debits"] ?? []).map((x) => DebitModel.fromJson(x))),
         expenses: List<TransactionModel>.from(
             json["expenses"].map((x) => TransactionModel.fromJson(x))),
         accounts: List<AccountModel>.from(
