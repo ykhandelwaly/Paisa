@@ -19,7 +19,7 @@
   </a>
 </p>
 <p  align="center">
-    <h2> This is a test content</h2>
+    <h2> Material design expense manager</h2>
 </p>
 
 ### ⚠ Join [@paisa group](https://t.me/app_paisa) on Telegram for important updates
